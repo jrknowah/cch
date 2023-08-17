@@ -29,7 +29,9 @@ export const clientSleepPlace = [
     "Client doesn’t know*",
     "Client refused*"
 ];
-
+export const highestEdu = [
+    "", "Some College"
+];
 export const PatientProfileList = [
     {
         patientProfileTitle: "Client Orientation Information Sheet", patientProfileDate: ""
@@ -193,31 +195,30 @@ export const section5List = [
 
 export const crList = [
     "All clients have rights that include, but are not limited to the following:",
-    "➢The Right:",
-    "➢To treatment",
-    "➢To refuse treatment",
-    "➢To communicate",
-    "➢To read personal treatment decisions",
-    "➢To be free to restraints and seclusion",
-    "➢To be informed of the provisions of the law regarding complaints confidentiality,including but not limited to, the address and telephone number of the Complaintreceiving Unit of the department (Head of Program)",
+    "To treatment",
+    "To refuse treatment",
+    "To communicate",
+    "To read personal treatment decisions",
+    "To be free to restraints and seclusion",
+    "To be informed of the provisions of the law regarding complaints confidentiality,including but not limited to, the address and telephone number of the Complaintreceiving Unit of the department (Head of Program)",
     "Other Rights: an individual with mental illness restrains all Personal civil rights, benefits, and privileges guaranteed by law which include, but are not limited to:",
-    "➢To be treated with dignity and respect",
-    "➢To be protected from abuse",
-    "➢To privacy",
-    "➢To be considered legally competent unless there has been a court decision ofincompetence",
-    "➢To have all privileges of citizenship including the right to be represented by anattorney during civil commitment proceedings",
-    "➢To vote; make contracts; make a will; hold and transfer property; marry; have adriver’s license; and manage one’s own affairs.",
-    "➢The right to religious liberty",
-    "➢The right to be treated with cultural sensitivity",
-    "➢The right to self-determination in identifying and setting goals",
-    "➢The right to present complaints and grievance",
-    "➢The right to have an advocate present during appeals and grievance processes",
-    "➢The right to have all records and disclosures maintained according to the written standardsand rules regarding confidentiality and privacy",
-    "➢The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
-    "➢The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
-    "➢The right to be clearly informed, in understandable and applicable language, about thepurpose of the services being delivered",
-    "➢The right to leave and return to the facility at reasonable hours in accordance with theprogram rules and standards, unless coordinated by site management",
-    "➢The right to stay in facility 24 hours per day, except during required facility maintenance ornon-operational hours per funder contract. i. Temporary/seasonal Interim Housingprograms (i.e. Winter Shelter) that are funded for 14-hour operations shall allowparticipants access to program facility 24 hours per day during periods of inclement weather, as directed by the funder",
+    "To be treated with dignity and respect",
+    "To be protected from abuse",
+    "To privacy",
+    "To be considered legally competent unless there has been a court decision ofincompetence",
+    "To have all privileges of citizenship including the right to be represented by anattorney during civil commitment proceedings",
+    "To vote; make contracts; make a will; hold and transfer property; marry; have adriver’s license; and manage one’s own affairs.",
+    "The right to religious liberty",
+    "The right to be treated with cultural sensitivity",
+    "The right to self-determination in identifying and setting goals",
+    "The right to present complaints and grievance",
+    "The right to have an advocate present during appeals and grievance processes",
+    "The right to have all records and disclosures maintained according to the written standardsand rules regarding confidentiality and privacy",
+    "The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
+    "The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
+    "The right to be clearly informed, in understandable and applicable language, about thepurpose of the services being delivered",
+    "The right to leave and return to the facility at reasonable hours in accordance with theprogram rules and standards, unless coordinated by site management",
+    "The right to stay in facility 24 hours per day, except during required facility maintenance ornon-operational hours per funder contract. i. Temporary/seasonal Interim Housingprograms (i.e. Winter Shelter) that are funded for 14-hour operations shall allowparticipants access to program facility 24 hours per day during periods of inclement weather, as directed by the funder",
     "Client shall not be denied any of the above-mentioned rights on the basis of religion, ethnicity,gender, sexual preference, marital status, or physical disability. I have read, understand, and received a copy of the client's rights:"
 ];
 
@@ -405,7 +406,12 @@ export const inventoryAssistList = [
 ];
 
 
-export const housingList = [ "","Section 8", "Shelter Plus Care", "SRO" ];
+export const housingList = [ 
+    { value: '', label: '' },
+    { value: 'Section 8', label: 'Section 8' },
+    { value: 'Shelter Plus Care', label: 'Shelter Plus Care' },
+    { value: 'SRO', label: 'SRO' }
+];
 export const insList = [ "Medi-Cal", "Medicare", "HMO", "Private" ];
 export const assistList = [ "","Self", "Partial Assistance", "Complete Assistance"];
 export const famList = ["","Mother", "Father", "Other"];

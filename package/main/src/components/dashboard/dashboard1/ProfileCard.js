@@ -1,6 +1,7 @@
-import { Button, Card, CardBody, CardImg, CardSubtitle, CardTitle, Col, Row } from 'reactstrap';
+import React from 'react';
+import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from 'reactstrap';
 
-import img1 from '../../../assets/images/users/user4.jpg';
+import img1 from '../../../assets/images/users/user1.jpg';
 import bgimg1 from '../../../assets/images/background/profile-bg.jpg';
 
 const ProfileCard = () => {
@@ -10,14 +11,15 @@ const ProfileCard = () => {
       <CardBody className="text-center mt-n5">
         <img src={img1} className="rounded-circle mt-n4" width="125" alt="avatar" />
         <CardTitle className="mb-1 mt-3" tag="h4">
-          Steave Jobs
+          Client 1
         </CardTitle>
-
-        <CardSubtitle className="text-muted mb-1">Ui/Ux Designer</CardSubtitle>
         <CardSubtitle className="mb-3 pb-1 px-4">
-          Design is intelligence made visible <span></span>😎.
+         Percy 
         </CardSubtitle>
-        <Button color="primary" size="lg" className="rounded-pill">
+        <CardSubtitle className="mb-3 pb-1 px-4">
+         12345
+        </CardSubtitle>
+        {/* <Button color="primary" size="lg" className="rounded-pill">
           Follow
         </Button>
         <Row className="mt-4">
@@ -45,7 +47,7 @@ const ProfileCard = () => {
               Share Profile
             </Button>
           </Col>
-        </Row>
+        </Row> */}
       </CardBody>
     </Card>
   );

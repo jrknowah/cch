@@ -29,7 +29,7 @@ const Dashboard3 = () => {
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={newClientModalToggle.bind(null)}>
-                        Save New Client
+                        Create New Client
                     </Button>
                     <Button color="secondary" onClick={newClientModalToggle.bind(null)}>
                         Cancel

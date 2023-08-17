@@ -3,7 +3,6 @@ import {Card, Col, Nav, NavItem, NavLink, Row, TabContent, TabPane} from "reacts
 import {PatientProfileList} from "../../../data/arrayList";
 import AuthSig from "../../../components/apps/charts/Section-2/AuthSig";
 
-
 const Section2 = () => {
     const [activeTab, setActiveTab] = useState('1');
 

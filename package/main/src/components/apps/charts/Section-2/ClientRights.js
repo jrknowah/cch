@@ -11,17 +11,18 @@ const ClientRights = () => {
     return (
         <div>
             <Form>
-
-                <p>
-                    {crList.map((list) => {
-                        return (
-                            <div>
-                                {list}
-                            </div>
-                        );
-                    })}
-                </p>
                 <div className="form-body">
+                    <Row>
+                        <Col md="12">
+                            {crList.map((list) => {
+                                return (
+                                    <div>
+                                        {list} <br/> <br/>
+                                    </div>
+                                );
+                            })}
+                        </Col>
+                    </Row>
                     <Row>
                         <Col md="6">
                             <FormGroup>
@@ -31,15 +32,7 @@ const ClientRights = () => {
                         </Col>
                         <Col md="6">
                             <FormGroup>
-                                <Label for="coiStaff">Client Printed Name</Label>
-                                <Input type="text" id="coiStaff" name="coiStaff"></Input>
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label for="coiClientSign">Staff Printed Name</Label>
+                                <Label for="coiClientSign">Staff Signature </Label>
                                 <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
                             </FormGroup>
                         </Col>

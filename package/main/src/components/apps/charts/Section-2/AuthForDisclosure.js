@@ -45,14 +45,25 @@ const AuthForDisclosure = () => {
                     <br/>
                     By signing my name below, I agree that my current, past, and future treating providers and organizations, and California Department of Public Social Services may disclose my health AUDI.11.16.18. information, records, social services information, and other data to DHS
                     information, records, social services information, and other data to DHS SSHIE for CHIP and that such data may be shared among and between the programs within CHIP. I also agree that the DHS SSHIE for CHIP may disclose this information to my current, past, and future
-                    treating providers, including CHIP partners and subcontractors, and other organizations that work with CHIP, which are listed in Attachment A. for the purposes described above.<br/>
+                    treating providers, including CHIP partners and subcontractors, and other organizations that work with CHIP, which are listed in Attachment A. for the purposes described above.<br/><br/>
 
-                    •I authorize my health and social service information to be shared through any health information exchange operated by or with participation from the County. A health information exchange is an electronic system that allows organizations to share information.<br/>
-                    •Information that may be shared will include information about:<br/>
-                        my personal characteristics<br/>
-                        my medical history, mental or physical condition,<br/>
-                        my social service information (including CalFresh, General Relief, CalWorks, CashAssistance Program for Immigrants, Medi-Cal, and other public benefits thatI may apply for), and treatment and services I receive.<br/>
-                    •I understand that this Authorization will apply to data from all services I receive fromCHIP providers and partners and any data received by the DHS SSHIE.<br/>
+                    <ol style={{ listStyleType: 'circle' }}>
+                        <li>•I authorize my health and social service information to be shared through any health information exchange operated by or with participation from the County. A health information exchange is an electronic system that allows organizations to share information.</li>
+                        <li>Information that may be shared will include information about:</li>
+                            <ol style={{ listStyleType: 'circle' }}>
+                                <li>My personal characteristics.</li>
+                                <li>My medical history, mental or physical condition.</li>
+                                <li>My social service information (including CalFresh, General Relief, CalWorks, CashAssistance Program for Immigrants, Medi-Cal, and other public benefits thatI may apply for).</li>
+                                <li>Treatment and services I receive.</li>
+                            </ol>
+                        <li></li>
+                    </ol>
+                    
+                    •<br/>
+                        <br/>
+                        <br/>
+                        <br/><br/>
+                    •I understand that this Authorization will apply to data from all services I receive fromCHIP providers and partners and any data received by the DHS SSHIE.<br/><br/>
                     <br/>
 
                 </p>

@@ -77,27 +77,29 @@ const AuthSig = () => {
 
             {/* --------------------------------------------------------------------------------*/}
             <Row>
-                 <Col lg="3">
+                 <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">Client Orientation Information</CardTitle>
-                        `<Modal isOpen={coiModal} fade={false} toggle={newCoiModalToggle.bind(null)} size="lg">
-                        <ModalBody>
-                            <ClientOrientation />
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="primary" onClick={newCoiModalToggle.bind(null)}>
-                                Submit
-                            </Button>
-                            <Button color="secondary" onClick={newCoiModalToggle.bind(null)}>
-                                Clear
-                            </Button>
+                        <Modal isOpen={coiModal} fade={false} toggle={newCoiModalToggle.bind(null)} size="lg">
+                            <ModalBody>
+                                <ClientOrientation />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={newCoiModalToggle.bind(null)}>
+                                    Submit
+                                </Button>
+                                <Button color="secondary" onClick={newCoiModalToggle.bind(null)}>
+                                    Clear
+                                </Button>
 
-                        </ModalFooter>
-                    </Modal>
+                            </ModalFooter>
+                        </Modal>
                         <div>
                             <Button onClick={setCoiModalToggle}>Open</Button>
                         </div>
                     </Card>
+                </Col>
+                <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">Client Rights</CardTitle>
                         <Modal isOpen={crModal} fade={false} toggle={crModalToggle.bind(null)} size="lg">
@@ -117,6 +119,8 @@ const AuthSig = () => {
                            <Button onClick={setCRModalToggle} >Open</Button>
                         </div>
                     </Card>
+                </Col>
+                <Col md="4">
                      <Card body className="text-center">
                          <CardTitle tag="h5">HHH PHI Release here</CardTitle>
                          <Modal isOpen={agreeModal} fade={false} toggle={agreeModalToggle.bind(null)} size="lg">
@@ -137,8 +141,12 @@ const AuthSig = () => {
                              <Button onClick={setAgreeModalToggle}>Open</Button>
                          </div>
                      </Card>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="4">
                      <Card body className="text-center">
-                         <CardTitle tag="h5">RULES OF RESIDENCE AND SECURITY POLICY</CardTitle>
+                         <CardTitle tag="h5">Rules of Residence & Security Policy</CardTitle>
                          <Modal isOpen={resModal} fade={false} toggle={resModalToggle.bind(null)} size="lg">
                              <ModalBody>
                                  <ResidencePolicy />
@@ -150,15 +158,14 @@ const AuthSig = () => {
                                  <Button color="secondary" onClick={resModalToggle.bind(null)}>
                                      Clear
                                  </Button>
-
                              </ModalFooter>
                          </Modal>
                          <div>
                              <Button onClick={setResModalToggle}>Open</Button>
                          </div>
                      </Card>
-                </Col>`
-                <Col md="3" >
+                </Col>
+                <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">Consent for Treatment and Services</CardTitle>
                        <Modal isOpen={consentModal} fade={false} toggle={consentModalToggle.bind(null)} size="lg">
@@ -179,9 +186,10 @@ const AuthSig = () => {
                             <Button onClick={setConsentModalToggle}>Open</Button>
                         </div>
                     </Card>
-
+                </Col>
+                <Col md="4">
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Authorization To Share/Release Information</CardTitle>
+                        <CardTitle tag="h5">Authorization To Share Information</CardTitle>
                        <Modal isOpen={authModal} fade={false} toggle={authModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <AuthForDisclosure />
@@ -193,14 +201,16 @@ const AuthSig = () => {
                                 <Button color="secondary" onClick={authModalToggle.bind(null)}>
                                     Clear
                                 </Button>
-
                             </ModalFooter>
                         </Modal>
                         <div>
                             <Button onClick={setAuthModalToggle}>Open</Button>
                         </div>
                     </Card>
-
+                </Col>
+            </Row>
+            <Row>
+                <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">Termination Policy & Procedure</CardTitle>
                         <Modal isOpen={termModal} fade={false} toggle={termModalToggle.bind(null)} size="lg">
@@ -221,9 +231,10 @@ const AuthSig = () => {
                             <Button onClick={setTermModalToggle}>Open</Button>
                         </div>
                     </Card>
-
+                </Col>
+                <Col md="4">
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Advance Healthcare Directive Acknowledgement Form</CardTitle>
+                        <CardTitle tag="h5">Advance Healthcare Directive Form</CardTitle>
                         <Modal isOpen={advModal} fade={false} toggle={advModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <AdvCareAck />
@@ -243,9 +254,9 @@ const AuthSig = () => {
                         </div>
                     </Card>
                 </Col>
-                <Col md="3" >
+                <Col md="4" >
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Authorization For The Use & Disclosure Of Health & Social Service Information</CardTitle>
+                        <CardTitle tag="h5">Authorization Of Health & Social Service Information</CardTitle>
                         <Modal isOpen={discloseModal} fade={false} toggle={discloseModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <AuthForDisclosure />
@@ -264,7 +275,10 @@ const AuthSig = () => {
                             <Button onClick={setDiscloseModalToggle}>Open</Button>
                         </div>
                     </Card>
-
+                </Col>
+            </Row>
+            <Row>
+                <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">LA HMIS Consent</CardTitle>
                         <Modal isOpen={lahmisModal} fade={false} toggle={lahmisModalToggle.bind(null)} size="lg">
@@ -285,6 +299,8 @@ const AuthSig = () => {
                             <Button onClick={setLahmisModalToggle}>Open</Button>
                         </div>
                     </Card>
+                </Col>
+                <Col md="4">
                     <Card body className="text-center">
                         <CardTitle tag="h5">LA County Notice Of Private Practices</CardTitle>
                         <Modal isOpen={agreeModal} fade={false} toggle={agreeModalToggle.bind(null)} size="lg">
@@ -305,7 +321,8 @@ const AuthSig = () => {
                             <Button onClick={setAgreeModalToggle}>Open</Button>
                         </div>
                     </Card>
-
+                </Col>
+                <Col>
                     <Card body className="text-center">
                         <CardTitle tag="h5">LB HMIS Consent</CardTitle>
                         <Modal isOpen={missingAckModal} fade={false} toggle={missingAckModalToggle.bind(null)} size="lg">

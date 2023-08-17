@@ -1,4 +1,5 @@
-import { Input, Table } from 'reactstrap';
+import React from 'react';
+import { Input, Table, Button } from 'reactstrap';
 import user1 from '../../../assets/images/users/user1.jpg';
 import user2 from '../../../assets/images/users/user2.jpg';
 import user3 from '../../../assets/images/users/user3.jpg';
@@ -9,71 +10,58 @@ import DashCard from '../dashboardCards/DashCard';
 const tableData = [
   {
     isActive: 'active',
-    avatar: user1,
-    name: 'Hanna Gover',
-    post: 'Web Designer',
-    project: 'Flexy React',
-    status: 'Low',
-    budget: '95K',
+    clientAvatar: user1,
+    clientName: 'Client 1',
+    clientSite: 'Percy',
+    clientID: '1234545',
   },
   {
     isActive: '',
-    avatar: user2,
-    name: 'Daniel Kristeen',
-    post: 'Project Manager',
-    project: 'Lading pro React',
-    status: 'Medium',
-    budget: '95K',
+    clientAvatar: user2,
+    clientName: 'Client 2',
+    clientSite: 'Cabrillo',
+    clientID: '1234545',
   },
   {
     isActive: '',
-    avatar: user3,
-    name: 'Julian Josephs',
-    post: 'Developer',
-    project: 'Elite React',
-    status: 'High',
-    budget: '95K',
+    clientAvatar: user3,
+    clientName: 'Client 3',
+    clientSite: 'Downey',
+    clientID: '1234545',
   },
   {
     isActive: '',
-    avatar: user4,
-    name: 'Jan Petrovic',
-    post: 'Frontend Eng',
-    project: 'Flexy React',
-    status: 'Low',
-    budget: '95K',
+    clientAvatar: user4,
+    clientName: 'Client 4',
+    clientSite: '41st',
+    clientID: '1234545',
   },
   {
     isActive: '',
-    avatar: user5,
-    name: 'Steve Gover',
-    post: 'Content Writer',
-    project: 'Ample React',
-    status: 'Medium',
-    budget: '95K',
+    clientAvatar: user5,
+    clientName: 'Client 5',
+    clientSite: 'South Harmony',
+    clientID: '1234545',
   },
   {
     isActive: '',
-    avatar: user1,
-    name: 'Johnathan',
-    post: 'Graphic',
-    project: 'Monster React',
-    status: 'Low',
-    budget: '95K',
+    clientAvatar: user1,
+    clientName: 'Client 6',
+    clientSite: 'Arroyo',
+    clientID: '1234545',
   },
 ];
 
 const ProjectTable = () => {
   return (
     <DashCard
-      title="Projects of the Month"
-      subtitle="January 2022"
+      title="Client Search"
       actions={
         <Input type="select" className="form-select">
-          <option value="0">Monthly</option>
-          <option value="1">Daily</option>
-          <option value="2">Weekly</option>
-          <option value="3">Yearly</option>
+          <option value="0"></option>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
         </Input>
       }
     >
@@ -81,47 +69,30 @@ const ProjectTable = () => {
         <Table className="text-nowrap mt-n3 mb-0 align-middle custom-table" borderless>
           <thead>
             <tr>
-              <th>Assigned</th>
-              <th>Name</th>
-              <th>Priority</th>
-              <th>Budget</th>
+              <th>Client</th>
+              <th>Client ID</th>
             </tr>
           </thead>
           <tbody>
             {tableData.map((tdata) => (
-              <tr key={tdata.name} className={`border-top ${tdata.isActive}`}>
+              <tr key={tdata.clientName} className={`border-top ${tdata.isActive}`}>
                 <td>
                   <div className="d-flex align-items-center">
                     <img
-                      src={tdata.avatar}
+                      src={tdata.clientAvatar}
                       className="rounded-circle"
                       alt="avatar"
                       width="45"
                       height="45"
                     />
                     <div className="ms-3">
-                      <h6 className="mb-0 fw-bold">{tdata.name}</h6>
-                      <span className="text-muted fs-7">{tdata.post}</span>
+                      <h6 className="mb-0 fw-bold">{tdata.clientName}</h6>
+                      <span className="text-muted fs-7">{tdata.clientSite}</span>
                     </div>
                   </div>
                 </td>
-                <td>{tdata.project}</td>
-                <td>
-                  {tdata.status === 'Low' ? (
-                    <span className="badge bg-light-danger text-danger rounded-pill d-inline-block fw-bold">
-                      {tdata.status}
-                    </span>
-                  ) : tdata.status === 'Medium' ? (
-                    <span className="badge bg-light-primary text-primary rounded-pill d-inline-block fw-bold">
-                      {tdata.status}
-                    </span>
-                  ) : (
-                    <span className="badge bg-light-success text-success rounded-pill d-inline-block fw-bold">
-                      {tdata.status}
-                    </span>
-                  )}
-                </td>
-                <td>{tdata.budget}</td>
+                <td>{tdata.clientID}</td>
+                <td><Button block color="primary">Open </Button></td> 
               </tr>
             ))}
           </tbody>

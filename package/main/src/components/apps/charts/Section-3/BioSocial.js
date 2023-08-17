@@ -3,7 +3,8 @@ import {
     Row,
     Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form, Table
 } from 'reactstrap';
-import {assistList, finList, gfp} from "../../../../data/arrayList";
+import Select from 'react-select';
+import {assistList, finList, gfp, ynd, housingList} from "../../../../data/arrayList";
 
 
 const BioSocial = () => {
@@ -34,26 +35,28 @@ const BioSocial = () => {
                 <Label>Payee Information</Label>
             </Row>
             <Row>
-
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for=" ">Do you have a payee?</Label>
-                        <Input type="select" id=" " name=" " >
-                            <option>Yes</option>
-                            <option>No</option>
+                        <Input type="select" id="payeeChoice" name=" " >
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for=" Name">Payee Name</Label>
-                        <Input type="text" id=" Name" name=" Name" />
+                        <Input type="text" id="payeeName" name=" Name" />
                     </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for=" Phone">Payee Phone</Label>
-                        <Input type="tel" id=" Phone" name=" Phone" />
+                        <Input type="tel" id="payeePhone" name=" Phone" />
                     </FormGroup>
                 </Col>
             </Row>
@@ -61,37 +64,48 @@ const BioSocial = () => {
                 <Label className="text-center">Employment History</Label>
             </Row>
             <Row>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
-                        <Label for="clientEmployed">Have you ever been employed?</Label>
-                        <Input type="select" id="clientEmployed" name="clientEmployed" >
-                            <option>Yes</option>
-                            <option>No</option>
+                        <Label for="clientBeenEmployed">Have you ever been employed?</Label>
+                        <Input type="select" id="clientBeenEmployed" name="clientBeenEmployed" >
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
-                    <FormGroup>
-                        <Label for="clientEmployed">Are you currently employed?</Label>
-                        <Input type="select" id="clientEmployed" name="clientEmployed" >
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="2">
-                    <FormGroup>
-                        <Label for="clientEmployer">Name of Employer</Label>
-                        <Input type="text" name="clientEmployer" id="clientEmployer" />
-                    </FormGroup>
-                </Col>
-                <Col md="4" sm="12">
+                <Col md="4">
                     <FormGroup>
                         <Label for="clientEmpIntr">Are you interested in obtaining employment?</Label>
                         <Input type="select" id="clientEmpIntr" name="clientEmpIntr" >
-                            <option>Yes</option>
-                            <option>No</option>
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
                         </Input>
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="clientEmployed">Are you currently employed?</Label>
+                        <Input type="select" id="clientEmployed" name="clientEmployed" >
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
+                        </Input>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="clientEmployer">Name of Employer</Label>
+                        <Input type="text" name="clientEmployer" id="clientEmployer" />
                     </FormGroup>
                 </Col>
             </Row>
@@ -103,8 +117,11 @@ const BioSocial = () => {
                     <FormGroup>
                         <Label for="clientDebt">Do you owe any debt to a public agency?</Label>
                         <Input type="select" id="clientDebt" name="clientDebt" >
-                            <option>Yes</option>
-                            <option>No</option>
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
                         </Input>
                     </FormGroup>
                 </Col>
@@ -112,8 +129,11 @@ const BioSocial = () => {
                     <FormGroup>
                         <Label for="clientBankrupt">Have you ever filed for bankruptcy?</Label>
                         <Input type="select" id="clientBankrupt" name="clientBankrupt" >
-                            <option>Yes</option>
-                            <option>No</option>
+                            {ynd.map((list) => {
+                                return (
+                                   <option>{list}</option>
+                                );
+                            })}
                         </Input>
                     </FormGroup>
                 </Col>
@@ -123,17 +143,16 @@ const BioSocial = () => {
             </Row>
             <Row>
                 <Col md="4" >
-                    <Label for="clientContactInfo">Have you ever applied for government-sponsoring housing? (If Yes, specify)
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="radio" name="customcheck1" />
-                            <Label check>Yes</Label>
+                    <Label for="clientGovSponProgram">Government-Sponsored Housing Program?
+                        <FormGroup>
+                            <Select
+
+                                closeMenuOnSelect={false}
+                                isMulti
+                                options={housingList}
+                            />
                         </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="radio" name="customcheck1" />
-                            <Label check>No</Label>
-                        </FormGroup>
-                    </FormGroup></Label>
+                    </Label>
                 </Col>
                 <Col md="4" >
                     <FormGroup>

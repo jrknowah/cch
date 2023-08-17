@@ -56,16 +56,6 @@ const Indentification = () => {
                                     CalAIM Program Consent
                                 </NavLink>
                             </NavItem>
-                            {/*<NavItem>
-                                <NavLink
-                                    className={activeTab === '6' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('6');
-                                    }}
-                                >
-                                    Acknowledgement of Missing Item
-                                </NavLink>
-                            </NavItem>*/}
                         </Nav>
                         <TabContent activeTab={activeTab}>
                             <TabPane tabId="1">
@@ -112,13 +102,6 @@ const Indentification = () => {
                                         <div className="p-4">
                                             <CalAim />
                                         </div>
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="4">
-                                <Row>
-                                    <Col>
-                                        <ClientFace/>
                                     </Col>
                                 </Row>
                             </TabPane>

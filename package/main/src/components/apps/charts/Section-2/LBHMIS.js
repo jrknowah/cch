@@ -27,7 +27,7 @@ const LBHMIS = () => {
                     The purpose of the HMIS is to assist people experiencing homelessness or at risk of homelessness to have better access to those services, achieve self-sufficiency, and obtain housing. The information provided will help coordinate the most effective services for you and your household members.<br/>
                 </p>
                 <ComponentCard
-                    title="What Type of information is being collected?"
+                    title="Collected Information?"
                 >
                     <Table bordered responsive>
                         <tbody>
@@ -73,8 +73,8 @@ const LBHMIS = () => {
                     <b>Why is this type of information being collected?</b><br/>
 
                     Client data will be used by local state and federal officials to better address the needs of the homeless. Gathering certain information (race, date of birth, family size, etc.) about you and the members of your household is a requirement of the federal and local funding that supports this programs and organizations. The information used, released and shared may include information related to a history of alcohol and/or drug abuse, domestic violence, medical or mental health issues, employment, financial or housing status. This information may be exchanged among the organizations verbally, by phone, mail, fax, personal delivery, or email.<br/>
-                    <br/>
-                    <b>Why is this type of information being collected?</b><br/>
+                    <br/><br/>
+                    <b>Why is this type of information being collected?</b><br/><br/>
                     By gathering this information on you only once you can be served by other organizations without reporting all the details (date of birth, social security number, last address, etc.) again and again. If there is a reason that providing your name or the name of other members of your household would place you (or your household member) at risk, then you can request that your information NOT be shared with other agencies by signing the appropriate section at the end of this form. You have the right to revoke the sharing of your information at any time. The information you provide allows you and your caseworker can work together to identify the housing and services you need and work to obtain them.
                     <br/>
                     <b>Who has access to your information?</b><br/>
