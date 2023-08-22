@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Row,
     Col, FormGroup, Label, Input, Table
 } from 'reactstrap';
 
 const MedFaceSheet = () => {
+    const [list, setList] = useState([]);
 
+    const [value, setValue] = useState("Allergies");
+
+    const addToList = () => {
+
+        const tempArr = list;
+
+        tempArr.push(value);
+
+        setList(tempArr);
+
+        setValue("");
+
+    };
     return (
 
         <div className="form-body">
@@ -20,6 +34,23 @@ const MedFaceSheet = () => {
                         <Input type="text" id="" name="" placeholder="Diagnosis 3"/><br/>
                         <Input type="text" id="" name="" placeholder="Diagnosis 4"/><br/>
                     </FormGroup>
+                </Col>
+                <Col md="4">
+                    <input
+
+                        type="text"
+
+                        value={value}
+
+                        onChange={(e) => setValue(e.target.value)}
+
+                    />{" "}
+
+                    <button type="button" onClick={addToList}> Click to Add </button>
+
+                    <ul>
+                        {list.length > 0 && list.map((item) => <li>{item} </li>)}
+                    </ul>
                 </Col>
                 <Col md="4">
                     <FormGroup>

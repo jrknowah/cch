@@ -10,8 +10,10 @@ import {
     NavLink
 } from 'reactstrap';
 import {section6List} from "../../../../data/arrayList";
-import IDTNote from "./IDTNote";
 import PersonalInventory from "./PersonalInventory";
+import IDTNoteNursing from './IDTNoteNursing';
+import IDTNoteCM from './IDTNoteCM';
+import IDTNoteProvider from './IDTNoteProvider';
 
 
 const Section6 = () => {
@@ -46,7 +48,7 @@ const Section6 = () => {
                                         toggle('2');
                                     }}
                                 >
-                                    IDT Note
+                                    IDT Note - Provider
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -54,6 +56,26 @@ const Section6 = () => {
                                     className={activeTab === '3' ? 'active bg-transparent' : 'cursor-pointer'}
                                     onClick={() => {
                                         toggle('3');
+                                    }}
+                                >
+                                    IDT Note - Case Manager
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
+                                    onClick={() => {
+                                        toggle('4');
+                                    }}
+                                >
+                                    IDT Note - Nursing
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    className={activeTab === '5' ? 'active bg-transparent' : 'cursor-pointer'}
+                                    onClick={() => {
+                                        toggle('5');
                                     }}
                                 >
                                     Personal Inventory
@@ -94,12 +116,30 @@ const Section6 = () => {
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
-                                            <IDTNote/>
+                                            <IDTNoteProvider/>
                                         </div>
                                     </Col>
                                 </Row>
                             </TabPane>
                             <TabPane tabId="3">
+                                <Row>
+                                    <Col sm="12">
+                                        <div className="p-4">
+                                            <IDTNoteCM/>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="4">
+                                <Row>
+                                    <Col sm="12">
+                                        <div className="p-4">
+                                            <IDTNoteNursing/>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="5">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">

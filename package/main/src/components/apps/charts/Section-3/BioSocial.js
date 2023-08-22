@@ -113,9 +113,9 @@ const BioSocial = () => {
                 <Label>Debt</Label>
             </Row>
             <Row>
-                <Col md="6">
+                <Col md="4">
                     <FormGroup>
-                        <Label for="clientDebt">Do you owe any debt to a public agency?</Label>
+                        <Label for="clientDebt">Owe any debt to a public agency?</Label>
                         <Input type="select" id="clientDebt" name="clientDebt" >
                             {ynd.map((list) => {
                                 return (
@@ -125,9 +125,9 @@ const BioSocial = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="6" sm="12">
+                <Col md="4" sm="12">
                     <FormGroup>
-                        <Label for="clientBankrupt">Have you ever filed for bankruptcy?</Label>
+                        <Label for="clientBankrupt">Ever filed for bankruptcy?</Label>
                         <Input type="select" id="clientBankrupt" name="clientBankrupt" >
                             {ynd.map((list) => {
                                 return (
@@ -143,10 +143,9 @@ const BioSocial = () => {
             </Row>
             <Row>
                 <Col md="4" >
-                    <Label for="clientGovSponProgram">Government-Sponsored Housing Program?
+                    <Label for="clientGovSponProgram">Ever applied for government housing?
                         <FormGroup>
                             <Select
-
                                 closeMenuOnSelect={false}
                                 isMulti
                                 options={housingList}
@@ -155,93 +154,73 @@ const BioSocial = () => {
                     </Label>
                 </Col>
                 <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Section 8</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Shelter Plus Care</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>SRO</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="clientContactInfo">Have you lived in government sponsored housing? (If Yes, specify)
+                    <Label for="clientContactInfo">Ever lived in government housing?
                         <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
+                            <Select
+                                closeMenuOnSelect={false}
+                                isMulti
+                                options={housingList}
+                            />
+                        </FormGroup>
+                    </Label>
                 </Col>
                 <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Section 8</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Shelter Plus Care</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>SRO</Label>
-                        </FormGroup>
-                    </FormGroup>
+                    <Label for="clientEmployed">Ever rented before?</Label>
+                    <Input type="select" id="clientEmployed" name="clientEmployed" >
+                        {ynd.map((list) => {
+                            return (
+                                <option>{list}</option>
+                            );
+                        })}
+                    </Input>
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
-                    <Label for="clientEmployed">Have you ever rented before?</Label>
+                
+                <Col md="4" >
+                    <Label for="clientEmployed">Ever been served a late notice?</Label>
                     <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
+                        {ynd.map((list) => {
+                            return (
+                                <option>{list}</option>
+                            );
+                        })}
                     </Input>
                 </Col>
-                <Col md="3" >
-                    <Label for="clientEmployed">Have you ever been served a late notice before?</Label>
+                <Col md="4" >
+                    <Label for="clientEmployed">Ever been evicted?</Label>
                     <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
+                        {ynd.map((list) => {
+                            return (
+                                <option>{list}</option>
+                            );
+                        })}
                     </Input>
                 </Col>
-                <Col md="2" >
-                    <Label for="clientEmployed">Have you ever been evicted?</Label>
+                <Col md="4" >
+                    <Label for="clientEmployed">Ever had problems with previous landlords?</Label>
                     <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
+                        {ynd.map((list) => {
+                            return (
+                                <option>{list}</option>
+                            );
+                        })}
                     </Input>
                 </Col>
-                <Col md="3" >
-                    <Label for="clientEmployed">Have you had problems with previous landlords?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="2" >
+            </Row>
+            <Row>       
+                <Col md="4" >
                     <Label for="clientEmployed">Do you have any outstanding utility bills?</Label>
                     <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
+                        {ynd.map((list) => {
+                            return (
+                                <option>{list}</option>
+                            );
+                        })}
                     </Input>
                 </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <Label for="clientEmployed">How would you rate your credit?</Label>
+                <Col md="4" >
+                    <Label for="clientEmployed">Rate your credit?</Label>
                     <Input type="select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
                         {gfp.map((g) => (
                             <option value={g}>{g}</option>
@@ -250,98 +229,28 @@ const BioSocial = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="3" >
-                    <Label for="clientEmployed">Total Number in Household</Label>
-                </Col>
                 <Col md="4" >
-                    <Label for="clientEmployed"># of adults to be housed in addition to applicant?</Label>
-                </Col>
-                <Col md="4" >
-                    <Label for="clientEmployed"># of children to be housed?</Label>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={{ size: 2, offset: 3}} >
                     <FormGroup>
-                        <FormGroup>
-                            <Input type="text" id="clientEmployed" name="clientEmployed" />
-                        </FormGroup>
+                        <Label for="clientNumOfHousehold">Total Number in Household</Label>
+                        <Input type="text" name="clientNumOfHousehold" id="clientNumOfHousehold" />
                     </FormGroup>
                 </Col>
-                <Col md={{ size: 2, offset: 2}} >
+                <Col md="4" >
                     <FormGroup>
-                        <FormGroup>
-                            <Input type="text" id="clientEmployed" name="clientEmployed" />
-                        </FormGroup>
+                        <Label for="clientNumOfAdultsHoused">Number of adults to be housed?</Label>
+                        <Input type="text" name="clientNumOfAdultsHoused" id="clientNumOfAdultsHoused" />
+                    </FormGroup>
+                </Col>
+                <Col md="4" >
+                    <FormGroup>
+                        <Label for="clientEmployed">Number of children to be housed?</Label>
+                        <Input type="text" name="clientNumOfChildrenHoused" id="clientNumOfChildrenHoused" />
                     </FormGroup>
                 </Col>
             </Row>
             <Row className="text-center">
                 <Label for="clientContactInfo">Medical</Label>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="clientContactInfo">Does individual have health Insurance?(If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Medi-Cal</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Medicare</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>HMO</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Private</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <FormGroup>
-                        <Label for="clientContactInfo">Health Insurance Provider (e.g. HealthNet/LA Care):</Label>
-                    </FormGroup>
-                </Col>
-                <Col md="4" >
-                    <Input type="text" name="customcheck1" />
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label for="clientContactInfo">Medical Provider Information</Label>
-            </Row>
-            <Row>
-                <Col md="6" >
-                    <Label for="clientContactInfo">Do you have a primary care physician?(If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-            </Row>
+            </Row>         
             <Row>
                 <Col  md="2">
                     <Label for="clientContactInfo">Physician</Label>
@@ -359,7 +268,7 @@ const BioSocial = () => {
                     <Label for="clientContactInfo">State</Label>
                     <Input type="text" name="customcheck1" />
                 </Col>
-                <Col  md="1">
+                <Col  md="2">
                     <Label for="clientContactInfo">Zip Code</Label>
                     <Input type="text" name="customcheck1" />
                 </Col>
@@ -369,31 +278,15 @@ const BioSocial = () => {
                 </Col>
             </Row>
             <Row>
-                <Col  md="3">
-                    <Label for="clientContactInfo">LAST APPOINTMENT</Label>
-                    <Input type="datetime-local" name="customcheck1" />
+                <Col  md="4">
+                    <Label for="clientAppointment">LAST APPOINTMENT</Label>
+                    <Input type="datetime-local" id="clientLastAppt" name="clientLastAppt" />
                 </Col>
-                <Col  md="3">
-                    <Label for="clientContactInfo">NEXT APPOINTMENT</Label>
-                    <Input type="datetime-local" name="customcheck1" />
+                <Col  md="4">
+                    <Label for="clientAppointment">NEXT APPOINTMENT</Label>
+                    <Input type="datetime-local"id="clientNextAppt" name="clientNextAppt" />
                 </Col>
 
-            </Row>
-            <Row>
-                <Col>
-                    *If client agrees, sign release of information to coordinate treatment*
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <Label for="clientContactInfo">Do you have a primary care physician?(If Yes, specify)</Label>
-                </Col>
-                <Col md="1">
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
             </Row>
             <Row>
                 <Col md="">

@@ -7,7 +7,7 @@ import {
     clientGenders, cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,
     energyLevelList,
     gadList,
-    gfp,
+    gfp, famList, ynd,
     mhList, relList, resultInList,
     sleepPatternList, substanceAbuseOften, substanceAbuseUse, substanceList, traumaList, treatList
 } from "../../../../data/arrayList";
@@ -21,53 +21,56 @@ const MentalHealth = () => {
             <Row className="text-center">
                 <Label>Strengths and Challenges</Label>
             </Row>
-            <Row md="12">
+            <Row className="text-center">
+                <Col md="12">
                 <FormGroup>
                     <FormGroup>
-                        <Label check>Areas of Strengths</Label>
+                        <center><Label check>Areas of Strengths</Label></center>
                         <Input type="textarea" name="customcheck1" />
                     </FormGroup>
                 </FormGroup>
+                </Col>
+            </Row>
+            <Row className="text-center">
+                <center><Label>Family Origin</Label></center>
             </Row>
             <Row>
-                <Label>Family Origin</Label>
-            </Row>
-            <Row>
-                <Col md="6">
+                <Col md="4">
                     <Label>Who primarily raised you?</Label>
                     <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="radio" name="customcheck1" />
-                            <Label check>Mother</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="radio" name="customcheck1" />
-                            <Label check>Father</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="radio" name="customcheck1" />
-                            <Label check>Other</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="text" name="customcheck1" />
-                        </FormGroup>
+                        <Input type="select" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
+                            {famList.map((fam) => (
+                                <option value={fam}>{fam}</option>
+                            ))}
+                        </Input>
                     </FormGroup>
                 </Col>
-                <Col md="6">
-                    <Label>Did your parents experience separation/divorces?</Label>
+                <Col md="4">
+                    <Label>Did your parents separate/divorce?</Label>
                     <FormGroup>
-                        <Label check>What age did this occur?</Label>
-                        <FormGroup check inline>
-                            <Input type="text" name="customcheck1" />
-                        </FormGroup>
+                        <Input type="select" className="custom-select" id="clientFamDiv" name="clientFamDiv" >
+                            {ynd.map((y) => (
+                                <option value={y}>{y}</option>
+                            ))}
+                        </Input>
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <Label check>If yes, what age did this occur?</Label>
+                    <FormGroup>
+                    <Input type="select" className="custom-select" id="clientFamDivAge" name="clientFamDivAge" >
+                        {ynd.map((y) => (
+                            <option value={y}>{y}</option>
+                        ))}
+                    </Input>
                     </FormGroup>
                 </Col>
             </Row>
             <Row>
-                <Col md="2">
+                <Col md="3">
                     <Label>How many siblings do you have?</Label>
                 </Col>
-                <Col md="2">
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Brother(s)</InputGroupText>
@@ -75,7 +78,7 @@ const MentalHealth = () => {
                         </InputGroup>
                     </Form>
                 </Col>
-                <Col md="2">
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Half-Brother(s)</InputGroupText>
@@ -83,7 +86,7 @@ const MentalHealth = () => {
                         </InputGroup>
                     </Form>
                 </Col>
-                <Col md="2">
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Step-Brother(s)</InputGroupText>
@@ -91,10 +94,11 @@ const MentalHealth = () => {
                         </InputGroup>
                     </Form>
                 </Col>
-
             </Row>
             <Row>
-                <Col md="2">
+                <Col md="3">  
+                </Col>
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Sister(s)</InputGroupText>
@@ -102,7 +106,7 @@ const MentalHealth = () => {
                         </InputGroup>
                     </Form>
                 </Col>
-                <Col md="2">
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Half-sister(s)</InputGroupText>
@@ -110,7 +114,7 @@ const MentalHealth = () => {
                         </InputGroup>
                     </Form>
                 </Col>
-                <Col md="2">
+                <Col md="3">
                     <Form>
                         <InputGroup>
                             <InputGroupText>Step-sister(s)</InputGroupText>
@@ -121,7 +125,7 @@ const MentalHealth = () => {
             </Row>
 
             <Row>
-                <Col md="2">
+                <Col md="4">
                     <FormGroup >
                         <Label>What was your birth order?</Label>
                         <Input type="select" id="clientPayee" name="clientPayee" >
@@ -135,7 +139,7 @@ const MentalHealth = () => {
                 </Col>
                 <Col md="4">
                     <FormGroup >
-                        <Label>What was your family’s economic status during childhood and adolescence?</Label>
+                        <Label>Childhood family’s economic status?</Label>
                         <Input type="select" id="clientPayee" name="clientPayee" >
                             <option> </option>
                             <option>Poverty level (on welfare)</option>
@@ -145,7 +149,7 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="2">
+                <Col md="4">
                     <FormGroup >
                         <Label>Overall, my childhood was:</Label>
                         <Input type="select" id="clientPayee" name="clientPayee" >
@@ -158,7 +162,7 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for="clientPayee">As a child, my relationship with my mother was:</Label>
                         <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
@@ -168,7 +172,7 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for="clientPayee">As a child, my relationship with my father was:</Label>
                         <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
@@ -178,7 +182,7 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for="clientPayee">As a child, my relationship with my siblings was:</Label>
                         <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
@@ -188,7 +192,9 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
+            </Row>
+            <Row>
+                <Col md="4">
                     <FormGroup>
                         <Label for="clientPayee">As a child, my relationship with my friends was:</Label>
                         <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
@@ -198,11 +204,9 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-            </Row>
-            <Row>
-                <Col md="5">
+                <Col md="4">
                     <FormGroup >
-                        <Label>Are you currently married or in a significant relationship?</Label>
+                        <Label>Currently married or in relationship?</Label>
                         <Input type="select" id="" name="" >
                             <option> </option>
                             <option>Good</option>
@@ -211,7 +215,7 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup>
                         <Label for="">If Yes, this relationship is:</Label>
                         <Input type="select" id="" name="" >
@@ -223,19 +227,13 @@ const MentalHealth = () => {
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                <Col md="6">
+            <Row className="text-center">
+                <Col md="12">
                     <FormGroup>
                         <Label for="">List any other sources of emotional support</Label>
                         <Input type="textarea" id="" name="" />
                     </FormGroup>
                 </Col>
-                {/*<Col md="6" sm="12">
-                    <FormGroup>
-                        <Label for="">Family Dynamic</Label>
-                        <Input type="textarea" id="" name="" />
-                    </FormGroup>
-                </Col>*/}
             </Row>
             <Row className="text-center">
                 <Label for="clientContactInfo">Family Dynamic</Label>
@@ -327,9 +325,9 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="3">
+                <Col md="4">
                     <FormGroup inline>
-                        <Label for="">If children are under 18, do you have legal custody of your children?</Label>
+                        <Label for="">Do you have legal custody of your children?</Label>
                         <Input type="select" id="" name="" >
                             <option> </option>
                             <option>Yes</option>
@@ -337,7 +335,7 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="2">
+                <Col md="4">
                     <FormGroup inline>
                         <Label for="">Do you owe child support?</Label>
                         <Input type="select" id="" name="" >
@@ -349,7 +347,7 @@ const MentalHealth = () => {
                 </Col>
                 <Col md="4">
                     <FormGroup inline>
-                        <Label for="">Have you ever been involved with DCFS (Department of Children and FamilyServices)</Label>
+                        <Label for="">Have you ever been involved with DCFS?</Label>
                         <Input type="select" id="" name="" >
                             <option> </option>
                             <option>Yes</option>
@@ -357,7 +355,10 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-                <Col md="2">
+                
+            </Row>
+            <Row>
+                <Col md="4">
                     <FormGroup inline>
                         <Label for="">Do you currently have an open DCFS case?</Label>
                         <Input type="select" id="" name="" >
@@ -367,15 +368,13 @@ const MentalHealth = () => {
                         </Input>
                     </FormGroup>
                 </Col>
-            </Row>
-            <Row>
-                <Col md="2">
+                <Col md="4">
                     <FormGroup inline>
                         <Label for="">DCFS Workers Name</Label>
                         <Input type="text" id="" name=""/>
                     </FormGroup>
                 </Col>
-                <Col md="2">
+                <Col md="4">
                     <FormGroup inline>
                         <Label for="">Phone Number</Label>
                         <Input type="text" id="" name=""/>

@@ -42,7 +42,7 @@ const NewClient = () => {
                             <Col md="4" sm="12">
                                 <FormGroup>
                                     <Label for="clientDOB">DOB</Label>
-                                    <Input type="text" name="clientDOB" id="clientDOB" />
+                                    <Input type="date" name="clientDOB" id="clientDOB" />
                                 </FormGroup>
                             </Col>
                             <Col md="4" sm="12">
@@ -138,7 +138,7 @@ const NewClient = () => {
                             </Col>
                         </Row>
                         <Row>
-                        <Col md="4" sm="12">
+                            <Col md="4" sm="12">
                                 <FormGroup>
                                     <Label for="clientHighEnd">Highest Level of Education</Label>
                                     <Input type="select" id="clientHighEnd" name="clientHighEnd" >

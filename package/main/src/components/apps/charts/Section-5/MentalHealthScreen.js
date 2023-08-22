@@ -23,7 +23,7 @@ const MentalHealthScreen = () => {
             </Row>
             <Row>
                 <Col >
-                    <b><Label>Mental Illness</Label></b>
+                    <center><b><Label>Mental Illness</Label></b></center>
                 </Col>
             </Row>
             <Row>

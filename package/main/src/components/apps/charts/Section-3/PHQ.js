@@ -7,7 +7,7 @@ const PHQ = () => {
     return (
         <>
             <Card>
-                <CardHeader>PATIENT HEALTH QUESTIONNAIRE (PHQ-9)</CardHeader>
+                <CardHeader><center>PATIENT HEALTH QUESTIONNAIRE (PHQ-9)</center></CardHeader>
                 <CardBody>
                     <Form>
                         <div className="form-body">
@@ -25,7 +25,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ1" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -40,7 +40,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ2" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -55,7 +55,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ3" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -70,7 +70,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ4" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -85,7 +85,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ5" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -96,11 +96,10 @@ const PHQ = () => {
                                     <Label for="clientPHQ6">6. Feeling bad about yourself or that you are a failure or have letyourself or your family down</Label>
                                 </Col>
                                 <Col>
-
                                     <Input type="select" id="PHQ6" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -111,11 +110,10 @@ const PHQ = () => {
                                     <Label for="clientPHQ7">7. Trouble concentrating on things, such as reading the newspaper or watching television</Label>
                                 </Col>
                                 <Col>
-
                                     <Input type="select" id="PHQ7" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -126,11 +124,10 @@ const PHQ = () => {
                                     <Label for="clientPHQ8">8. Moving or speaking so slowly that other people could have noticed. Or the opposite being so fidgety or restless that you have been moving around a lot more than usual</Label>
                                 </Col>
                                 <Col>
-
                                     <Input type="select" id="PHQ8" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -145,7 +142,7 @@ const PHQ = () => {
                                     <Input type="select" id="PHQ9" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>

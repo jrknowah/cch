@@ -3,66 +3,44 @@ import {
     Row,
     Col, FormGroup, Label, Input
 } from 'reactstrap';
+import Select from 'react-select';
+import { clientAllergies } from "../../../../data/arrayList";
 
 const OrderForm = () => {
 
     return (
 
         <div className="form-body">
-            <Row className="text-center">
-                <Label>ORDER FORM</Label>
-            </Row>
             <Row>
-                <Col md="12">
-                    <Row>
-                        <Col md="6">
-                            <FormGroup>
-                                <Row>
-                                    <Label sm="3">Name:</Label>
-                                    <Col sm="5">
-                                        <Input/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-                            <FormGroup>
-                                <Row>
-                                    <Label sm="3">DOB:</Label>
-                                    <Col sm="5">
-                                        <Input/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            <FormGroup>
-                                <Row>
-                                    <Label sm="3">Date of Admission:</Label>
-                                    <Col sm="5">
-                                        <Input type="date"/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-                            <FormGroup>
-                                <Row>
-                                    <Label sm="3">Allergies:</Label>
-                                    <Col sm="5">
-                                        <Input type="textarea" rows="2"/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-                        </Col>
-                    </Row>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="clientAdmitDate">Date of Admission</Label>
+                        <Input type="date" name="clientAdmitDate" id="clientAdmitDate" />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="clientAllergies">Allergies</Label>
+                        <Select
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={clientAllergies}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label check>
+                            <Input type="checkbox" name="" /> Admit to Serenity Recuperative Care
+                        </Label>
+                    </FormGroup>
                 </Col>
             </Row>
             <Row>
                 <Col md="12">
                     <Row>
                         <Col md="6">
-                            <FormGroup>
-                                <Label check>
-                                    <Input type="checkbox" name="" /> Admit to Serenity Recuperative Care
-                                </Label>
-                            </FormGroup>
+                            
                             <FormGroup>
                                 <Row>
                                     <Label sm="2">Diagnosis</Label>

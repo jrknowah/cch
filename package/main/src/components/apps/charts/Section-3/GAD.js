@@ -7,7 +7,7 @@ const GAD = () => {
     return (
         <>
             <Card>
-                <CardHeader>Generalized Anxiety Disorder 7-Item (GAD-7) Scale</CardHeader>
+                <CardHeader><center>Generalized Anxiety Disorder 7-Item (GAD-7) Scale</center></CardHeader>
                 <CardBody>
                     <Form>
                         <div className="form-body">
@@ -21,11 +21,10 @@ const GAD = () => {
                                     <Label for="clientGAD1">1. Feeling nervous, anxious, or on edge</Label>
                                 </Col>
                                 <Col>
-
                                     <Input type="select" id="gad1" >
                                     {gadList.map((list) => {
                                         return (
-                                            <option id={list.id} value={list.value}>{list.id}</option>
+                                            <option id={list} value={list}>{list}</option>
                                         );
                                     })}
                                     </Input>
@@ -40,7 +39,7 @@ const GAD = () => {
                                     <Input type="select" id="gad2" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -55,7 +54,7 @@ const GAD = () => {
                                     <Input type="select" id="gad3" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -70,7 +69,7 @@ const GAD = () => {
                                     <Input type="select" id="gad4" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -85,7 +84,7 @@ const GAD = () => {
                                     <Input type="select" id="gad5" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -100,7 +99,7 @@ const GAD = () => {
                                     <Input type="select" id="gad6" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>
@@ -115,7 +114,7 @@ const GAD = () => {
                                     <Input type="select" id="gad7" >
                                         {gadList.map((list) => {
                                             return (
-                                                <option id={list.id} value={list.value}>{list.id}</option>
+                                                <option id={list} value={list}>{list}</option>
                                             );
                                         })}
                                     </Input>

@@ -30,8 +30,14 @@ export const clientSleepPlace = [
     "Client refused*"
 ];
 export const highestEdu = [
-    "", "Some College"
+    "","High School Graduate", "GED or Equivalent", "Some College",  "Associate's Degree", "Bachelor's Degree", "Master's Degree", "Professional Degree", "Doctoral Degree"
 ];
+
+export const clientAllergies = [
+    {
+        label: "", value: ""
+    }
+]
 export const PatientProfileList = [
     {
         patientProfileTitle: "Client Orientation Information Sheet", patientProfileDate: ""
@@ -340,7 +346,7 @@ export const gadList = [
     "Nearly Every Day"
 ];
 
-export const gadDifList = [ "Not Difficult at All","Somewhat Difficult","Very Difficult","Extremely Difficult",
+export const gadDifList = [ "", "Not Difficult at All","Somewhat Difficult","Very Difficult","Extremely Difficult",
 ];
 
 
@@ -981,8 +987,12 @@ export const religiousPrefList = [
 ];
 
 export const identityList = [
-    "","Client Provided Copy","Client Will Provide",
-    "Need to Obtain","Not Applicable"
+    {label: "Valid Government Issued Identification", value:"Valid Government Issued Identification"},
+    {label: "Permanent Residence Card", value:"Permanent Residence Card"},
+    {label: "Social Security Card", value:"Social Security Card"},
+    {label: "Birth Certificate", value:"Birth Certificate"},
+    {label: "", value:""},
+    {label: "", value:""},
 ];
 
 export const activitiesList = [
