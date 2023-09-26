@@ -10,8 +10,6 @@ import {
 } from 'reactstrap';
 import {acpList} from "../../../data/arrayList";
 import BioSocial from "../../../components/apps/charts/Section-3/BioSocial";
-import GAD from "../../../components/apps/charts/Section-3/GAD";
-import PHQ from "../../../components/apps/charts/Section-3/PHQ";
 import MentalHealth from "../../../components/apps/charts/Section-3/MentalHealth";
 
 const Section3 = () => {
@@ -56,26 +54,6 @@ const Section3 = () => {
                                     }}
                                 >
                                     Mental Health Assessment
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('4');
-                                    }}
-                                >
-                                    PHQ-9
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '5' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('5');
-                                    }}
-                                >
-                                    GAD-7
                                 </NavLink>
                             </NavItem>
                         </Nav>
@@ -124,20 +102,6 @@ const Section3 = () => {
                                         <div className="p-4">
                                             <MentalHealth />
                                         </div>
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="4">
-                                <Row>
-                                    <Col>
-                                        <PHQ />
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="5">
-                                <Row>
-                                    <Col>
-                                        <GAD />
                                     </Col>
                                 </Row>
                             </TabPane>

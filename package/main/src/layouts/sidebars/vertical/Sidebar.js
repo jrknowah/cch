@@ -29,7 +29,8 @@ const Sidebar = () => {
           <div className="p-3 d-flex">
             <img src={user1} alt="user" width="50" className="rounded-circle" />
           </div>
-          <div className="bg-dark text-dark-white p-2 opacity-75 text-truncate">Steave Rojer</div>
+          <div className="bg-dark text-dark-white p-2 opacity-75 text-truncate">J.R. Cunningham</div>
+          <div className="bg-dark text-dark-white p-2 opacity-75 text-truncate">Director</div>
         </div>
         {/********Sidebar Content*******/}
         <div className="p-3 pt-1 mt-2">

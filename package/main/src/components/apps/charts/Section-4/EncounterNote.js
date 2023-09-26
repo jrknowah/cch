@@ -1,4 +1,4 @@
-import {Card, CardBody, CardHeader} from 'reactstrap';
+import {Card, CardBody} from 'reactstrap';
 import TwoColumn from '../../../twoColumn/TwoColumn';
 import './notes.scss';
 import EncounterNoteList from "./EncounterNoteList";
@@ -8,7 +8,6 @@ const EncounterNote = () => {
     return (
         <>
             <Card>
-                <CardHeader>Encounter Note</CardHeader>
                 <CardBody>
                     <TwoColumn
                         leftContent={

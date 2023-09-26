@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import Select from 'react-select';
 import {assistList, finList, gfp, ynd, housingList} from "../../../../data/arrayList";
+import Profile from "../../../widgets/Profile";
 
 
 const BioSocial = () => {
@@ -15,9 +16,19 @@ const BioSocial = () => {
             <Row className="text-center">
                 <Label>Bio-Social Assessment</Label>
             </Row>
+            <Row>
+                <Col md="4">
+                
+                </Col>
+                <Col md="4">
+                    <Profile/>
+                </Col>
+                <Col md="4">
+                
+                </Col>
+            </Row>
             <Row className="text-center">
                 <Label>FINANCIAL SCREENING</Label>
-
             </Row>
             <Row>
                 {finList.map((list) => (

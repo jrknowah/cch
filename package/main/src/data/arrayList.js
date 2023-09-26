@@ -58,11 +58,7 @@ export const PatientProfileList = [
         patientProfileTitle: "Notice of Privacy Practices and Acknowledgment Receipt", patientProfileDate: ""
     },
     {
-        patientProfileTitle: "Long Beach Homeless Management Information System (HMIS) Consent to Share Personal\n" +
-            "Information & LB Release of Information", patientProfileDate: ""
-    },
-    {
-        patientProfileTitle: "Holliday’s Helping Hands Uses and Releases of Protected Health Information", patientProfileDate: ""
+        patientProfileTitle: "Uses and Releases of Protected Health Information", patientProfileDate: ""
     },
     {
         patientProfileTitle: "House Rules", patientProfileDate: ""
@@ -145,7 +141,7 @@ export const ppcList = [
 
 export const section4List = [
     {
-        section4Title: "Encounter Notes", section4Date: ""
+        section4Title: "Case Notes", section4Date: ""
     },
     {
         section4Title: "Care Plan", section4Date: ""
@@ -230,10 +226,7 @@ export const crList = [
 
 export const acpList = [
     { acpListTitle: "Mental Health Intake Assessment", acpListDate: ""},
-    { acpListTitle: "Care and Coordination Plan (72 Hours of Arrival)", acpListDate: ""},
-    { acpListTitle: "Coordinated Entry System for Individuals/Families", acpListDate: ""},
-    { acpListTitle: "Patient Health Questionnaire (PHQ-9) (Monthly)", acpListDate: ""},
-    { acpListTitle: "Generalized Anxiety Disorder 7-Item (GAD-7) Scale (Monthly)", acpListDate: ""}
+    { acpListTitle: "Care and Coordination Plan (72 Hours of Arrival)", acpListDate: ""}
 ];
 
 export const finList = [

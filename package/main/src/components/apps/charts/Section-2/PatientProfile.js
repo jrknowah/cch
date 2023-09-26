@@ -40,7 +40,7 @@ const PatientProfile = () => {
                                     toggle('2');
                                 }}
                             >
-                                Encounter
+                                Case Notes 
                             </NavLink>
                         </NavItem>
                         <NavItem>

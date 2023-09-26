@@ -12,7 +12,6 @@ import ConsentForTreatment from "./ConsentForTreatment";
 // import AuthToRelease from "./AuthToRelease";
 import AuthForDisclosure from "./AuthForDisclosure";
 import PrivacyPractice from "./PrivacyPractices";
-import LBHMIS from "./LBHMIS";
 import HHHPHI from "./HHHPHI";
 import LAHMIS from "./LAHMIS";
 import ResidencePolicy from "./ResidencePolicy";
@@ -59,10 +58,6 @@ const AuthSig = () => {
         setLahmisModalToggle(!lahmisModal);
     };
 
-    const [missingAckModal, setMissingAckModalToggle] = useState(false);
-    const missingAckModalToggle = () => {
-        setMissingAckModalToggle(!missingAckModal);
-    };
     const [termModal, setTermModalToggle] = useState(false);
     const termModalToggle = () => {
         setTermModalToggle(!termModal);
@@ -319,28 +314,6 @@ const AuthSig = () => {
                         </Modal>
                         <div>
                             <Button onClick={setAgreeModalToggle}>Open</Button>
-                        </div>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card body className="text-center">
-                        <CardTitle tag="h5">LB HMIS Consent</CardTitle>
-                        <Modal isOpen={missingAckModal} fade={false} toggle={missingAckModalToggle.bind(null)} size="lg">
-                            <ModalBody>
-                                <LBHMIS />
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={missingAckModalToggle.bind(null)}>
-                                    Submit
-                                </Button>
-                                <Button color="secondary" onClick={missingAckModalToggle.bind(null)}>
-                                    Clear
-                                </Button>
-
-                            </ModalFooter>
-                        </Modal>
-                        <div>
-                            <Button onClick={setMissingAckModalToggle}>Open</Button>
                         </div>
                     </Card>
                 </Col>

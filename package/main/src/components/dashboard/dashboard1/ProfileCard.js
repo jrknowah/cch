@@ -17,7 +17,13 @@ const ProfileCard = () => {
          Percy 
         </CardSubtitle>
         <CardSubtitle className="mb-3 pb-1 px-4">
-         12345
+         Cliet ID: 12345
+        </CardSubtitle>
+        <CardSubtitle className="mb-3 pb-1 px-4">
+         02/27/1989
+        </CardSubtitle>
+        <CardSubtitle className="mb-3 pb-1 px-4">
+         Intake: 02/23/2023
         </CardSubtitle>
         {/* <Button color="primary" size="lg" className="rounded-pill">
           Follow

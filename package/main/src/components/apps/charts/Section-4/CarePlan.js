@@ -1,4 +1,4 @@
-import {Card, CardBody, CardHeader} from 'reactstrap';
+import {Card, CardBody} from 'reactstrap';
 import TwoColumn from '../../../twoColumn/TwoColumn';
 import './notes.scss';
 import CarePlanList from "./CarePlanList";
@@ -8,7 +8,6 @@ const CarePlan = () => {
     return (
         <>
             <Card>
-                <CardHeader>Coordinated Care Plan</CardHeader>
                 <CardBody>
                     <TwoColumn
                         leftContent={
