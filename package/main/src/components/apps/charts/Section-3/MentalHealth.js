@@ -3,13 +3,14 @@ import {
     Row,
     Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form, Table
 } from 'reactstrap';
+import Select from 'react-select';
 import {
     clientGenders, cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,
     energyLevelList,
     gadList,
     gfp, famList, ynd,
     mhList, relList, resultInList,
-    sleepPatternList, substanceAbuseOften, substanceAbuseUse, substanceList, traumaList, treatList
+    sleepPatternList, substanceAbuseOften, substanceAbuseUse, substanceList, traumaList, treatList,needsCol1
 } from "../../../../data/arrayList";
 
 
@@ -1450,6 +1451,8 @@ const MentalHealth = () => {
                     </Table>
                 </Col>
             </Row>
+
+            <hr/>
             <Row>
                 <Col className="text-center">
                     <b><Label>NEEDS ASSESSMENT</Label></b>
@@ -1457,62 +1460,28 @@ const MentalHealth = () => {
             </Row>
             <Row>
                 <Col >
-                    <Label>Patient/Family Needs: Review Section One: Bio-Social Assessment to complete.</Label>
+                    <Label></Label>
                 </Col>
             </Row>
             <Row>
-                <Col md="4">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Medical</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Use of Medical Equipment /Supplies </Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Mental Health</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Coping Skills </Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Medications</Label><br/>
-                </Col>
-                <Col md="4">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Substance Abuse </Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Patient/Family Responsibilities in Patient’s Care</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Education</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Vocational Skills</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Benefits(e.g. Medi-Cal, GR, SSI, etc.)</Label>
-                </Col>
-                <Col md="3">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Housing</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Personal Hygiene </Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Diet/Nutrition/Oral Health</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Living Skills</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Community Resources</Label><br/>
+                <Col md="" className="text-center">
+                    <FormGroup>
+                        <Label for="">Patient/Family Needs: Review Section One: Bio-Social Assessment to complete.</Label>
+                        <Select id="clientPatFamNeeds" name="clientPatFamNeeds"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={needsCol1}
+                        />
+                    </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                *For each checked needs assessment; there needs to be an objective and plan to complete objective*
+            <Row className="text-center">
+                <Col md="" className="text-center">
+                    *For each checked needs assessment; there needs to be an objective and plan to complete objective*
+                </Col>
             </Row>
+
+            <hr/>
             <Row>
                 <Col className="text-center">
                     <b><Label>CASE MANAGERS OBSERVATIONS</Label></b>

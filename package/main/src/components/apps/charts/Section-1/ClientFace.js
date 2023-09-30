@@ -3,6 +3,7 @@ import {
     Row,
     Col, FormGroup, Label, Input, Table
 } from 'reactstrap';
+import Select from 'react-select';
 import {
     allergyList
 } from "../../../../data/arrayList";
@@ -94,11 +95,11 @@ const ClientFace = () => {
                 <Col md="6">
                     <FormGroup>
                         <Label for="">List ALL allergies:</Label>
-                        <Input type="select" className="custom-select" id="" name="" >
-                            {allergyList.map((al) => (
-                                <option value={al}>{al}</option>
-                            ))}
-                        </Input>
+                        <Select id="clientAllergy" name="clientAllergy"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={allergyList}
+                        />
                     </FormGroup>
                 </Col>
                 <Col md="6">

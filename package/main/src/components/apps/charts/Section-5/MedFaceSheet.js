@@ -1,31 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
 import {
     Row,
     Col, FormGroup, Label, Input, Table
 } from 'reactstrap';
+import MedicalDiagnosis from "./MedicalDiagnosis";
 
 const MedFaceSheet = () => {
-    const [list, setList] = useState([]);
 
-    const [value, setValue] = useState("Allergies");
-
-    const addToList = () => {
-
-        const tempArr = list;
-
-        tempArr.push(value);
-
-        setList(tempArr);
-
-        setValue("");
-
-    };
     return (
 
         <div className="form-body">
             <Row className="text-center">
-                <Label>MEDICAL FACE SHEET</Label>
+                <Label>FACE SHEET</Label>
             </Row>
+            <MedicalDiagnosis />
             <Row>
                 <Col md="4">
                     <FormGroup>
@@ -35,23 +23,7 @@ const MedFaceSheet = () => {
                         <Input type="text" id="" name="" placeholder="Diagnosis 4"/><br/>
                     </FormGroup>
                 </Col>
-                <Col md="4">
-                    <input
 
-                        type="text"
-
-                        value={value}
-
-                        onChange={(e) => setValue(e.target.value)}
-
-                    />{" "}
-
-                    <button type="button" onClick={addToList}> Click to Add </button>
-
-                    <ul>
-                        {list.length > 0 && list.map((item) => <li>{item} </li>)}
-                    </ul>
-                </Col>
                 <Col md="4">
                     <FormGroup>
                         <Label for=""></Label>
@@ -61,10 +33,13 @@ const MedFaceSheet = () => {
                         <Input type="text" id="" name="" placeholder="Diagnosis 8"/><br/>
                     </FormGroup>
                 </Col>
-                <Col md="4">
+                
+            </Row>
+            <Row>
+                <Col md="" className="text-center">
                     <FormGroup>
-                        <Label for="clientPayeeName">Addtional Medical History</Label>
-                        <Input type="textarea" id="clientPayeeName" name="clientPayeeName" />
+                        <Label for="clientAddMedHistory">Addtional Medical History</Label>
+                        <Input type="textarea" id="clientAddMedHistory" name="clientAddMedHistory" />
                     </FormGroup>
                 </Col>
             </Row>
@@ -87,10 +62,10 @@ const MedFaceSheet = () => {
             </Row>
             <Row>
                 <Col md="4">
-                    <FormGroup>
-                        <Label for="clientDebt">List All Allergies</Label><br/>
-                        <Input type="checkbox" id="clientDebt" name="clientDebt"/>
-                        <Label for="clientDebt">No Allergies</Label>
+                    <FormGroup>clientAllergy
+                        <Label for="clientAllergy">List All Allergies</Label><br/>
+                        <Input type="checkbox" id="" name="clientAllergy"/>
+                        <Label for="clientAllergy">No Known Allergies</Label>
                         <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 1"/><br/>
                         <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 2"/><br/>
                         <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 3"/><br/>

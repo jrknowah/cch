@@ -253,7 +253,16 @@ export const hhhSiteList = ["","41st","97th","104th","238th","Atlantic","Downey"
 
 export const srcSiteList = ["", "Arlington-LA","Arroyo","East LA","Lakeview Terrace","Long Beach 4th", "Motel 6","Percy","Torrance-Cabrillo"];
 
-export const allergyList = [ "", "No Allergies", "Drug Allergy", "Food Allergy", "Insect Allergy", "Latex Allergy", "Mold Allergy", "Pet Allergy", "Pollen Allergy"];
+export const allergyList = [ 
+    { value: 'No Allergies', label: 'No Allergies' },
+    { value: 'Drug Allergy', label: 'Drug Allergy' },
+    { value: 'Food Allergy', label: 'Food Allergy' },
+    { value: 'Insect Allergy', label: 'Insect Allergy' },
+    { value: 'Latex Allergy', label: 'Latex Allergy' },
+    { value: 'Mold Allergy', label: 'Mold Allergy' },
+    { value: 'Pet Allergy', label: 'Pet Allergy' },
+    { value: 'Pollen Allergy', label: 'Pollen Allergy' }
+];
 
 export const locList = [
     { value: 'Alert/ Awake', label: 'Alert/ Awake' },
@@ -447,13 +456,13 @@ export const substanceAbuseOften  = [
 ];
 
 export const clientDiet = [
-    {id: "clientDiet", value: "Regular"},
-    {id: "clientDiet", value: "Low Fat"},
-    {id: "clientDiet", value: "Low Salt"},
-    {id: "clientDiet", value: "Diabetic"},
-    {id: "clientDiet", value: "Pureed"},
-    {id: "clientDiet", value: "Increased Calorie Intake"},
-    {id: "clientDiet", value: "Other"}
+    {value: "Regular", label: "Regular"},
+    {value: "Low Fat", label: "Low Fat"},
+    {value: "Low Salt", label: "Low Salt"},
+    {value: "Diabetic", label: "Diabetic"},
+    {value: "Pureed", label: "Pureed"},
+    {value: "Increased Calorie Intake", label: "Increased Calorie Intake"},
+    {value: "Other", label: "Other"}
 ];
 
 export const substanceAbuseUse  = [
@@ -1029,10 +1038,27 @@ export const treatList = ["","Detox","Outpatient","Residential Treatment"];
 export const legalList = [ "No Legal Issues", "Tickets","Divorce","Child Custody","Conservatorship","Probation (specify):","Parole (specify):","Arrests (specify):","Other (specify):"];
 export const resultInList = ["","Informal Probation","Formal Probation","Parole","No Conditions"];
 export const mfList = ["","Misdemeanor","Felony"];
-export const needsCol1 = ["Medical","Use of Medical Equipment /Supplies","Mental Health","Coping Skills","Medications"];
-export const needsCol2 = ["Substance Abuse","Patient/Family Responsibilities in Patient’s Care","Education","Vocational Skills","Benefits (e.g. Medi-Cal, GR, SSI, etc.)"];
-export const needsCol3 = ["Housing","Personal Hygiene","Diet/Nutrition/Oral Health"];
-export const needsCol4 = ["Living Skills","Community Resources","Other:"];
+
+export const needsCol1 = [
+    { label:  "Medical", value: "Medical"},
+    { label:  "Use of Medical Equipment /Supplies", value: "Use of Medical Equipment /Supplies"},
+    { label:  "Mental Health", value: "Mental Health"},
+    { label:  "Coping Skills", value: "Coping Skills"},
+    { label:  "Medications", value: "Medications"},
+    { label:  "Substance Abuse", value: "Substance Abuse"},
+    { label:  "Patient/Family Responsibilities in Patient’s Care", value: "Patient/Family Responsibilities in Patient’s Care"},
+    { label:  "Education", value: "Education"},
+    { label:  "Vocational Skills", value: "Vocational Skills"},
+    { label:  "Benefits (e.g. Medi-Cal, GR, SSI, etc.)", value: "Benefits (e.g. Medi-Cal, GR, SSI, etc.)"},
+    { label:  "Housing", value: "Housing"},
+    { label:  "Personal Hygiene", value: "Personal Hygiene"},
+    { label:  "Diet/Nutrition/Oral Health", value: "Diet/Nutrition/Oral Health"},
+    { label:  "Living Skills", value: "Living Skills"},
+    { label:  "Community Resources", value: "Community Resources"},
+    { label:  "Other", value: "Other"},
+    
+];
+
 export const cmOb1 = [ "Well Groomed","Average","Dirty","Odorous"];
 export const cmOb2 = [ "Normal for culture","Little","Avoids","Erratic"];
 export const cmOb3 = [ "Calm","Restless","Agitated"];
@@ -1044,26 +1070,73 @@ export const cmOb8 = [ "Unimpaired","Impaired"];
 export const cmOb9 = [ "Bizarre","Phobic","Suspicious","Obsessive","Blames Others","Persecutory","Assaultive ideas","Magical Thinking","Irrational/Excessive Worry","Sexual Preoccupation","Excessive/Inappropriate Religiosity","Excessive/Inappropriate Guilt"];
 export const cmOb10 = [ "None","Aggressive","Uncooperative","Demanding","Demeaning","Manipulative"];
 export const cmOb11 = [ "A-motivational","Apathetic","Isolated","Evasive","Dependent"];
-export const medCond = [ "Anemia","GERD (Gastro Esophageal Reflux Disease)","Arthritis (Rheumatoid)","Heart Disease","Asthma","Heart attack / Cardiac Stent","Cancer","HIV / AIDS","Cellulitis"
+export const medCond = [ 
+    { value: "Anemia", label:  "Anemia"},
+    { value: "GERD", label: "GERD" },
+    { value: "Arthritis (Rheumatoid)", label: "Arthritis (Rheumatoid)" },
+    { value: "Heart Disease", label: "Heart Disease" },
+    { value: "Asthma", label: "Asthma"  },
+    { value: "Heart attack / Cardiac Stent", label:  "Heart attack / Cardiac Stent"},
+    { value: "Cancer", label:  "Cancer"},
+    { value: "HIV / AIDS", label: "HIV / AIDS" },
+    { value: "High Blood Pressure", label:  "High Blood Pressure"},
+    { value: "Convulsions/Seizures", label:  "Convulsions/Seizures"},
+    { value: "High Cholesterol", label:  "High Cholesterol"},
+    { value: "Congestive Heart Failure(CHF)", label:  "Congestive Heart Failure(CHF)"},
+    { value: "Liver Disease", label:  "Liver Disease"},
+    { value: "Chronic Obstructive Pulmonary Disease (COPD)", label:  "Chronic Obstructive Pulmonary Disease (COPD)"},
+    { value: "Renal Failure", label:  "Renal Failure"},
+    { value: "Chronic Pain", label:  "Chronic Pain"},
+    { value: "Sexually Transmitted Infections", label:  "Sexually Transmitted Infections"},
+    { value: "Cirrhosis", label:  "Cirrhosis"},
+    { value: "Sickle Cell Anemia", label:  "Sickle Cell Anemia"},
+    { value: "Decubitus Ulcers(Bed Sore)/Wound", label:  "Decubitus Ulcers(Bed Sore)/Wound"},
+    { value: "Stroke", label:  "Stroke"},
+    { value: "Diabetes", label:  "Diabetes"},
+    { value: "Thyroid Problem", label:  "Thyroid Problem"},
+    { value: "Fractures", label:  "Fractures"},
+    { value: "Traumatic Brain Injury", label:  "Traumatic Brain Injury"},
+    { value: "Gout", label:  "Gout"}
+
 ];
-export const medCond1a = [
-    "High Blood Pressure" ,"Convulsions/Seizures","High Cholesterol","Congestive Heart Failure(CHF)","Liver Disease","Chronic Obstructive Pulmonary Disease (COPD)","Renal Failure","Chronic Pain","Sexually Transmitted Infections"
+
+export const medCond2 = [ 
+    { value: "Colostomy Bag", label:  "Colostomy Bag"},
+    { value: "On-going intravenous therapy", label:  "On-going intravenous therapy"},
+    { value: "Feeding Tube", label:  "Feeding Tube"},
+    { value: "Wounds that require care", label:  "Wounds that require care"},
+    { value: "Tracheotomy", label:  "Tracheotomy"},
+    { value: "Incontinent or urine/feces", label:  "Incontinent or urine/feces"},
+    { value: "Urinary Catheter", label:  "Urinary Catheter"}
 ];
-export const medCond1b = [
-    "Cirrhosis","Sickle Cell Anemia","Decubitus Ulcers(Bed Sore)/Wound","Stroke","Diabetes","Thyroid Problem","Fractures","Traumatic Brain Injury","Gout"
+
+export const medCond3 = [ 
+    { value: "Hepatitis B", label:  "Hepatitis B"},
+    { value: "Hepatitis C", label:  "Hepatitis C"}
 ];
-export const medCond2 = [ "Colostomy Bag","On-going intravenous therapy"];
-export const medCond2a = [ "Feeding Tube","Wounds that require care"];
-export const medCond2b = [ "Tracheotomy","Incontinent or urine/feces"];
-export const medCond2c = [ "Urinary Catheter"];
-export const medCond3 = [ "Hepatitis B","Hepatitis C"];
-export const medCond4 = [ "Syphillis","Trichomonas","Chlamydia","HIV"];
-export const medCond6 = [ "Gonorrhea","Genital Warts","Herpes","Other","None"];
-export const medCond5 = [ "Sex without a condom","Non-monogamous","Sex with a prostitute",
-    "Men having sex with men","Sex for drugs/money"];
+export const medCond4 = [ 
+    { value: 'Syphillis', label: 'Syphillis' },{ value: 'Trichomonas', label: 'Trichomonas' },
+    { value: 'Chlamydia', label: 'Chlamydia' },{ value: 'HIV', label: 'HIV' },
+    { value: 'Gonorrhea', label: 'Gonorrhea' },{ value: 'Genital Warts', label: 'Genital Warts' },
+    { value: 'Herpes', label: 'Herpes' },{ value: 'Other', label: 'Other' },
+    { value: 'None', label: 'None' }
+]; 
+
+
+export const medCond5 = [ 
+    { value: "Sex without a condom", label: "Sex without a condom"},
+    { value: "Non-monogamous", label: "Non-monogamous"},
+    { value: "Sex with a prostitute", label: "Sex with a prostitute"},
+    { value: "Men having sex with men", label: "Men having sex with men"},
+    { value: "Sex for drugs/money", label: "Sex for drugs/money"}
+];
 
 export const medRisk1 = [ "Sex without a condom","Sex with a prostitute","Sex for drugs/money","Men having sex with men","Non-monogamous"];
-export const medRisk2 = [ "I am abstinent – not having sex","I use condoms 100% of the time","I am monogamous – sex with 1 person"];
+export const medRisk2 = [ 
+    { value: "I am abstinent – not having sex", label: "I am abstinent – not having sex"},
+    { value: "I use condoms 100% of the time", label: "I use condoms 100% of the time"},
+    { value: "I am monogamous – sex with 1 person", label: "I am monogamous – sex with 1 person"}
+];
 export const clientLang = [ "English","Spanish","French","Italian","German","Greek","Polish","Portugese","Russian","Swedish",
     "American Sign Language","Other(specify:)","Client Doesn’t Know","Client Rsefiused"];
 

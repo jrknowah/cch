@@ -4,13 +4,22 @@ import {
     Col, FormGroup, Label, Input
 } from 'reactstrap';
 import Select from 'react-select';
-import { clientAllergies } from "../../../../data/arrayList";
+import { allergyList, clientDiet } from "../../../../data/arrayList";
 
 const OrderForm = () => {
 
     return (
 
         <div className="form-body">
+            <Row className="text-center">
+                <Col md="">
+                    <FormGroup>
+                        <Label check>
+                            <Input type="checkbox" name="" /> Admit to Serenity Recuperative Care
+                        </Label>
+                    </FormGroup>
+                </Col>
+            </Row>
             <Row>
                 <Col md="4">
                     <FormGroup>
@@ -20,72 +29,38 @@ const OrderForm = () => {
                 </Col>
                 <Col md="4">
                     <FormGroup>
-                        <Label for="clientAllergies">Allergies</Label>
-                        <Select
+                        <Label for="">List ALL allergies:</Label>
+                        <Select id="clientAllergy" name="clientAllergy"
                             closeMenuOnSelect={false}
                             isMulti
-                            options={clientAllergies}
+                            options={allergyList}
                         />
                     </FormGroup>
                 </Col>
                 <Col md="4">
                     <FormGroup>
-                        <Label check>
-                            <Input type="checkbox" name="" /> Admit to Serenity Recuperative Care
-                        </Label>
+                        <Label>Diagnosis</Label>
+                        <Input/>
                     </FormGroup>
-                </Col>
+                </Col>                
             </Row>
             <Row>
-                <Col md="12">
-                    <Row>
-                        <Col md="6">
-                            
-                            <FormGroup>
-                                <Row>
-                                    <Label sm="2">Diagnosis</Label>
-                                    <Col sm="5">
-                                        <Input/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label >
-                                    Diet<br/>
-                                </Label>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Regular
-                                </Label>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Low fat
-                                </Label>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Low Salt
-                                </Label>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Increased Calorie Intake
-                                </Label>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Diabetic
-                                </Label>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Pureed
-                                </Label><br/>
-                                <Label check>
-                                    <Input type="checkbox" name="" />Other
-                                    <Input type="text" name="" />
-                                </Label>
-                            </FormGroup>
-                        </Col>
-                    </Row>
+                <Col md="4">
+                    <FormGroup>
+                        <Label >Diet<br/></Label>
+                        <Select id="clientDietType" name="clientDietType"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={clientDiet}
+                        />
+                    </FormGroup>    
                 </Col>
             </Row>
+            <hr/>
             <Row>
-                <Label>Nursing Orders</Label>
+                <Col className="text-center">
+                    <b><Label>Nursing Orders</Label></b>
+                </Col>
             </Row>
             <Row>
                 <Col md="2">

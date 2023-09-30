@@ -40,7 +40,7 @@ const Medical = () => {
                                         toggle('1');
                                     }}
                                 >
-                                    Face Sheet
+                                    Main
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -50,7 +50,7 @@ const Medical = () => {
                                         toggle('2');
                                     }}
                                 >
-                                    Medical Face Sheet
+                                    Face Sheet
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -60,7 +60,7 @@ const Medical = () => {
                                         toggle('3');
                                     }}
                                 >
-                                    Medical Screening
+                                    Nursing Screening
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -80,7 +80,7 @@ const Medical = () => {
                                         toggle('5');
                                     }}
                                 >
-                                    Physical Exam
+                                    NP/Nurse Exam
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -90,7 +90,7 @@ const Medical = () => {
                                         toggle('6');
                                     }}
                                 >
-                                    Assessment/Diagnosis
+                                    LVN Assessment
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -110,7 +110,7 @@ const Medical = () => {
                                         toggle('8');
                                     }}
                                 >
-                                    Admission Assessment
+                                    Nursing Assessment
                                 </NavLink>
                             </NavItem>
                             <NavItem>

@@ -1,6 +1,6 @@
 export const Section5 = [
     {
-        section5Title: "Medical Face Sheet", section5Date: ""
+        section5Title: "Face Sheet", section5Date: ""
     },
     {
         section5Title: "Medical Intake Assessment", section5Date: ""

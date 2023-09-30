@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Row,
-    Col, Label, Input, Table
+    Col, Label, Input, Table, FormGroup
 } from 'reactstrap';
 
 const PhysicalExam = () => {
@@ -15,7 +15,7 @@ const PhysicalExam = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="4">
+                <Col md="6">
                     <Table className="align-middle">
                         <thead>
                         <tr>
@@ -41,7 +41,7 @@ const PhysicalExam = () => {
                         </tbody>
                     </Table>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                     <Table className="align-middle">
                         <thead>
                         <tr>
@@ -59,7 +59,7 @@ const PhysicalExam = () => {
                         </tr>
                         <tr>
                             <td>
-                                <Input check inline type="checkbox" id="" name="" /> <Label for="">No rashes or eruptions</Label>
+                                <Input check inline type="checkbox" id="" name="" /> <Label for="">No rashes/eruptions</Label>
 
                             </td>
                             <td><Input input type="text" id="" name=""/></td>
@@ -74,7 +74,10 @@ const PhysicalExam = () => {
                         </tbody>
                     </Table>
                 </Col>
-                <Col md="4">
+
+            </Row>
+            <Row>
+                 <Col md="6">
                     <Table className="align-middle">
                         <thead>
                         <tr>
@@ -93,9 +96,8 @@ const PhysicalExam = () => {
                         </tr>
                         </tbody>
                     </Table>
-                </Col>
-
-                <Col md="4">
+                </Col>               
+                <Col md="6">
                     <Table className="align-middle">
                         <thead>
                         <tr>
@@ -113,8 +115,29 @@ const PhysicalExam = () => {
                         </tr>
                         <tr>
                             <td>
-                                <Input check inline type="checkbox" id="" name="" /> <Label for="">Pupils: R mm L mm</Label>
-
+                                <Input check inline type="checkbox" id="" name="" /> <Label for="">Pupils</Label>
+                                <Row>
+                                    <Col lg="4">
+                                    <Label>Right</Label>
+                                    </Col>
+                                    <Col lg="4">
+                                    <Label>Left</Label>
+                                    </Col>
+                                    <Col lg="10">
+                                        <Row>
+                                            <Col md="4">
+                                            <FormGroup>
+                                                <Input type="text" />
+                                            </FormGroup>
+                                            </Col>
+                                            <Col md="4">
+                                            <FormGroup>
+                                                <Input type="text"/>
+                                            </FormGroup>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
                             </td>
                             <td><Input input type="text" id="" name=""/></td>
                         </tr>
@@ -163,6 +186,8 @@ const PhysicalExam = () => {
                         </tbody>
                     </Table>
                 </Col>
+            </Row>
+            <Row>
                 <Col md="4">
                     <Table className="align-middle">
                         <thead>
