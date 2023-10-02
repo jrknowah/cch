@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import Select from 'react-select';
 import {
-    clientGenders, cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,
+    clientGenders, cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,cmObNone,legalList,
     energyLevelList,
     gadList,
     gfp, famList, ynd,
@@ -1261,77 +1261,79 @@ const MentalHealth = () => {
                     </Table>
                 </Col>
             </Row>
+
+            <hr/>
             <Row>
                 <Col className="text-center">
                     <b><Label>LEGAL</Label></b>
                 </Col>
             </Row>
             <Row>
-                <Col md="3">
-                    <Label>Do you currently have any pending legal issues (check all that apply):</Label>
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">No Legal Issues</Label>
-                </Col>
-                <Col md="3">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Tickets</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Divorce</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Child Custody</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Conservatorship</Label><br/>
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Divorce</Label>
-                </Col>
-                <Col md="3">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Probation (specify):</Label>
-                    <Input type="text" id="" name="" />
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Parole (specify):</Label>
-                    <Input type="text" id="" name="" />
-                </Col>
-                <Col md="3">
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Arrests (specify):</Label>
-                    <Input type="text" id="" name="" />
-
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Other (specify):</Label>
-                    <Input type="text" id="" name="" />
+                <Col md="" className="text-center">
+                    <FormGroup>
+                        <Label for="">Do you currently have any pending legal issues (Select all that apply)</Label>
+                        <Select id="clientLegalIssues" name="clientLegalIssues"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={legalList}
+                        />
+                    </FormGroup>
                 </Col>
             </Row>
+            <Row>
+                <Col md="6">
+                    <FormGroup>
+                        <Label for="">Probation</Label>
+                        <Input type="text" id="clientLegalProbation" name="clientLegalProbation" />
+                    </FormGroup>
+                </Col>
+                <Col md="6">
+                    <FormGroup>
+                        <Label for="">Parole</Label>
+                        <Input type="text" id="clientLegalParole" name="clientLegalParole" />
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="6">
+                    <FormGroup>
+                        <Label for="">Arrests</Label>
+                        <Input type="text" id="clientLegalArrests" name="clientLegalArrests" />
+                    </FormGroup>
+                </Col>
+                <Col md="6">
+                    <FormGroup>
+                        <Label for="">Other</Label>
+                        <Input type="text" id="clientLegalOther" name="clientLegalOther" />
+                    </FormGroup>
+                </Col>
+            </Row>
+            <hr/>
             <Row>
                 <Col className="text-center">
                     <b><Label>Arrest Screening</Label></b>
                 </Col>
             </Row>
             <Row>
-                <Col md="3">
+                <Col md="4">
                     <Label>Have you ever been arrested for production or manufacturing of methamphetamines?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestMeth" name="arrestMeth" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <Label>Have you ever been arrested for any other drug and/or alcohol related crime?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestDrugAlcohol" name="arrestDrugAlcohol" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <Label>Have you ever been arrested for a violent crime?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestViolent" name="arrestViolent" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
@@ -1339,33 +1341,35 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="3">
+                <Col md="4">
                     <Label>Have you ever been arrested for arson?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestArson" name="arrestArson" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <Label>Have you ever been arrested for a sex crime?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestSexCrime" name="arrestSexCrime" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3">
+                <Col md="4">
                     <Label>Are you a registered sex offender?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="regSexOffender" name="regSexOffender" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3">
+            </Row>
+            <Row>
+                <Col md="4">
                     <Label>Have you ever been arrested for any crime whatsoever?</Label>
-                    <Input type="select" id="" name="" >
+                    <Input type="select" id="arrestCrime" name="arrestCrime" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
@@ -1489,98 +1493,126 @@ const MentalHealth = () => {
             </Row>
             <Row>
                 <Col md="4">
-                    <Label for="">Grooming & Hygiene:</Label><br/>
-                    {cmOb1.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Eye Contact:</Label><br/>
-                    {cmOb2.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Motor Activity:</Label><br/>
-                    {cmOb3.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Speech:</Label><br/>
-                    {cmOb4.map((i) => (
-                        <div>
-                            <input value={i} type="checkbox" />
-                            <span>{i}</span>
-                        </div>
-                    ))}
-                    <Label for="">Interaction Style:</Label><br/>
-                    {cmOb5.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                    <FormGroup>
+                        <Label for="">Grooming & Hygiene:</Label>
+                        <Select id="cmOb1" name="cmOb1"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb1}
+                        />
+                    </FormGroup>
                 </Col>
                 <Col md="4">
-                    <Label for="">Mood:</Label><br/>
-                    {cmOb6.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Affect:</Label><br/>
-                    {cmOb7.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Associations:</Label><br/>
-                    {cmOb8.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Concentration:</Label><br/>
-                    {cmOb9.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                    <FormGroup>
+                        <Label for="">Eye Contact:</Label>
+                        <Select id="cmOb2" name="cmOb2"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb2}
+                        />
+                    </FormGroup>
                 </Col>
-
                 <Col md="4">
-
-                        <div>
-                            <input value="None Apparent" type="checkbox" />
-                            <span>None Apparent</span>
-                        </div>
-
-                    <Label for="">Behavioral Disturbances:</Label><br/>
-                    {cmOb10.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Passive:</Label><br/>
-                    {cmOb11.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                    <FormGroup>
+                        <Label for="">Motor Activity:</Label>
+                        <Select id="cmOb3" name="cmOb3"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb3}
+                        />
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Speech:</Label>
+                        <Select id="cmOb4" name="cmOb4"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb4}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Interaction Style:</Label>
+                        <Select id="cmOb5" name="cmOb5"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb5}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Mood:</Label>
+                        <Select id="cmOb6" name="cmOb6"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb6}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Affect:</Label>
+                        <Select id="cmOb7" name="cmOb7"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb7}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Associations:</Label>
+                        <Select id="cmOb8" name="cmOb8"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb8}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Concentration:</Label>
+                        <Select id="cmOb9" name="cmOb9"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb9}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Behavioral Disturbances:</Label>
+                        <Select id="cmOb10" name="cmOb10"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb10}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">Passive:</Label>
+                        <Select id="cmOb11" name="cmOb11"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmOb11}
+                        />
+                    </FormGroup>
+                </Col>
+                <Col md="4">
+                    <FormGroup>
+                        <Label for="">None Apparent</Label>
+                        <Select id="cmObNone" name="cmObNone"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={cmObNone}
+                        />
+                    </FormGroup>
                 </Col>
             </Row>
             <Row>

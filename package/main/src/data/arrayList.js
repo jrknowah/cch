@@ -1035,7 +1035,17 @@ export const statusList = ["Active","Case Closed","Unknown"];
 export const riskList = ["Thoughts of harming him or herself","Thoughts of harming others","Denies thoughts"];
 export const substanceList = ["Alcohol","Cocaine/Crack","Marijuana","Heroin","Methadone or Suboxone","Methamphetamine","Speed","LSD","Tobacco","Other"];
 export const treatList = ["","Detox","Outpatient","Residential Treatment"];
-export const legalList = [ "No Legal Issues", "Tickets","Divorce","Child Custody","Conservatorship","Probation (specify):","Parole (specify):","Arrests (specify):","Other (specify):"];
+export const legalList = [ 
+    { label:  "No Legal Issues", value: "No Legal Issues"},
+    { label:  "Tickets", value: "Tickets"},
+    { label:  "Child Custody", value: "Child Custody"},
+    { label:  "Divorce", value: "Divorce"},
+    { label:  "Conservatorship", value: "Conservatorship"},
+    { label:  "Probation (specify)", value: "Probation (specify)"},
+    { label:  "Parole (specify)", value: "Parole (specify)"},
+    { label:  "Arrests (specify)", value: "Arrests (specify)"},
+    { label:  "Other (specify)", value: "Other (specify)"}
+];
 export const resultInList = ["","Informal Probation","Formal Probation","Parole","No Conditions"];
 export const mfList = ["","Misdemeanor","Felony"];
 
@@ -1059,17 +1069,96 @@ export const needsCol1 = [
     
 ];
 
-export const cmOb1 = [ "Well Groomed","Average","Dirty","Odorous"];
-export const cmOb2 = [ "Normal for culture","Little","Avoids","Erratic"];
-export const cmOb3 = [ "Calm","Restless","Agitated"];
-export const cmOb4 = [ "Unimpaired","Soft","Slowed","Mute","Pressured","Loud","Excessive","Slurred","Incoherent"];
-export const cmOb5 = [ "Culturally congruent","Cooperative","Guarded/Suspicious","Overly Dramatic","Negative"];
-export const cmOb6 = [ "Happy","Unhappy","Tearful","Irritable","Hopeless/Worthless","Anxious"];
-export const cmOb7 = [ "Appropriate","Labile","Flat","Sad","Worried"];
-export const cmOb8 = [ "Unimpaired","Impaired"];
-export const cmOb9 = [ "Bizarre","Phobic","Suspicious","Obsessive","Blames Others","Persecutory","Assaultive ideas","Magical Thinking","Irrational/Excessive Worry","Sexual Preoccupation","Excessive/Inappropriate Religiosity","Excessive/Inappropriate Guilt"];
-export const cmOb10 = [ "None","Aggressive","Uncooperative","Demanding","Demeaning","Manipulative"];
-export const cmOb11 = [ "A-motivational","Apathetic","Isolated","Evasive","Dependent"];
+export const cmObNone = [
+    { value: "None Apparent", label: "None Apparent" }
+];
+
+export const cmOb1 = [ 
+    { value: "Well Groomed", label:  "Well Groomed"},
+    { value: "Average", label:  "Average"},
+    { value: "Dirty", label:  "Dirty"},
+    { value: "Odorous", label:  "Odorous"}
+];
+export const cmOb2 = [ 
+    { value: "Normal for culture", label:  "Normal for culture"},
+    { value: "Little", label:  "Little"},
+    { value: "Avoids", label:  "Avoids"},
+    { value: "Erratic", label:  "Erratic"}
+];
+export const cmOb3 = [ 
+    { value: "Calm", label:  "Calm"},
+    { value: "Restless", label:  "Restless"},
+    { value: "Agitated", label:  "Agitated"}
+];
+export const cmOb4 = [ 
+    { value: "Unimpaired", label:  "Unimpaired"},
+    { value: "Soft", label:  "Soft"},
+    { value: "Slowed", label:  "Slowed"},
+    { value: "Mute", label:  "Mute"},
+    { value: "Pressured", label:  "Pressured"},
+    { value: "Loud", label:  "Loud"},
+    { value: "Excessive", label:  "Excessive"},
+    { value: "Slurred", label:  "Slurred"},
+    { value: "Incoherent", label:  "Incoherent"}
+];
+export const cmOb5 = [ 
+    { value: "Culturally congruent", label:  "Culturally congruent"},
+    { value: "Cooperative", label:  "Cooperative"},
+    { value: "Guarded/Suspicious", label:  "Guarded/Suspicious"},
+    { value: "Overly Dramatic", label:  "Overly Dramatic"},
+    { value: "Negative", label:  "Negative"},
+    { value: "", label:  ""},
+    { value: "", label:  ""},
+    { value: "", label:  ""},
+    { value: "", label:  ""}
+];
+export const cmOb6 = [ 
+    { value: "Happy", label:  "Happy"},
+    { value: "Unhappy", label:  "Unhappy"},
+    { value: "Tearful", label:  "Tearful"},
+    { value: "Irritable", label:  "Irritable"},
+    { value: "Hopeless/Worthless", label:  "Hopeless/Worthless"},
+    { value: "Anxious", label:  "Anxious"}
+];
+export const cmOb7 = [ 
+    { value: "Appropriate", label:  "Appropriate"},
+    { value: "Labile", label:  "Labile"},
+    { value: "Flat", label:  "Flat"},
+    { value: "Sad", label:  "Sad"},
+    { value: "Worried", label:  "Worried"}
+];
+export const cmOb8 = [ 
+    { value: "Unimpaired", label:  "Unimpaired"},
+    { value: "Impaired", label:  "Impaired"}
+];
+export const cmOb9 = [ 
+    { value: "Bizarre", label:  "Bizarre"},
+    { value: "Phobic", label:  "Phobic"},
+    { value: "Suspicious", label:  "Suspicious"},
+    { value: "Obsessive", label:  "Obsessive"},
+    { value: "Blames Others", label:  "Blames Others"},
+    { value: "Persecutory", label:  "Persecutory"},
+    { value: "Assaultive ideas", label:  "Assaultive ideas"},
+    { value: "Magical Thinking", label:  "Magical Thinking"},
+    { value: "Irrational/Excessive Worry", label:  "Irrational/Excessive Worry"},
+    { value: "Sexual Preoccupation", label:  "Sexual Preoccupation"},
+    { value: "Excessive/Inappropriate Religiosity", label:  "Excessive/Inappropriate Religiosity"},
+    { value: "Excessive/Inappropriate Guilt", label:  "Excessive/Inappropriate Guilt"},
+];
+export const cmOb10 = [ 
+    { value: "None", label:  "None"},
+    { value: "Aggressive", label:  "Aggressive"},
+    { value: "Uncooperative", label:  "Uncooperative"},
+    { value: "Demanding", label:  "Demanding"},
+    { value: "Manipulative", label:  "Manipulative"},
+];
+export const cmOb11 = [ 
+    { value: "A-motivational", label:  "A-motivational"},
+    { value: "Apathetic", label:  "Apathetic"},
+    { value: "Isolated", label:  "Isolated"},
+    { value: "Evasive", label:  "Evasive"},
+    { value: "Dependent", label:  "Dependent"}
+];
 export const medCond = [ 
     { value: "Anemia", label:  "Anemia"},
     { value: "GERD", label: "GERD" },
