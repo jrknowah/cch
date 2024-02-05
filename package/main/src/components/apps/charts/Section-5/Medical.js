@@ -12,11 +12,11 @@ import {
 import {section5List} from "../../../../data/arrayList";
 import MedFaceSheet from "./MedFaceSheet";
 import MedScreening from "./MedScreening";
-import MentalHealthScreen from "./MentalHealthScreen";
-import PhysicalExam from "./PhysicalExam";
-import AssessmentDiagnosis from "./AssessmentDiagnosis";
-import OrderForm from "./OrderForm";
-import NursingAdmission from "./NursingAdmission";
+// import MentalHealthScreen from "./MentalHealthScreen";
+// import PhysicalExam from "./PhysicalExam";
+// import AssessmentDiagnosis from "./AssessmentDiagnosis";
+// import OrderForm from "./OrderForm";
+// import NursingAdmission from "./NursingAdmission";
 
 const Medical = () => {
     const [activeTab, setActiveTab] = useState('1');
@@ -172,7 +172,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            <TabPane tabId="4">
+                            {/*<TabPane tabId="4">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
@@ -181,7 +181,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            <TabPane tabId="5">
+                             <TabPane tabId="5">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
@@ -234,7 +234,7 @@ const Medical = () => {
                                         </div>
                                     </Col>
                                 </Row>
-                            </TabPane>
+                            </TabPane> */}
                         </TabContent>
                     </Card>
                 </Col>

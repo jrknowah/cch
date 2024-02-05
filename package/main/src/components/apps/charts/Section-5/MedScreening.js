@@ -10,7 +10,7 @@ import {
     medCond2, medCond3,
     medRisk2, medCond4, medCond5
 } from "../../../../data/arrayList";
-import TableAdd from "./Table";
+// import TableAdd from "./Table";
 
 const MedScreening = () => {
 
@@ -445,7 +445,7 @@ const MedScreening = () => {
                 </Col>
             </Row>
             <Row>
-                <TableAdd />
+                {/* <TableAdd /> */}
             </Row>
             <Row>
                 <Col md="4">
