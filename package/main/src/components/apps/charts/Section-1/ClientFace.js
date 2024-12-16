@@ -15,7 +15,7 @@ const ClientFace = () => {
 
         <div className="form-body">
             <Row className="text-center">
-                <Label>CLIENT FACE SHEET</Label>
+                <Label></Label>
             </Row>
             <Row>
                 <Label className="text-center">Client Contact Information</Label>
@@ -33,24 +33,18 @@ const ClientFace = () => {
             <Row>
                 <Label className="text-center">Emergency Contact Information</Label>
                 <Col md="4">
-                    Name:<Input input type="text" id="" name="" placeholder=""/>
+                    Name:<Input input type="text" id="" name="" placeholder="Velma Jackson"/>
                 </Col>
                 <Col md="4">
-                    Relationship:<Input input type="text" id="" name="" placeholder=""/>
+                    Phone:<Input input type="text" id="" name="" placeholder="323-370-1274"/>
                 </Col>
                 <Col md="4">
-                    Address:<Input input type="text" id="" name="" placeholder=""/>
+                    Relationship:<Input input type="text" id="" name="" placeholder="Grandmother"/>
                 </Col>
             </Row>  
             <Row>
-                <Col md="4">
-                    City:<Input input type="text" id="" name="" placeholder=""/>
-                </Col>
-                <Col md="4">
-                    State:<Input input type="text" id="" name="" placeholder=""/>
-                </Col>
-                <Col md="4">
-                    Zip Code:<Input input type="text" id="" name="" placeholder=""/>
+                <Col md="12">
+                    Address:<Input input type="text" id="" name="" placeholder="12341111 S Figueroa St, Los Angeles, CA 90015"/>
                 </Col>
             </Row>
             <Row>
@@ -84,10 +78,10 @@ const ClientFace = () => {
                     Physician:<Input input type="text" id="" name="" placeholder=""/>
                 </Col>
                 <Col md="4">
-                    Facility:<Input input type="text" id="" name="" placeholder=""/>
+                    Facility:<Input input type="text" id="" name="" placeholder="Star Clinic"/>
                 </Col>
                 <Col md="4">
-                    Phone Number:<Input input type="phone" id="" name="" placeholder=""/>
+                    Phone Number:<Input input type="phone" id="" name="" placeholder="323-370-1274"/>
                 </Col>
             </Row>
             <Row>

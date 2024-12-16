@@ -4,30 +4,22 @@ import {
     Col, FormGroup, Label, Input
 } from 'reactstrap';
 import Select from 'react-select';
-import { allergyList, clientDiet } from "../../../../data/arrayList";
+import { allergyList, clientDiet,medCond } from "../../../../data/arrayList";
 
 const OrderForm = () => {
 
     return (
 
         <div className="form-body">
-            <Row className="text-center">
-                <Col md="">
-                    <FormGroup>
-                        <Label check>
-                            <Input type="checkbox" name="" /> Admit to Serenity Recuperative Care
-                        </Label>
-                    </FormGroup>
-                </Col>
-            </Row>
+
             <Row>
-                <Col md="4">
+                <Col md="6">
                     <FormGroup>
                         <Label for="clientAdmitDate">Date of Admission</Label>
                         <Input type="date" name="clientAdmitDate" id="clientAdmitDate" />
                     </FormGroup>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                     <FormGroup>
                         <Label for="">List ALL allergies:</Label>
                         <Select id="clientAllergy" name="clientAllergy"
@@ -36,16 +28,20 @@ const OrderForm = () => {
                             options={allergyList}
                         />
                     </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup>
-                        <Label>Diagnosis</Label>
-                        <Input/>
-                    </FormGroup>
-                </Col>                
+                </Col>             
             </Row>
             <Row>
-                <Col md="4">
+                <Col md="6">
+                    <Label for="">Medical Conditions</Label>
+                    <FormGroup>
+                        <Select id="clientMedConditions" name="clientMedConditions"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={medCond}
+                        />
+                    </FormGroup>                   
+                </Col> 
+                <Col md="6">
                     <FormGroup>
                         <Label >Diet<br/></Label>
                         <Select id="clientDietType" name="clientDietType"
@@ -182,23 +178,6 @@ const OrderForm = () => {
                         <Input type="checkbox" id="" name="" />No Restrictions (ok to shower) <br/>
                         <Input type="checkbox" id="" name="" />No Soaking in Water<br/>
                     </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label>Medical Assessment Completed By:</Label>
-            </Row>
-            <Row>
-                <Col md="6">
-                    <Label for="">Signature</Label>
-                    <Input type="text" id="" name="" /><br/>
-                    <Label for="">Type Name</Label>
-                    <Input type="text" id="" name="" /><br/>
-                </Col>
-                <Col>
-                    <Label for="">Date</Label>
-                    <Input type="date" id="" name="" /><br/>
-                    <Label for="">Title</Label>
-                    <Input type="text" id="" name="" /><br/>
                 </Col>
             </Row>
         </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form, Table
+    Col, FormGroup, Label, Input, 
+    // InputGroup, InputGroupText, Form, 
+    Table
 } from 'reactstrap';
 import Select from 'react-select';
 import {
@@ -27,7 +29,7 @@ const MentalHealth = () => {
                 <FormGroup>
                     <FormGroup>
                         <center><Label check>Areas of Strengths</Label></center>
-                        <Input type="textarea" name="customcheck1" />
+                        <Input type="textarea" name="clientAreaOfStrengths" id="clientAreaOfStrengths"/>
                     </FormGroup>
                 </FormGroup>
                 </Col>
@@ -67,80 +69,39 @@ const MentalHealth = () => {
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                <Col md="3">
+            <Row>                
+                <Col md="4">
                     <Label>How many siblings do you have?</Label>
+                    <FormGroup>
+                        <Input type="text" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
+                        </Input>
+                    </FormGroup>
                 </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Brother(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
+                <Col md="4">
+                    <Label>Childhood family’s economic status?</Label>
+                    <FormGroup>
+                    <Input type="select" id="clientPayee" name="clientPayee" >
+                            <option> </option>
+                            <option>Poverty level (on welfare)</option>
+                            <option>Middle Class</option>
+                            <option>Upper Middle Class</option>
+                            <option>Wealthy</option>
+                        </Input>
+                    </FormGroup>
                 </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Half-Brother(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
-                </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Step-Brother(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3">  
-                </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Sister(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
-                </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Half-sister(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
-                </Col>
-                <Col md="3">
-                    <Form>
-                        <InputGroup>
-                            <InputGroupText>Step-sister(s)</InputGroupText>
-                            <Input type="text"/>
-                        </InputGroup>
-                    </Form>
+                <Col md="4">
+                    <Label>How many siblings do you have?</Label>
+                    <FormGroup>
+                        <Input type="text" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
+                        </Input>
+                    </FormGroup>
                 </Col>
             </Row>
 
             <Row>
                 <Col md="4">
                     <FormGroup >
-                        <Label>What was your birth order?</Label>
-                        <Input type="select" id="clientPayee" name="clientPayee" >
-                            <option> </option>
-                            <option>Only child</option>
-                            <option>Youngest</option>
-                            <option>Middle</option>
-                            <option>Oldest</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup >
-                        <Label>Childhood family’s economic status?</Label>
+                        <Label></Label>
                         <Input type="select" id="clientPayee" name="clientPayee" >
                             <option> </option>
                             <option>Poverty level (on welfare)</option>

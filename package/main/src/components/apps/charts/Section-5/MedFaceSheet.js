@@ -3,7 +3,10 @@ import {
     Row,
     Col, FormGroup, Label, Input, Table
 } from 'reactstrap';
-import MedicalDiagnosis from "./MedicalDiagnosis";
+import Select from "react-select"
+import {
+    allergyList, medCond,
+} from "../../../../data/arrayList";
 
 const MedFaceSheet = () => {
 
@@ -13,44 +16,36 @@ const MedFaceSheet = () => {
             <Row className="text-center">
                 <Label>FACE SHEET</Label>
             </Row>
-            <MedicalDiagnosis />
+            {/* <MedicalDiagnosis /> */}
             <Row>
-                <Col md="4">
+                <Col md="6">
+                    <Label for="">Medical Conditions</Label>
                     <FormGroup>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 1" /><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 2"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 3"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 4"/><br/>
-                    </FormGroup>
+                        <Select id="clientMedConditions" name="clientMedConditions"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={medCond}
+                        />
+                    </FormGroup>                   
                 </Col>
-
-                <Col md="4">
-                    <FormGroup>
-                        <Label for=""></Label>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 5"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 6"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 7"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 8"/><br/>
-                    </FormGroup>
-                </Col>
-                
-            </Row>
-            <Row>
-                <Col md="" className="text-center">
+                <Col md="6" className="text-center">
                     <FormGroup>
                         <Label for="clientAddMedHistory">Addtional Medical History</Label>
                         <Input type="textarea" id="clientAddMedHistory" name="clientAddMedHistory" />
                     </FormGroup>
                 </Col>
+                
             </Row>
             <Row>
-                <Col md="4">
+            </Row>
+            <Row>
+                <Col md="6">
                     <FormGroup>
                         <Label for="clientPayeePhone">Pertinent Information</Label>
                         <Input type="textarea" id="clientPayeePhone" name="clientPayeePhone" />
                     </FormGroup>
                 </Col>
-                <Col md="5">
+                <Col md="6">
                     <FormGroup>
                         <Label for="clientEmployed">Review of Charts/Previous Lab Work</Label>
                         <Input type="textarea" id="clientEmployed" name="clientEmployed" >
@@ -61,15 +56,15 @@ const MedFaceSheet = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="4">
-                    <FormGroup>clientAllergy
-                        <Label for="clientAllergy">List All Allergies</Label><br/>
-                        <Input type="checkbox" id="" name="clientAllergy"/>
-                        <Label for="clientAllergy">No Known Allergies</Label>
-                        <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 1"/><br/>
-                        <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 2"/><br/>
-                        <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 3"/><br/>
-                        <Input type="text" id="clientPayee" name="clientPayee" placeholder="Allergies 4"/><br/>
+                <Label className="text-center">Allergy/Intolerance History</Label>
+                <Col md="6">
+                    <FormGroup>
+                        <Label for="">List ALL allergies:</Label>
+                        <Select id="clientAllergy" name="clientAllergy"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={allergyList}
+                        />
                     </FormGroup>
                 </Col>
             </Row>

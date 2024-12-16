@@ -31,25 +31,25 @@ const CalAim = () => {
                 <div className="form-body">
                     <p>
                         <FormGroup check>
-                            <Input type="checkbox" id="" name=""></Input>
+                            <Input type="checkbox" id="" name="" checked></Input>
                             Do you acknowledge we have explained the CalAIM program to you?
                         </FormGroup>
                     </p>
                     <p>
                         <FormGroup check>
-                            <Input type="checkbox" id="" name=""></Input>
+                            <Input type="checkbox" id="" name="" checked></Input>
                             Do you understand the terms of voluntary participation?
                         </FormGroup>
                     </p>
                     <p>
                         <FormGroup check>
-                            <Input type="checkbox" id="" name=""></Input>
+                            <Input type="checkbox" id="" name="" checked></Input>
                             Do you agree to participate in the CalAIM [indicate program name: Housing Navigation, Tenancy and Sustaining Services, or Recuperative Care]?
                         </FormGroup>
                     </p>
                     <p>
                         <FormGroup check>
-                            <Input type="checkbox" id="" name=""></Input>
+                            <Input type="checkbox" id="" name="" checked></Input>
                             If you agree to the CalAIM Housing Navigation participation, do you also agree to participate in [indicate program name: Housing Navigation, Tenancy and Sustaining Services, or Recuperative Care] when you become eligible for those services?
                         </FormGroup>
                     </p>

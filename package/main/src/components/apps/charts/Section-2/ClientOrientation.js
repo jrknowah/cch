@@ -37,13 +37,13 @@ const ClientOrientation = () => {
                     <Row className="text-center">
                         <Col md="6">
                             <FormGroup>
-                                <Label for="coiClientSign">Client Signature</Label>
+                                <Label for="coiClientSign">Client</Label>
                                 <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
                             </FormGroup>
                         </Col>
                         <Col md="6">
                             <FormGroup>
-                                <Label for="coiStaff">Signature of Staff Providing</Label>
+                                <Label for="coiStaff">Staff</Label>
                                 <Input type="text" id="coiStaff" name="coiStaff"></Input>
                             </FormGroup>
                         </Col>

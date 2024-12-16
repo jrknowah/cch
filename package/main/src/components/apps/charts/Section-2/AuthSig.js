@@ -12,7 +12,7 @@ import ConsentForTreatment from "./ConsentForTreatment";
 // import AuthToRelease from "./AuthToRelease";
 import AuthForDisclosure from "./AuthForDisclosure";
 import PrivacyPractice from "./PrivacyPractices";
-import HHHPHI from "./HHHPHI";
+import ReleasePHI from "./ReleasePHI";
 import LAHMIS from "./LAHMIS";
 import ResidencePolicy from "./ResidencePolicy";
 import InterimHousingAgreement from "./InterimHousingAgreement";
@@ -67,6 +67,10 @@ const AuthSig = () => {
     const advModalToggle = () => {
         setAdvModalToggle(!advModal);
     };
+    const [PHIModal, setPHIModalToggle] = useState(false);
+    const PHIModalToggle = () => {
+        setPHIModalToggle(!PHIModal);
+    };
     return (
         <div>
 
@@ -96,7 +100,7 @@ const AuthSig = () => {
                 </Col>
                 <Col md="4">
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Client Rights</CardTitle>
+                        <CardTitle tag="h5">Patient Rights</CardTitle>
                         <Modal isOpen={crModal} fade={false} toggle={crModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <ClientRights />
@@ -116,27 +120,28 @@ const AuthSig = () => {
                     </Card>
                 </Col>
                 <Col md="4">
-                     <Card body className="text-center">
-                         <CardTitle tag="h5">HHH PHI Release here</CardTitle>
-                         <Modal isOpen={agreeModal} fade={false} toggle={agreeModalToggle.bind(null)} size="lg">
-                             <ModalBody>
-                                 <HHHPHI />
-                             </ModalBody>
-                             <ModalFooter>
-                                 <Button color="primary" onClick={agreeModalToggle.bind(null)}>
-                                     Submit
-                                 </Button>
-                                 <Button color="secondary" onClick={agreeModalToggle.bind(null)}>
-                                     Clear
-                                 </Button>
+                    <Card body className="text-center">
+                        <CardTitle tag="h5">Consent for Treatment and Services</CardTitle>
+                       <Modal isOpen={consentModal} fade={false} toggle={consentModalToggle.bind(null)} size="lg">
+                            <ModalBody>
+                                <ConsentForTreatment />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={consentModalToggle.bind(null)}>
+                                    Submit
+                                </Button>
+                                <Button color="secondary" onClick={consentModalToggle.bind(null)}>
+                                    Clear
+                                </Button>
 
-                             </ModalFooter>
-                         </Modal>
-                         <div>
-                             <Button onClick={setAgreeModalToggle}>Open</Button>
-                         </div>
-                     </Card>
+                            </ModalFooter>
+                        </Modal>
+                        <div>
+                            <Button onClick={setConsentModalToggle}>Open</Button>
+                        </div>
+                    </Card>
                 </Col>
+                
             </Row>
             <Row>
                 <Col md="4">
@@ -161,26 +166,26 @@ const AuthSig = () => {
                      </Card>
                 </Col>
                 <Col md="4">
-                    <Card body className="text-center">
-                        <CardTitle tag="h5">Consent for Treatment and Services</CardTitle>
-                       <Modal isOpen={consentModal} fade={false} toggle={consentModalToggle.bind(null)} size="lg">
-                            <ModalBody>
-                                <ConsentForTreatment />
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={consentModalToggle.bind(null)}>
-                                    Submit
-                                </Button>
-                                <Button color="secondary" onClick={consentModalToggle.bind(null)}>
-                                    Clear
-                                </Button>
+                     <Card body className="text-center">
+                         <CardTitle tag="h5">Client PHI Release</CardTitle>
+                         <Modal isOpen={PHIModal} fade={false} toggle={PHIModalToggle.bind(null)} size="lg">
+                             <ModalBody>
+                                 <ReleasePHI />
+                             </ModalBody>
+                             <ModalFooter>
+                                 <Button color="primary" onClick={PHIModalToggle.bind(null)}>
+                                     Submit
+                                 </Button>
+                                 <Button color="secondary" onClick={PHIModalToggle.bind(null)}>
+                                     Clear
+                                 </Button>
 
-                            </ModalFooter>
-                        </Modal>
-                        <div>
-                            <Button onClick={setConsentModalToggle}>Open</Button>
-                        </div>
-                    </Card>
+                             </ModalFooter>
+                         </Modal>
+                         <div>
+                             <Button onClick={setPHIModalToggle}>Open</Button>
+                         </div>
+                     </Card>
                 </Col>
                 <Col md="4">
                     <Card body className="text-center">

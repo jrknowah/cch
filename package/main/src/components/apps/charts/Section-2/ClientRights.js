@@ -26,13 +26,13 @@ const ClientRights = () => {
                     <Row>
                         <Col md="6">
                             <FormGroup>
-                                <Label for="coiClientSign">Client Signature</Label>
+                                <Label for="coiClientSign">Client</Label>
                                 <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
                             </FormGroup>
                         </Col>
                         <Col md="6">
                             <FormGroup>
-                                <Label for="coiClientSign">Staff Signature </Label>
+                                <Label for="coiClientSign">Staff</Label>
                                 <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
                             </FormGroup>
                         </Col>

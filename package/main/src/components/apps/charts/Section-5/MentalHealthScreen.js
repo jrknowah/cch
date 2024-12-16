@@ -1,15 +1,45 @@
 import React from "react";
 import {
     Row,
-    Col, Label, Input, Table
+    Col, Label,
+     Input,
+     FormGroup,
+    Table
 } from 'reactstrap';
+import Select from 'react-select';
 import {
-    cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,
+    cmOb1, cmOb2, cmOb3, cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,
+     cmOb9,cmOb10,cmOb11,
     gadList,
-    mhList, resultInList,
-    substanceAbuseOften, substanceAbuseUse, substanceList, treatList
+    mhList, 
+    resultInList,
+    treatList,
+    substanceAbuseOften, substanceAbuseUse, substanceList
 } from "../../../../data/arrayList";
+import ComponentCard from '../../../ComponentCard';
 
+const CustomClearText = () => 'clear all';
+const ClearIndicator = (props) => {
+  const {
+    // eslint-disable-next-line react/prop-types
+    children = <CustomClearText />,
+    // eslint-disable-next-line react/prop-types
+    getStyles,
+    // eslint-disable-next-line react/prop-types
+    innerProps: { ref, ...restInnerProps },
+  } = props;
+  return (
+    <div {...restInnerProps} ref={ref} style={getStyles('clearIndicator', props)}>
+      <div style={{ padding: '0px 5px' }}>{children}</div>
+    </div>
+  );
+};
+
+const ClearIndicatorStyles = (base, state) => ({
+  ...base,
+  cursor: 'pointer',
+  color: state.isFocused ? 'blue' : 'black',
+});
 
 const MentalHealthScreen = () => {
 
@@ -27,15 +57,17 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
-                    <Label for="">Ever been diagnosis with a mental illness?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
+                <Col md="4">
+                    <Label>Ever been diagnosis with a mental illness?</Label>
+                    <FormGroup>
+                        <Input type="select" id="" name="" >
+                            <option> </option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </Input>
+                    </FormGroup>
                 </Col>
-                <Col md="3" >
+                <Col md="4" >
                     <Label for="">If YES, select one:</Label>
                     <Input type="select" className="custom-select" id="" name="" >
                         {mhList.map((mh) => (
@@ -50,7 +82,7 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="4" >
                     <Label for="">Ever utilized mental health services?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -58,7 +90,7 @@ const MentalHealthScreen = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="2" >
+                <Col md="4" >
                     <Label for="clientEmployed">Currently utilizing mental health services?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -73,11 +105,11 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">Agency Name:</Label>
                     <Input type="text" id="" name=""/>
                 </Col>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">MH Worker:</Label>
                     <Input type="text" id="" name=""/>
                 </Col>
@@ -103,7 +135,7 @@ const MentalHealthScreen = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="2" >
+                <Col md="3" >
                     <Label>Total # hospitalizations:</Label>
                     <Input type="text" id="" name=""/>
                 </Col>
@@ -157,11 +189,11 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">Psychiatrist:</Label>
                     <Input type="text" id="" name=""/>
                 </Col>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">Facility:</Label>
                     <Input type="text" id="" name=""/>
                 </Col>
@@ -184,7 +216,7 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="4" >
+                <Col md="5" >
                     <Label for="">Have you ever taken medications for mental health?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -192,7 +224,7 @@ const MentalHealthScreen = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="4" >
+                <Col md="5" >
                     <Label for="">Are you currently taking medications for mental health issues?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -618,7 +650,12 @@ const MentalHealthScreen = () => {
             </Row>
             <Row>
                 <Col >
-                    <Label>Patient/Family Needs: Review Section One: Bio-Social Assessment to complete.</Label>
+                    <Label>Patient/Family Needs:</Label>
+                </Col>
+            </Row>
+            <Row>
+                <Col >
+                    <Label> <b> *For each checked needs assessment; there needs to be an objective and plan to complete objective*</b></Label>
                 </Col>
             </Row>
             <Row>
@@ -672,107 +709,139 @@ const MentalHealthScreen = () => {
                 </Col>
             </Row>
             <Row>
-                *For each checked needs assessment; there needs to be an objective and plan to complete objective*
-            </Row>
-            <Row>
                 <Col className="text-center">
                     <b><Label>CASE MANAGERS OBSERVATIONS</Label></b>
                 </Col>
             </Row>
             <Row>
-                <Col md="4">
-                    <Label for="">Grooming & Hygiene:</Label><br/>
-                    {cmOb1.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Eye Contact:</Label><br/>
-                    {cmOb2.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Motor Activity:</Label><br/>
-                    {cmOb3.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                    <Label for="">Speech:</Label><br/>
-                    {cmOb4.map((i) => (
-                        <div>
-                            <input value={i} type="checkbox" />
-                            <span>{i}</span>
-                        </div>
-                    ))}
-                    <Label for="">Interaction Style:</Label><br/>
-                    {cmOb5.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                <Col md="3">
+                    <ComponentCard title="Grooming & Hygiene:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        // defaultValue={[colourOptions[4], colourOptions[5]]}
+                        isMulti
+                        options={cmOb1}
+                        />
+                    </ComponentCard>
                 </Col>
-                <Col md="4">
-                    <Label for="">Mood:</Label><br/>
-                    {cmOb6.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Affect:</Label><br/>
-                    {cmOb7.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Associations:</Label><br/>
-                    {cmOb8.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Concentration:</Label><br/>
-                    {cmOb9.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                <Col md="3">
+                    <ComponentCard title="Eye Contact:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        // defaultValue={[colourOptions[4], colourOptions[5]]}
+                        isMulti
+                        options={cmOb2}
+                        />
+                    </ComponentCard>
                 </Col>
-
-                <Col md="4">
-
-                    <div>
-                        <input value="None Apparent" type="checkbox" />
-                        <span>None Apparent</span>
-                    </div>
-
-                    <Label for="">Behavioral Disturbances:</Label><br/>
-                    {cmOb10.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-
-                    <Label for="">Passive:</Label><br/>
-                    {cmOb11.map((item) => (
-                        <div>
-                            <input value={item} type="checkbox" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+                <Col md="3">
+                    <ComponentCard title="Motor Activity:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        // defaultValue={[colourOptions[4], colourOptions[5]]}
+                        isMulti
+                        options={cmOb3}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Speech:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        // defaultValue={[colourOptions[4], colourOptions[5]]}
+                        isMulti
+                        options={cmOb4}
+                        />
+                    </ComponentCard>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="3">
+                    <ComponentCard title="Interaction Style:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb5}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Mood:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb6}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Affect:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb7}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Associations:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb8}
+                        />
+                    </ComponentCard>
+                </Col>
+            </Row>
+            <Row>
+            <Col md="3">
+                    <ComponentCard title="Concentration:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb9}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Behavioral Disturbances:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb10}
+                        />
+                    </ComponentCard>
+                </Col>
+                <Col md="3">
+                    <ComponentCard title="Passive:">
+                        <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={cmOb11}
+                        />
+                    </ComponentCard>
                 </Col>
             </Row>
             <Row>
@@ -783,12 +852,6 @@ const MentalHealthScreen = () => {
             <Row>
                 <Col md="12">
                     <Input input type="textarea" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="12">
-                    Mental Health Assessment Completed By:<br/>
-                    <Input input type="text" id="" name=""/>
                 </Col>
             </Row>
         </div>

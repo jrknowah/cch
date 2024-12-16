@@ -229,7 +229,7 @@ const TagSelect = () => {
               closeMenuOnSelect={false}
               components={{ ClearIndicator }}
               styles={{ clearIndicator: ClearIndicatorStyles }}
-              defaultValue={[colourOptions[4], colourOptions[5]]}
+              // defaultValue={[colourOptions[4], colourOptions[5]]}
               isMulti
               options={colourOptions}
             />

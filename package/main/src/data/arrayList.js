@@ -9,6 +9,17 @@ export const clientGenders = [
     "Data not collected"
 ];
 
+export const clientPronouns = [
+    "",
+    "Female",
+    "Male",
+    "Trans Female (MTF or Male to Female)",
+    "Trans Male (FTM or Female to Male)",
+    "Gender Non-Conforming (i.e. not exclusively male or female)",
+    "Client doesn’t know, Client refused",
+    "Data not collected"
+];
+
 export const clientEthnicityList = [
     "",
     "Hispanic/Latino",
@@ -89,10 +100,10 @@ export const PatientProfileList = [
 
 export const ppcList = [
     {
-        ppcListTitle: "Client Orientation Information Sheet", ppcListDate: ""
+        ppcListTitle: "Client Orientation Sheet", ppcListDate: ""
     },
     {
-        ppcListTitle: "Client Rights", ppcListDate: ""
+        ppcListTitle: "Patient Rights", ppcListDate: ""
     },
     {
         ppcListTitle: "Consent for Treatment", ppcListDate: ""
@@ -101,42 +112,32 @@ export const ppcList = [
         ppcListTitle: "Housing for Health Supportive Housing Pre-Screen Form", ppcListDate: ""
     },
     {
-        ppcListTitle: "DHS Authorization for Use and Disclosure of Health and Social Service Information", ppcListDate: ""
+        ppcListTitle: "DHS Authorization for Use and Disclosure of Protected Health Information", ppcListDate: ""
     },
     {
-        ppcListTitle: "Notice of Privacy Practices and Acknowledgment Receipt", ppcListDate: ""
+        ppcListTitle: "Homeless Management Information System (HMIS) Client Consent Information Release Authorization", ppcListDate: ""
     },
     {
-        ppcListTitle: "Long Beach Homeless Management Information System (HMIS) Consent to Share Personal Information & LB Release of Information", ppcListDate: ""
-    },
-    {
-        ppcListTitle: "Holliday’s Helping Hands Uses and Releases of Protected Health Information", ppcListDate: ""
+        ppcListTitle: "Uses and Releases of Protected Health Information (PHI)", ppcListDate: ""
     },
     {
         ppcListTitle: "House Rules", ppcListDate: ""
     },
     {
-        ppcListTitle: "Advance Healthcare Directive", ppcListDate: ""
+        ppcListTitle: "Termination Policy", ppcListDate: ""
     },
     {
-        ppcListTitle: "Client Grievances Policies and Procedures (HHH)", ppcListDate: ""
+        ppcListTitle: "Advance Directive Confirmation Form, Information / Brochure", ppcListDate: ""
     },
     {
-        ppcListTitle: "Interim Housing Program (IHP) Provider Grievance Policies and Procedures", ppcListDate: ""
+        ppcListTitle: "Grievance Policy & Procedure & Acknowledgement", ppcListDate: ""
     },
     {
-        ppcListTitle: "Interim Housing Program (IHP) Shelter Agreement", ppcListDate: ""
+        ppcListTitle: "Interim Housing Shelter Agreement", ppcListDate: ""
     },
     {
-        ppcListTitle: "Mail Form", ppcListDate: ""
-    },
-    {
-        ppcListTitle: "Authorization for Use and/or Disclosure of Health Information", ppcListDate: ""
-    },
-    {
-        ppcListTitle: "Authorization for Release and Publication of Photographs, Art Work and/or Personal Information", ppcListDate: ""
+        ppcListTitle: "Mail Consent Form", ppcListDate: ""
     }
-
 ];
 
 export const section4List = [
@@ -216,12 +217,12 @@ export const crList = [
     "The right to present complaints and grievance",
     "The right to have an advocate present during appeals and grievance processes",
     "The right to have all records and disclosures maintained according to the written standardsand rules regarding confidentiality and privacy",
-    "The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
-    "The right to review their records and external disclosures of any personal participantinformation, as governed by the written program standards and rules regardingconfidentiality and privacy",
+    "The right to review their records and external disclosures of any personal participant information, as governed by the written program standards and rules regarding confidentiality and privacy",
+    "The right to review their records and external disclosures of any personal participant information, as governed by the written program standards and rules regarding confidentiality and privacy",
     "The right to be clearly informed, in understandable and applicable language, about thepurpose of the services being delivered",
-    "The right to leave and return to the facility at reasonable hours in accordance with theprogram rules and standards, unless coordinated by site management",
-    "The right to stay in facility 24 hours per day, except during required facility maintenance ornon-operational hours per funder contract. i. Temporary/seasonal Interim Housingprograms (i.e. Winter Shelter) that are funded for 14-hour operations shall allowparticipants access to program facility 24 hours per day during periods of inclement weather, as directed by the funder",
-    "Client shall not be denied any of the above-mentioned rights on the basis of religion, ethnicity,gender, sexual preference, marital status, or physical disability. I have read, understand, and received a copy of the client's rights:"
+    "The right to leave and return to the facility at reasonable hours in accordance with the program rules and standards, unless coordinated by site management",
+    "The right to stay in facility 24 hours per day, except during required facility maintenance or non-operational hours per funder contract. i. Temporary/seasonal Interim Housingprograms (i.e. Winter Shelter) that are funded for 14-hour operations shall allow participants access to program facility 24 hours per day during periods of inclement weather, as directed by the funder",
+    "Patient shall not be denied any of the above-mentioned rights on the basis of religion, ethnicity,gender, sexual preference, marital status, or physical disability. I have read, understand, and received a copy of the client's rights:"
 ];
 
 export const acpList = [
@@ -249,7 +250,7 @@ export const finList = [
 
 export const encTypeList = ["","Summary","1 on 1","Group","Collaborative","Consult","Crisis","Intervention"];
 
-export const hhhSiteList = ["","41st","97th","104th","238th","Atlantic","Downey","Northridge", "Arlington-LA","Arroyo","East LA","Lakeview Terrace","Long Beach 4th", "Motel 6","Percy","Torrance-Cabrillo"];
+export const hhhSiteList = ["","41st","97th","104th","238th","Downey","Heritage House","Northridge","Pacific", "South Harmony"];
 
 export const srcSiteList = ["", "Arlington-LA","Arroyo","East LA","Lakeview Terrace","Long Beach 4th", "Motel 6","Percy","Torrance-Cabrillo"];
 
@@ -1164,6 +1165,7 @@ export const medCond = [
     { value: "GERD", label: "GERD" },
     { value: "Arthritis (Rheumatoid)", label: "Arthritis (Rheumatoid)" },
     { value: "Heart Disease", label: "Heart Disease" },
+    { value: "High Blood Pressure", label: "High Blood Pressure" },
     { value: "Asthma", label: "Asthma"  },
     { value: "Heart attack / Cardiac Stent", label:  "Heart attack / Cardiac Stent"},
     { value: "Cancer", label:  "Cancer"},
@@ -1377,5 +1379,5 @@ export const elopeClinical = [ "Yes to self-mobile with No on additional risk fa
 
 export default {
     clientGenders, mfList, substanceAbuseOften, substanceAbuseUse, substanceList, clientEthnicityList,ynd, PatientProfileList, ppcList, acpList, finList, famList,section4List,encTypeList,hhhSiteList,behContractList, gadQuestList, gadDifList, crList, section5List, section6List,
-    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema
+    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema, clientPronouns
 }

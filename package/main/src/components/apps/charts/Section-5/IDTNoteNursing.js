@@ -11,38 +11,42 @@ const IDTNoteNursing = () => {
                 <b><Label>IDT NOTE - Nursing</Label></b>
             </Row>
             <Row>
-                <Col md="4">
+                <Col md="6">
                     <FormGroup>
                         <Label for="idtNursingAppointYN">Has the Member been able to attend appointments?</Label>
                         <Input type="textarea" id="idtNursingAppointYN" name="idtNursingAppointYN" />
                     </FormGroup>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                     <FormGroup>
                         <Label for="idtNursingAppoint">Specific appointment(s) Member would like to focus on attending?</Label>
                         <Input type="textarea" id="idtNursingAppoint" name="idtNursingAppoint" placeholder=""/><br/>
                     </FormGroup>
                 </Col>
-                <Col md="4">
+            </Row>
+            <Row>
+                <Col md="6">
                     <FormGroup>
                         <Label for="idtNursingProb">Specific problems the member is experiencing that are barriers to independent functioning?</Label>
                         <Input type="textarea" id="idtNursingProb" name="idtNursingProb" />
                     </FormGroup>
                 </Col>
-            </Row>
-            <Row>
-                <Col md="4">
+                <Col md="6">
                     <FormGroup>
                         <Label for="idtNursingGoal">What is the Member’s goal? Has it changed since initial eval/previous appointments?</Label>
                         <Input type="textarea" id="idtNursingGoal" name="idtNursingGoal" />
                     </FormGroup>
                 </Col>
-                <Col md="4">
+                
+            </Row>
+            <Row>
+                <Col md="6">
                     <FormGroup>
                         <Label for="idtNursingCompliant">Is Member compliant with meds/therapy?</Label>
                         <Input type="textarea" id="idtNursingCompliant" name="idtNursingCompliant" placeholder=""/><br/>
                     </FormGroup>
                 </Col>
+
             </Row>
             <Row>
                 <Col md="12">
