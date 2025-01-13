@@ -82,7 +82,67 @@ const Section6 = () => {
                                 </NavLink>
                             </NavItem>
                         </Nav>
-                        <TabContent activeTab={activeTab}>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '6' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('6');
+                                }}
+                            >
+                                Miscellaneous Documentation
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '7' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('7');
+                                }}
+                            >
+                                Lease
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '8' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('8');
+                                }}
+                            >
+                                Special Accommodations
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '9' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('9');
+                                }}
+                            >
+                                Old Certifications
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '10' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('10');
+                                }}
+                            >
+                                Outdate Forms and Consents
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === '11' ? 'active bg-transparent' : 'cursor-pointer'}
+                                onClick={() => {
+                                    toggle('11');
+                                }}
+                            >
+                                Inventory Forms
+                            </NavLink>
+                        </NavItem>  
+                        <TabContent activeTab={activeTab}>      
                             <TabPane tabId="1">
                                 <Row>
                                     <Col sm="12">
@@ -144,6 +204,15 @@ const Section6 = () => {
                                     <Col sm="12">
                                         <div className="p-4">
                                             <PersonalInventory/>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="6">
+                                <Row>
+                                    <Col sm="12">
+                                        <div className="p-4">
+                                            
                                         </div>
                                     </Col>
                                 </Row>
