@@ -1,7 +1,10 @@
 import React from "react";
 // import {BrowserRouter} from "react-router-dom";
 import {
-    Form
+    Col,
+    Form, FormGroup,
+    Input, Label,
+    Row,
 } from 'reactstrap';
 import { } from "../../../../data/arrayList";
 
@@ -167,15 +170,15 @@ const ReleasePHI = () => {
                     <b>Acknowledgement</b><br/>
                     I certify that I have received a copy of this privacy notice.  
                     <br/><br/>
-
-                    <b>Client</b><br/>
-                    <input type="text"></input>
-                    <br/><br/>
-
-                    <b>Staff</b><br/>
-                    <input type="text"></input>
-                    <br/><br/>
-
+                    
+                    <Row className="text-center">
+                        <Col md="12">
+                            <FormGroup>
+                                <Label for="patientRightsSig">Sign</Label>
+                                <Input type="text" id="patientRightsSig" name="patientRightsSig"></Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
                 </p>
                 
             </Form>

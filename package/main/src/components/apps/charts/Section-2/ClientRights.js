@@ -23,17 +23,11 @@ const ClientRights = () => {
                             })}
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md="6">
+                    <Row className="text-center">
+                        <Col md="12">
                             <FormGroup>
-                                <Label for="coiClientSign">Client</Label>
-                                <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label for="coiClientSign">Staff</Label>
-                                <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
+                                <Label for="patientRightsSig">Sign</Label>
+                                <Input type="text" id="patientRightsSig" name="patientRightsSig"></Input>
                             </FormGroup>
                         </Col>
                     </Row>

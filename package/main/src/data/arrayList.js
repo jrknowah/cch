@@ -87,7 +87,10 @@ export const PatientProfileList = [
         patientProfileTitle: "Interim Housing Program (IHP) Shelter Agreement", patientProfileDate: ""
     },
     {
-        patientProfileTitle: "Mail Form", patientProfileDate: ""
+        patientProfileTitle: "Mail Consent", patientProfileDate: ""
+    },
+    {
+        patientProfileTitle: "Termination Policy", patientProfileDate: ""
     },
     {
         patientProfileTitle: "Authorization for Use and/or Disclosure of Health Information", patientProfileDate: ""
@@ -142,18 +145,11 @@ export const ppcList = [
 
 export const section4List = [
     {
-        section4Title: "Case Notes", section4Date: ""
+        section4Title: "Notes", section4Date: ""
     },
     {
         section4Title: "Care Plan", section4Date: ""
-    },
-    {
-        section4Title: "Behavioral Agreement", section4Date: ""
-    },
-    {
-        section4Title: "Targeted Case Management Progress Notes", section4Date: ""
     }
-
 ];
 
 export const section5List = [
@@ -234,7 +230,7 @@ export const finList = [
     {finListTile: "Cal Works:", finListAmount: ""},
     {finListTile: "Employment:", finListAmount: ""},
     {finListTile: "Food Stamps:", finListAmount: ""},
-    {finListTile: "Widows Benefits:", finListAmount: ""},
+    {finListTile: "Widow Benefits:", finListAmount: ""},
     {finListTile: "Child Support:", finListAmount: ""},
     {finListTile: "General Relief:", finListAmount: ""},
     {finListTile: "SSI:", finListAmount: ""},
@@ -245,7 +241,7 @@ export const finList = [
     {finListTile: "Veterans Benefits:", finListAmount: ""},
     {finListTile: "State Disability:", finListAmount: ""},
     {finListTile: "Inheritance:", finListAmount: ""},
-    {finListTile: "Other", finListAmount: ""},
+    {finListTile: "Other Income", finListAmount: ""},
 ];
 
 export const encTypeList = ["","Summary","1 on 1","Group","Collaborative","Consult","Crisis","Intervention"];

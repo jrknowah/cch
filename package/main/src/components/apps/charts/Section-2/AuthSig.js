@@ -42,6 +42,11 @@ const AuthSig = () => {
     const consentModalToggle = () => {
         setConsentModalToggle(!consentModal);
     };
+    
+    const [preScreenModal, setPreScreenModalToggle] = useState(false);
+    const preScreenModalToggle = () => {
+        setPreScreenModalToggle(!preScreenModal);
+    };
 
     const [authModal, setAuthModalToggle] = useState(false);
     const authModalToggle = () => {
@@ -78,7 +83,7 @@ const AuthSig = () => {
             <Row>
                  <Col md="4">
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Client Orientation Information</CardTitle>
+                        <CardTitle tag="h5">Patient Orientation Information Sheet</CardTitle>
                         <Modal isOpen={coiModal} fade={false} toggle={newCoiModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <ClientOrientation />
@@ -100,7 +105,7 @@ const AuthSig = () => {
                 </Col>
                 <Col md="4">
                     <Card body className="text-center">
-                        <CardTitle tag="h5">Patient Rights</CardTitle>
+                        <CardTitle tag="h5">Client Rights</CardTitle>
                         <Modal isOpen={crModal} fade={false} toggle={crModalToggle.bind(null)} size="lg">
                             <ModalBody>
                                 <ClientRights />
@@ -140,31 +145,55 @@ const AuthSig = () => {
                             <Button onClick={setConsentModalToggle}>Open</Button>
                         </div>
                     </Card>
-                </Col>
-                
+                </Col>                
             </Row>
             <Row>
                 <Col md="4">
-                     <Card body className="text-center">
-                         <CardTitle tag="h5">Rules of Residence & Security Policy</CardTitle>
-                         <Modal isOpen={resModal} fade={false} toggle={resModalToggle.bind(null)} size="lg">
-                             <ModalBody>
-                                 <ResidencePolicy />
-                             </ModalBody>
-                             <ModalFooter>
-                                 <Button color="primary" onClick={resModalToggle.bind(null)}>
-                                     Submit
-                                 </Button>
-                                 <Button color="secondary" onClick={resModalToggle.bind(null)}>
-                                     Clear
-                                 </Button>
-                             </ModalFooter>
-                         </Modal>
-                         <div>
-                             <Button onClick={setResModalToggle}>Open</Button>
-                         </div>
-                     </Card>
+                    <Card body className="text-center">
+                        <CardTitle tag="h5">Housing Pre-Screen Form</CardTitle>
+                       <Modal isOpen={preScreenModal} fade={false} toggle={preScreenModalToggle.bind(null)} size="lg">
+                            <ModalBody>
+                                <ConsentForTreatment />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={preScreenModalToggle.bind(null)}>
+                                    Submit
+                                </Button>
+                                <Button color="secondary" onClick={preScreenModalToggle.bind(null)}>
+                                    Clear
+                                </Button>
+
+                            </ModalFooter>
+                        </Modal>
+                        <div>
+                            <Button onClick={setPreScreenModalToggle}>Open</Button>
+                        </div>
+                    </Card>
                 </Col>
+                <Col md="4">
+                    <Card body className="text-center">
+                        <CardTitle tag="h5">LA County Notice Of Private Practices</CardTitle>
+                        <Modal isOpen={agreeModal} fade={false} toggle={agreeModalToggle.bind(null)} size="lg">
+                            <ModalBody>
+                                <PrivacyPractice />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={agreeModalToggle.bind(null)}>
+                                    Submit
+                                </Button>
+                                <Button color="secondary" onClick={agreeModalToggle.bind(null)}>
+                                    Clear
+                                </Button>
+
+                            </ModalFooter>
+                        </Modal>
+                        <div>
+                            <Button onClick={setAgreeModalToggle}>Open</Button>
+                        </div>
+                    </Card>
+                </Col>
+            </Row>
+            <Row>
                 <Col md="4">
                      <Card body className="text-center">
                          <CardTitle tag="h5">Client PHI Release</CardTitle>
@@ -184,6 +213,27 @@ const AuthSig = () => {
                          </Modal>
                          <div>
                              <Button onClick={setPHIModalToggle}>Open</Button>
+                         </div>
+                     </Card>
+                </Col>
+                <Col md="4">
+                     <Card body className="text-center">
+                         <CardTitle tag="h5">Rules of Residence & Security Policy</CardTitle>
+                         <Modal isOpen={resModal} fade={false} toggle={resModalToggle.bind(null)} size="lg">
+                             <ModalBody>
+                                 <ResidencePolicy />
+                             </ModalBody>
+                             <ModalFooter>
+                                 <Button color="primary" onClick={resModalToggle.bind(null)}>
+                                     Submit
+                                 </Button>
+                                 <Button color="secondary" onClick={resModalToggle.bind(null)}>
+                                     Clear
+                                 </Button>
+                             </ModalFooter>
+                         </Modal>
+                         <div>
+                             <Button onClick={setResModalToggle}>Open</Button>
                          </div>
                      </Card>
                 </Col>
@@ -300,28 +350,7 @@ const AuthSig = () => {
                         </div>
                     </Card>
                 </Col>
-                <Col md="4">
-                    <Card body className="text-center">
-                        <CardTitle tag="h5">LA County Notice Of Private Practices</CardTitle>
-                        <Modal isOpen={agreeModal} fade={false} toggle={agreeModalToggle.bind(null)} size="lg">
-                            <ModalBody>
-                                <PrivacyPractice />
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={agreeModalToggle.bind(null)}>
-                                    Submit
-                                </Button>
-                                <Button color="secondary" onClick={agreeModalToggle.bind(null)}>
-                                    Clear
-                                </Button>
-
-                            </ModalFooter>
-                        </Modal>
-                        <div>
-                            <Button onClick={setAgreeModalToggle}>Open</Button>
-                        </div>
-                    </Card>
-                </Col>
+                
             </Row>
 
         </div>

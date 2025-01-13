@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, Table
+    Col, FormGroup, Label, Input, 
 } from 'reactstrap';
 import Select from "react-select"
 import {
@@ -70,42 +70,7 @@ const MedFaceSheet = () => {
             </Row>
             <Row>
                 <Col md="">
-                    <Table className="align-middle">
-                    <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Type of Appointment</th>
-                        <th>Transportation Provided?</th>
-                    </tr>
-                    </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="datetime-local" id="clientPayee" name="clientPayee" placeholder="Date & Time"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee" placeholder="Appointment Type"/></td>
-                            <td><Input input type="checkbox" id="clientPayee" name="clientPayee"/>  Yes/No?</td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="datetime-local" id="clientPayee" name="clientPayee" placeholder="Date & Time"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee" placeholder="Appointment Type"/></td>
-                            <td><Input input type="checkbox" id="clientPayee" name="clientPayee"/>  Yes/No?</td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="datetime-local" id="clientPayee" name="clientPayee" placeholder="Date & Time"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee" placeholder="Appointment Type"/></td>
-                            <td><Input input type="checkbox" id="clientPayee" name="clientPayee"/>  Yes/No?</td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="datetime-local" id="clientPayee" name="clientPayee" placeholder="Date & Time"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee" placeholder="Appointment Type"/></td>
-                            <td><Input input type="checkbox" id="clientPayee" name="clientPayee"/>  Yes/No?</td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="datetime-local" id="clientPayee" name="clientPayee" placeholder="Date & Time"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee" placeholder="Appointment Type"/></td>
-                            <td><Input input type="checkbox" id="clientPayee" name="clientPayee"/>  Yes/No?</td>
-                        </tr>
-                        </tbody>
-                    </Table>
+                    
                 </Col>
             </Row>
         </div>

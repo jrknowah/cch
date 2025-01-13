@@ -41,16 +41,10 @@ const ConsentForTreatment = () => {
 
                 <div className="form-body">
                     <Row className="text-center">
-                        <Col md="6">
+                        <Col md="12">
                             <FormGroup>
-                                <Label for="cftClientSign">Client Signature</Label>
-                                <Input type="text" id="cftClientSign" name="cftClientSign"></Input>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label for="cftStaffSign">Staff Signature</Label>
-                                <Input type="text" id="cftStaffSign" name="cftStaffSign"></Input>
+                                <Label for="consentTreatSig">Sign</Label>
+                                <Input type="text" id="consentTreatSig" name="consentTreatSig"></Input>
                             </FormGroup>
                         </Col>
                     </Row>
