@@ -12,7 +12,7 @@ const ClientOrientation = () => {
         <div >
             <Form>
 
-                <p>I have reviewed and signed:</p>
+                <center><p>I have reviewed and signed:</p></center>
 
                 {/*<Row>*/}
                     {ppcList.map((list) => {
@@ -35,16 +35,10 @@ const ClientOrientation = () => {
 
                 <div className="form-body">
                     <Row className="text-center">
-                        <Col md="6">
+                        <Col md="12">
                             <FormGroup>
-                                <Label for="coiClientSign">Client Signature</Label>
-                                <Input type="text" id="coiClientSign" name="coiClientSign"></Input>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label for="coiStaff">Signature of Staff Providing</Label>
-                                <Input type="text" id="coiStaff" name="coiStaff"></Input>
+                                <Label for="clientOrientInfoSig">Sign</Label>
+                                <Input type="text" id="clientOrientInfoSig" name="clientOrientInfoSig"></Input>
                             </FormGroup>
                         </Col>
                     </Row>

@@ -11,7 +11,6 @@ import {
 } from 'reactstrap';
 import {section6List} from "../../../../data/arrayList";
 import PersonalInventory from "./PersonalInventory";
-import IDTNoteNursing from './IDTNoteNursing';
 import IDTNoteCM from './IDTNoteCM';
 import IDTNoteProvider from './IDTNoteProvider';
 
@@ -63,19 +62,9 @@ const Section6 = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink
-                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('4');
-                                    }}
-                                >
-                                    IDT Note - Nursing
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
                                     className={activeTab === '5' ? 'active bg-transparent' : 'cursor-pointer'}
                                     onClick={() => {
-                                        toggle('5');
+                                        toggle('4');
                                     }}
                                 >
                                     Personal Inventory
@@ -191,15 +180,6 @@ const Section6 = () => {
                                 </Row>
                             </TabPane>
                             <TabPane tabId="4">
-                                <Row>
-                                    <Col sm="12">
-                                        <div className="p-4">
-                                            <IDTNoteNursing/>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="5">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">

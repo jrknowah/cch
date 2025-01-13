@@ -12,11 +12,13 @@ import {
 import {section5List} from "../../../../data/arrayList";
 import MedFaceSheet from "./MedFaceSheet";
 import MedScreening from "./MedScreening";
-// import MentalHealthScreen from "./MentalHealthScreen";
-// import PhysicalExam from "./PhysicalExam";
-// import AssessmentDiagnosis from "./AssessmentDiagnosis";
-// import OrderForm from "./OrderForm";
-// import NursingAdmission from "./NursingAdmission";
+import MentalHealthScreen from "./MentalHealthScreen";
+import PhysicalExam from "./PhysicalExam";
+import AssessmentDiagnosis from "./AssessmentDiagnosis";
+import OrderForm from "./OrderForm";
+import NursingAdmission from "./NursingAdmission";
+import ProgressNote from "./ProgressNote";
+import IDTNoteNursing from './IDTNoteNursing';
 
 const Medical = () => {
     const [activeTab, setActiveTab] = useState('1');
@@ -123,6 +125,16 @@ const Medical = () => {
                                     Progress Notes
                                 </NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    className={activeTab === '9' ? 'active bg-transparent' : 'cursor-pointer'}
+                                    onClick={() => {
+                                        toggle('10');
+                                    }}
+                                >
+                                    Nursing IDT
+                                </NavLink>
+                            </NavItem>
                         </Nav>
                         <TabContent activeTab={activeTab}>
                             <TabPane tabId="1">
@@ -172,7 +184,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            {/*<TabPane tabId="4">
+                            <TabPane tabId="4">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
@@ -221,7 +233,7 @@ const Medical = () => {
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
-                                            <PhysicalExam/>
+                                            <ProgressNote/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -230,11 +242,11 @@ const Medical = () => {
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
-                                            <PhysicalExam/>
+                                            <IDTNoteNursing/>
                                         </div>
                                     </Col>
                                 </Row>
-                            </TabPane> */}
+                            </TabPane>
                         </TabContent>
                     </Card>
                 </Col>

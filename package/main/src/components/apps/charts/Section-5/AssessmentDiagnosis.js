@@ -3,6 +3,10 @@ import {
     Row,
     Col, FormGroup, Label, Input
 } from 'reactstrap';
+import Select from "react-select";
+import {
+    medCond,
+} from "../../../../data/arrayList";
 
 const AssessmentDiagnosis = () => {
 
@@ -12,22 +16,15 @@ const AssessmentDiagnosis = () => {
             <Row className="text-center">
                 <Label>Assessment/Diagnosis</Label>
             </Row>
-            <Row>
-                <Col md="6">
+            <Row className="text-center">
+                <Col md="12">
                     <FormGroup>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 1" /><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 2"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 3"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 4"/><br/>
-                    </FormGroup>
-                </Col>
-                <Col md="6">
-                    <FormGroup>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 5"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 6"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 7"/><br/>
-                        <Input type="text" id="" name="" placeholder="Diagnosis 8"/><br/>
-                    </FormGroup>
+                        <Select id="clientMedConditions" name="clientMedConditions"
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={medCond}
+                        />
+                    </FormGroup>                   
                 </Col>
             </Row>
             <Row className="text-center">
@@ -47,23 +44,6 @@ const AssessmentDiagnosis = () => {
                         <Input type="text" id="clientDebt" name="clientDebt"/>
 
                     </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label>Medical Assessment Completed By:</Label>
-            </Row>
-            <Row>
-                <Col md="6">
-                <Label for="">Signature</Label>
-                <Input type="text" id="" name="" /><br/>
-                <Label for="">Type Name</Label>
-                <Input type="text" id="" name="" /><br/>
-                </Col>
-                <Col>
-                    <Label for="">Date</Label>
-                    <Input type="date" id="" name="" /><br/>
-                    <Label for="">Title</Label>
-                    <Input type="text" id="" name="" /><br/>
                 </Col>
             </Row>
         </div>

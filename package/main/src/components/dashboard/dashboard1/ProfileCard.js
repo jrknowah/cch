@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from 'reactstrap';
 
-import img1 from '../../../assets/images/users/user1.jpg';
+import img1 from '../../../assets/images/users/user2.jpg';
 import bgimg1 from '../../../assets/images/background/profile-bg.jpg';
 
 const ProfileCard = () => {
@@ -11,10 +11,10 @@ const ProfileCard = () => {
       <CardBody className="text-center mt-n5">
         <img src={img1} className="rounded-circle mt-n4" width="125" alt="avatar" />
         <CardTitle className="mb-1 mt-3" tag="h4">
-          Client 1
+          Jared Crest
         </CardTitle>
         <CardSubtitle className="mb-3 pb-1 px-4">
-         Percy 
+         Northridge 
         </CardSubtitle>
         <CardSubtitle className="mb-3 pb-1 px-4">
          Cliet ID: 12345
@@ -23,7 +23,7 @@ const ProfileCard = () => {
          02/27/1989
         </CardSubtitle>
         <CardSubtitle className="mb-3 pb-1 px-4">
-         Intake: 02/23/2023
+         Intake: 12/13/2023
         </CardSubtitle>
         {/* <Button color="primary" size="lg" className="rounded-pill">
           Follow

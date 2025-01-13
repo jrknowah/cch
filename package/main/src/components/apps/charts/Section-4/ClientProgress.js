@@ -12,7 +12,6 @@ import {
 import {section4List} from "../../../../data/arrayList";
 import EncounterNote from "./EncounterNote";
 import CarePlan from "./CarePlan";
-import BehaviorContract from "./BehaviorContract";
 
 const ClientProgress = () => {
     const [activeTab, setActiveTab] = useState('1');
@@ -46,7 +45,7 @@ const ClientProgress = () => {
                                         toggle('2');
                                     }}
                                 >
-                                    Encounter
+                                    Notes
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -57,16 +56,6 @@ const ClientProgress = () => {
                                     }}
                                 >
                                     Care Plan
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('4');
-                                    }}
-                                >
-                                    Behavior Contract
                                 </NavLink>
                             </NavItem>
                         </Nav>
@@ -115,13 +104,6 @@ const ClientProgress = () => {
                                         <div className="p-4">
                                             <CarePlan />
                                         </div>
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="4">
-                                <Row>
-                                    <Col>
-                                        <BehaviorContract />
                                     </Col>
                                 </Row>
                             </TabPane>

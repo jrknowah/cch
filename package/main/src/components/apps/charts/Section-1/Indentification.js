@@ -6,11 +6,12 @@ import {
     Nav,
     NavItem,
     NavLink,
-    TabContent, TabPane,
+    TabContent, TabPane, Form, FormGroup, Input 
 } from 'reactstrap';
-import {section1List} from "../../../../data/arrayList";
+//import ComponentCard from '../../../../components/ComponentCard';
+import ComponentCard from '../../../ComponentCard'
+import {} from "../../../../data/arrayList";
 import ClientFace from "./ClientFace";
-import CalAim from "./CalAim";
 
 const Indentification = () => {
     const [activeTab, setActiveTab] = useState('1');
@@ -33,7 +34,7 @@ const Indentification = () => {
                                         toggle('1');
                                     }}
                                 >
-                                    Face Sheet
+                                    Client Face Sheet
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -43,7 +44,7 @@ const Indentification = () => {
                                         toggle('2');
                                     }}
                                 >
-                                    Client Face Sheet
+                                    Identification
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -53,7 +54,17 @@ const Indentification = () => {
                                         toggle('3');
                                     }}
                                 >
-                                    CalAIM Program Consent
+                                    Medical Identification
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
+                                    onClick={() => {
+                                        toggle('4');
+                                    }}
+                                >
+                                    Income Verification
                                 </NavLink>
                             </NavItem>
                         </Nav>
@@ -61,46 +72,116 @@ const Indentification = () => {
                             <TabPane tabId="1">
                                 <Row>
                                     <Col sm="12">
-                                        <div className="p-4">
-                                            <div className="steamline position-relative ms-4 mt-0">
-                                                <div className="sl-item my-3 pb-3">
-                                                    <div className="sl-left float-start text-center rounded-circle text-white ms-n3 me-3 bg-success">
-                                                    </div>
-                                                    <div className="sl-right ps-4">
-                                                        <div>
-                                                            {section1List.map((list) => {
-                                                                if (list.s1ListDate==="") {
-                                                                    return (
-                                                                        <p><i className="bi-check-circle" style={{ color: "red" }} id={list.s1ListTitle}>{list.s1ListTitle}</i></p>
-                                                                    );
-                                                                }
-                                                                return (
-                                                                    <p><i className="bi-check-circle-fill" style={{ color: "green" }} id={list.s1ListTitle}>{list.s1ListTitle}</i></p>
-                                                                );
-                                                            })}
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
+                                        <ClientFace/>
                                     </Col>
                                 </Row>
                             </TabPane>
                             <TabPane tabId="2">
                                 <Row>
-                                    <Col sm="12">
-                                        <div className="p-4">
-                                            <ClientFace/>
-                                        </div>
+                                    <Col md="4">
+                                        <ComponentCard title="Identification Card"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                    <Col md="4">
+                                        <ComponentCard title="Driver's License"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                    <Col md="4">
+                                        <ComponentCard title="Social Security Card"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md="4">
+                                        <ComponentCard title="Permanent Resident Alien Card"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                    <Col md="4">
+                                        <ComponentCard title="Other"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
                                     </Col>
                                 </Row>
                             </TabPane>
                             <TabPane tabId="3">
                                 <Row>
-                                    <Col sm="12">
+                                    <Col md="4">
+                                        <ComponentCard title="Medi-Cal Benefits"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                    <Col md="4">
+                                        <ComponentCard title="Medicare"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                    <Col md="4">
+                                        <ComponentCard title="Other"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md="4">
+                                        <ComponentCard title="TB Clearance"  >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>                                
+                                </Row>
+                            </TabPane>
+                            <TabPane tabId="4">
+                                <Row>
+                                <Col sm="12">
                                         <div className="p-4">
-                                            <CalAim />
+                                            <Col sm="12" md="6">
+                                                <ComponentCard title="Select File to Upload" >
+                                                    <Form>
+                                                    <FormGroup>
+                                                        <Input type="file" name="file" id="exampleFile" />
+                                                    </FormGroup>
+                                                    </Form>
+                                                </ComponentCard>
+                                            </Col>
                                         </div>
                                     </Col>
                                 </Row>

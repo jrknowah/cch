@@ -660,10 +660,6 @@ const MedScreening = () => {
             </Row>
             <Row>
                 <Col md="4">
-                    <Label>Date last tested for a HIV?</Label><br/>
-                    <Input type="date" id="clientHIVDate" name="clientHIVDate"/>
-                </Col>
-                <Col md="4">
                     <Label for="">Ever had a STD/STI?(Check all that apply):</Label><br/>
                     <FormGroup>
                         <Select id="clientSTDStatus" name="clientSTDStatus"

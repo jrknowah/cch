@@ -1,25 +1,27 @@
 import React from 'react';
 import { Input, Table, Button } from 'reactstrap';
-import user1 from '../../../assets/images/users/user1.jpg';
-import user2 from '../../../assets/images/users/user2.jpg';
+import user1 from '../../../assets/images/users/user2.jpg';
+import user2 from '../../../assets/images/users/user1.jpg';
 import user3 from '../../../assets/images/users/user3.jpg';
 import user4 from '../../../assets/images/users/user4.jpg';
 import user5 from '../../../assets/images/users/user5.jpg';
 import DashCard from '../dashboardCards/DashCard';
+import {hhhSiteList} from '../../../data/arrayList';
 
 const tableData = [
   {
     isActive: 'active',
     clientAvatar: user1,
-    clientName: 'Client 1',
-    clientSite: 'Percy',
+    clientName: 'Jared Crest',
+    clientSite: 'Northridge',
     clientID: '1234545',
-  },
+  }
+  ,
   {
     isActive: '',
     clientAvatar: user2,
     clientName: 'Client 2',
-    clientSite: 'Cabrillo',
+    clientSite: 'Heritage House',
     clientID: '1234545',
   },
   {
@@ -45,9 +47,30 @@ const tableData = [
   },
   {
     isActive: '',
-    clientAvatar: user1,
+    // clientAvatar: user6,
     clientName: 'Client 6',
-    clientSite: 'Arroyo',
+    clientSite: '104th',
+    clientID: '1234545',
+  },
+  {
+    isActive: '',
+    // clientAvatar: user7,
+    clientName: 'Client 7',
+    clientSite: '97th',
+    clientID: '1234545',
+  },
+  {
+    isActive: '',
+    // clientAvatar: user8,
+    clientName: 'Client 8',
+    clientSite: '238th',
+    clientID: '1234545',
+  },
+  {
+    isActive: '',
+    // clientAvatar: user9,
+    clientName: 'Client 9',
+    clientSite: 'Pacific',
     clientID: '1234545',
   },
 ];
@@ -57,11 +80,10 @@ const ProjectTable = () => {
     <DashCard
       title="Client Search"
       actions={
-        <Input type="select" className="form-select">
-          <option value="0"></option>
-          <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
+        <Input type="select" className="form-select" id="clientSearchSite">
+          {hhhSiteList.map((sitelist) => (
+              <option value={sitelist}>{sitelist}</option>
+          ))}
         </Input>
       }
     >
