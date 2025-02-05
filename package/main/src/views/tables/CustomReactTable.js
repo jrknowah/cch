@@ -59,7 +59,7 @@ const CustomReactTable = () => {
             <i className="fa fa-edit" />
           </Button>
           {/* use this button to remove the data row */}
-          {/* <Button
+          {/*]] <Button
 							onClick={() => {
 								let newdata = data2;
 								newdata.find((o, i) => {

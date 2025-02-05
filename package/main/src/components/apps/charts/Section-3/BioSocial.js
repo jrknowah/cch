@@ -1,10 +1,10 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form, Table
+    Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form
 } from 'reactstrap';
 import Select from 'react-select';
-import {assistList, finList, gfp, ynd, housingList} from "../../../../data/arrayList";
+import {assistList, finList, gfp, ynd, housingList, functionalCommunication,ambulatoryStatus} from "../../../../data/arrayList";
 import Profile from "../../../widgets/Profile";
 
 
@@ -240,110 +240,12 @@ const BioSocial = () => {
                     </Input>
                 </Col>
             </Row>
-            {/* <Row>
-                <Col md="4" >
-                    <FormGroup>
-                        <Label for="clientNumOfHousehold">Total Number in Household</Label>
-                        <Input type="text" name="clientNumOfHousehold" id="clientNumOfHousehold" />
-                    </FormGroup>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <Label for="clientNumOfAdultsHoused">Number of adults to be housed?</Label>
-                        <Input type="text" name="clientNumOfAdultsHoused" id="clientNumOfAdultsHoused" />
-                    </FormGroup>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <Label for="clientEmployed">Number of children to be housed?</Label>
-                        <Input type="text" name="clientNumOfChildrenHoused" id="clientNumOfChildrenHoused" />
-                    </FormGroup>
-                </Col>
-            </Row> */}
             <Row className="text-center">
-                <Label for="clientContactInfo">Medical</Label>
-            </Row>         
-            <Row>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Physician</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Facility</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Address</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="1">
-                    <Label for="clientContactInfo">State</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Zip Code</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="1">
-                    <Label for="clientContactInfo">Phone </Label>
-                    <Input type="tel" name="customcheck1" />
-                </Col>
-            </Row>
-            <Row>
-                <Col  md="4">
-                    <Label for="clientAppointment">LAST APPOINTMENT</Label>
-                    <Input type="datetime-local" id="clientLastAppt" name="clientLastAppt" />
-                </Col>
-                <Col  md="4">
-                    <Label for="clientAppointment">NEXT APPOINTMENT</Label>
-                    <Input type="datetime-local"id="clientNextAppt" name="clientNextAppt" />
-                </Col>
-
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>PCP/Specialty Type</th>
-                            <th>Doctor’s Name</th>
-                            <th>Address</th>
-                            <th>Phone Number</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                            <td><Input input type="text" id=" " name=" "/></td>
-                        </tr>
-                        </tbody>
-                    </Table>
+                <Col md="12" >
+                    <FormGroup>
+                        <Label for="clientHousingSummary" align>Housing Summary Notes</Label>
+                        <Input type="textbox" name="clientHousingSummary" id="clientHousingSummary" />
+                    </FormGroup>
                 </Col>
             </Row>
             <Row>
@@ -351,75 +253,34 @@ const BioSocial = () => {
                     <b><Label>FUNCTIONAL SCREENING</Label></b>
                 </Col>
             </Row>
-            <Row>
+            <Row className="text-center">
                 <Col>
                     <Label>Ambulatory Status</Label>
                 </Col>
             </Row>
-            <Row>
+            <Row >
                 <Col md="4" >
-                    <Label for="clientContactInfo">Walking (If assistance is needed specify below ifnot skip to next section: Activities of Daily Living)
-
-                    </Label>
+                    <Label for="clientAmbulatory">Walking(Check All That Apply)</Label>
                 </Col>
-                <Col md="2">
+                <Col md="6" >
                     <FormGroup>
-                        <Input type="select" id="clientEmployed" name="clientEmployed" >
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
+                        <Select
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={ambulatoryStatus}
+                        />
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
+            <Row className="text-center">
                 <Col md="12" >
                     <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Limb Braces</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Cane</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Walker</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Wheel Chair (If Yes, please answer question below):</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Medicare</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Other (If yes, specify)</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Private</Label>
-                        </FormGroup>
+                        <Label for="clientAmbulatorySummary" align>Ambulatory Status Notes</Label>
+                        <Input type="textarea" name="clientAmbulatorySummary" id="clientAmbulatorySummary" />
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                <Col md={{ size: 2, offset: 3}}>
-                    <Label>Needs assistance in transferring in & out of bed?</Label>
-                </Col>
-                <Col md="1">
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md={{ size: 2, offset:2}}>
-                    <Input type="text" id="clientEmployed" name="clientEmployed"/>
-                </Col>
-            </Row>
-            <Row>
+            <Row className="text-center">
                 <Col>
                     <Label>Activities of Daily Living</Label>
                 </Col>
@@ -527,57 +388,40 @@ const BioSocial = () => {
             <Row>
                 <br/>
             </Row>
-            <Row>
-                <Col md="3">
+            <Row className="text-center">
+                <Col md="12">
                     If any assistance (Partial and/or Complete) please specify:
                 </Col>
-                <Col md="3">
-                    <Input type="textarea" name="clientEnrollWhere" id="clientEnrollWhere" />
+            </Row>
+            <Row className="text-center">
+                <Col md="12">
+                    <Input type="textarea" name="clientFunctionalAssist" id="clientFunctionalAssist" />
                 </Col>
             </Row>
             <Row>
                 <br/>
             </Row>
-            <Row>
+            <Row className="text-center">
                 <Col>
                     <Label>Communication & Language</Label>
                 </Col>
             </Row>
-            <Row>
+            <Row >
                 <Col md="4" >
-                    <Label for="clientContactInfo">Does patient communicate / express self “VERBALLY” (If no, please answerquestions below)
-
+                    <Label for="clientGovHousingApp">How does patient communicate / express themselves?
                     </Label>
                 </Col>
-                <Col md="2">
+                <Col md="6" >
                     <FormGroup>
-                        <Input type="select" id="clientEmployed" name="clientEmployed" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
+                        <Select
+                            closeMenuOnSelect={false}
+                            isMulti
+                            options={functionalCommunication}
+                        />
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                <Col md="12" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Expresses by facial expressions or gestures</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Expresses by sounds or movements</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Uses a talking device</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
+            <Row className="text-center"> 
                 <Col md="12" >
                     <FormGroup>
                         <FormGroup>
@@ -585,19 +429,6 @@ const BioSocial = () => {
                             <Input type="textarea" name="customcheck1" />
                         </FormGroup>
                     </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <FormGroup>
-                        <FormGroup>
-                            <Label check>Bio-Social Assessment Completed By:</Label>
-                            <Input type="text" name="customcheck1" />
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-                <Col md="6">
-
                 </Col>
             </Row>
         </div>

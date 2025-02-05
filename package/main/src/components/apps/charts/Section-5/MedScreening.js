@@ -1,34 +1,25 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, Table
+    Col, FormGroup, Label, Input, Table, Button
 } from 'reactstrap';
 import Select from 'react-select';
 import {
-    allergyList,
-    medCond,
+    // allergyList,
+    // medCond,
     medCond2, medCond3,
-    medRisk2, medCond4, medCond5
+    medCond4, medCond5, medicationData
 } from "../../../../data/arrayList";
-// import TableAdd from "./Table";
+import ComponentCard from "../../../ComponentCard";
+
+
 
 const MedScreening = () => {
 
     return (
 
         <div className="form-body">
-            <Row>
-
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientPCP">Do you have a Primary Care Physician(PCP)?</Label>
-                        <Input type="select" id="clientPCP" name="clientPCP" >
-                            <option></option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
+            {/* <Row>
                 <Col md="4">
                     <FormGroup>
                         <Label for="clientPCPName">Physician Name</Label>
@@ -41,15 +32,14 @@ const MedScreening = () => {
                         <Input type="tel" id="clientPCPFacility" name="clientPCPFacility" />
                     </FormGroup>
                 </Col>
-                
-            </Row>
-            <Row>
                 <Col md="4">
                     <FormGroup>
                         <Label for="clientPCPPhone">Phone Number:</Label>
                         <Input type="tel" id="clientPCPPhone" name="clientPCPPhone" />
                     </FormGroup>
-                </Col>
+                </Col>                
+            </Row>
+            <Row>
                 <Col md="4">
                     <FormGroup>
                         <Label for="clientPCPLastAppt">Last Appointment</Label>
@@ -62,18 +52,8 @@ const MedScreening = () => {
                         <Input input type="datetime-local" id="clientPCPNextAppt" name="clientPCPNextAppt" placeholder="Date & Time"/>
                     </FormGroup>
                 </Col>
-            </Row>
+            </Row> 
             <Row>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientEmpIntr">Are you interested in obtaining employment?</Label>
-                        <Input type="select" id="clientEmpIntr" name="clientEmpIntr" >
-                            <option></option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
                 <Col md="4">
                     <FormGroup>
                         <Label for="clientApptTransport">Transportation to you next appointment?</Label>
@@ -168,30 +148,10 @@ const MedScreening = () => {
                         </tbody>
                     </Table>
                 </Col>
-            </Row>
+            </Row>*/}
             <Row className="text-center">
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="">List ALL allergies:</Label>
-                        <Select id="clientAllergy" name="clientAllergy"
-                            closeMenuOnSelect={false}
-                            isMulti
-                            options={allergyList}
-                        />
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <Label for="">Medical Conditions</Label>
-                    <FormGroup>
-                        <Select id="clientMedConditions" name="clientMedConditions"
-                            closeMenuOnSelect={false}
-                            isMulti
-                            options={medCond}
-                        />
-                    </FormGroup>                   
-                </Col>
-                <Col md="4">
-                    <Label for="">Use any of the following medical devices and/or need extra assistance by staff?</Label>
+                <Col md="6">
+                    <Label for="">Do you need any of the following devices/assistance?</Label>
                     <FormGroup>
                         <Select id="clientMedConditions2" name="clientMedConditions2"
                             closeMenuOnSelect={false}
@@ -200,25 +160,7 @@ const MedScreening = () => {
                         />
                     </FormGroup>                   
                 </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <Label for="">Are you at risk for alcohol withdrawal or seizures?</Label>
-                    <Input type="select" id="clientAlcoholRisk" name="clientAlcoholRisk" >
-                        <option></option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="4">
-                    <Label for="">Were you getting medications in the hospital with alcohol withdrawal?</Label>
-                    <Input type="select" id="clientAlcoholRiskMed" name="clientAlcoholRiskMed" >
-                        <option></option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Have you ever been diagnosis with following?</Label>
                     <FormGroup>
                         <Select id="clientHepAB" name="clientHepAB"
@@ -227,93 +169,28 @@ const MedScreening = () => {
                             options={medCond3}
                         />
                     </FormGroup>  
-                </Col>                
+                </Col>   
             </Row>
             <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Other Medical Conditions(Not Mention)</th>
-                            <th>Type</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family History</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name="" placeholder=""/></td>
-                                <td>
-                                    <Input type="select" id="" name="" >
-                                        <option> </option>
-                                        <option>Self</option>
-                                        <option>Family Hx</option>
-                                    </Input>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                <Col md="6">
+                    <Label for="">Are you at risk for alcohol withdrawal or seizures?</Label>
+                    <Input type="select" id="clientAlcoholRisk" name="clientAlcoholRisk" >
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </Input>
                 </Col>
+                <Col md="6">
+                    <Label for="">Were you getting medications in the hospital with alcohol withdrawal?</Label>
+                    <Input type="select" id="clientAlcoholRiskMed" name="clientAlcoholRiskMed" >
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </Input>
+                </Col>             
             </Row>
-
+            <Row>
+            </Row>
             <hr/>
             <Row>
                 <Col className="text-center">
@@ -321,11 +198,11 @@ const MedScreening = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Your last TB skin test (PPD) or chest x-ray:</Label><br/>
                     <Input type="date" id="clientLastTBTest" name="clientLastTBTest" />
                 </Col>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Results:</Label><br/>
                     <Input type="select" id="clientLastTBTestResults" name="clientLastTBTestResults" >
                         <option> </option>
@@ -334,7 +211,9 @@ const MedScreening = () => {
                         <option>Unknown</option>
                     </Input>
                 </Col>
-                <Col md="4">
+            </Row>
+            <Row>
+                <Col md="6">
                     <Label for="">If positive, did you receive treatment:</Label><br/>
                     <Input type="select" id="clientLastTBTestResultsTreatment" name="clientLastTBTestResultsTreatment" >
                         <option> </option>
@@ -342,17 +221,14 @@ const MedScreening = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-
-            </Row>
-            <Row>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Outcome of Treatment:</Label><br/>
-                    <Input type="textarea" id="clientLastTBTestResultsTreatmentOutcome" name="clientLastTBTestResultsTreatmentOutcome" />
+                    <Input type="text" id="clientLastTBTestResultsTreatmentOutcome" name="clientLastTBTestResultsTreatmentOutcome" />
                 </Col>                
 
             </Row>
             <Row>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Do you have a cough lasting longer than 3 wks?</Label><br/>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -360,7 +236,7 @@ const MedScreening = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                     <Label for="">Are you coughing up blood?</Label><br/>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -368,88 +244,26 @@ const MedScreening = () => {
                         <option>No</option>
                     </Input>
                 </Col>                
-                <Col md="3">
-                    <Label for="">If yes to either above, please complete the following questions:</Label><br/>
-                </Col>
-                <Col md="3">
-                    <Label for="">Have you had new severe night sweats in the last month?</Label><br/>
-                    <Input type="text" id="" name="" />
-                </Col>
-                <Col md="3">
-                    <Label for="">Have you had weight loss without reason in the last couple months?</Label><br/>
-                    <Input type="text" id="" name="" />
-                </Col>
-                <Col md="3">
-                    <Label for="">Have you had high fevers without reason in the last few weeks?</Label><br/>
-                    <Input type="text" id="" name="" />
-                </Col>
-            </Row>
-            <Row>
-                <Label for=""><b>(If yes to A AND one of the questions in B then, member needs a CXR)</b></Label>
-            </Row>
-
-            <hr/>
-            <Row>
-                <Col className="text-center">
-                    <b><Label>MEDICATION</Label></b>
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-center" >
-                    <b><Label>Prescription Medications</Label></b>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Name of Medication</th>
-                            <th>Dose / Frequency</th>
-                            <th>Effectiveness/Side Effects</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-            <Row>
-                {/* <TableAdd /> */}
             </Row>
             <Row>
                 <Col md="4">
-                    <Label>Have you currently been prescribed a medication that you are not currently taking (If Yes, provide further information below)</Label><br/>
+                    <Label for="">Have you had new severe night sweats in the last month?</Label><br/>
+                    <Input type="select" id="" name="" >
+                        <option> </option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </Input>
+                </Col>
+                <Col md="4">
+                    <Label for="">Have you had weight loss without reason in the last couple months?</Label><br/>
+                    <Input type="select" id="" name="" >
+                        <option> </option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </Input>
+                </Col>
+                <Col md="4">
+                    <Label for="">Have you had high fevers without reason in the last few weeks?</Label><br/>
                     <Input type="select" id="" name="" >
                         <option> </option>
                         <option>Yes</option>
@@ -457,97 +271,87 @@ const MedScreening = () => {
                     </Input>
                 </Col>
             </Row>
+            <hr/>
             <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Name of Medication</th>
-                            <th>Dose / Frequency</th>
-                            <th>Effectiveness/Side Effects</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        </tbody>
-                    </Table>
+                <Col className="text-center">
+                    <b><Label>MEDICATION</Label></b>
                 </Col>
             </Row>
-
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/* Prescription Medication Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                subtitle={
+                    <p>
+                    <Button color="primary" size="sm">Add Medication</Button>
+                    </p>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dosage</th>
+                        <th>Side Effects</th>
+                        <th>Currenly Taking?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item[0]}</td>
+                            <td>{item[1]}</td>
+                            <td>{item[2]}</td>
+                            <td>{item[3]}</td>
+                        </tr>
+                        ))}
+                
+                    </tbody>
+                </Table>
+                </ComponentCard>  
+            </Row>
             <hr/>
             <Row>
                 <Col md="" className="text-center">
                     <b><Label>SURGICAL / HOSPITALIZATION HISTORY</Label><br/></b>
                 </Col>
             </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Type of Surgery</th>
-                            <th>Date</th>
-                            <th>Previous Hospitalizations</th>
-                            <th>Date</th>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/* Hospitalizations Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                subtitle={
+                    <p>
+                    <Button color="primary" size="sm">Add Surgery/Hospitalization</Button>
+                    </p>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Type of Surgery</th>
+                        <th>Date</th>
+                        <th>Previous Hospitalizations</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item[0]}</td>
+                            <td>{item[1]}</td>
+                            <td>{item[2]}</td>
+                            <td>{item[3]}</td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="date" id="" name=""/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Col>
+                        ))}
+                
+                    </tbody>
+                </Table>
+                </ComponentCard>  
             </Row>
             
             <hr />
@@ -644,7 +448,7 @@ const MedScreening = () => {
                     </Input>
                 </Col>
                 <Col md="4">
-                    <Label>Do you have any of the following Risk factors?</Label><br/>
+                    <Label>Risk factors(Check all that applies)</Label><br/>
                     <FormGroup>
                         <Select id="clientRiskFactors" name="clientRiskFactors"
                             closeMenuOnSelect={false}
@@ -669,17 +473,8 @@ const MedScreening = () => {
                         />
                     </FormGroup>
                 </Col>
-                <Col md="4">
-                    <Label for="">Preventing Sexually Transmitted Diseases:</Label><br/>
-                    <FormGroup>
-                        <Select id="clientSTDPrevent" name="clientSTDPrevent"
-                            closeMenuOnSelect={false}
-                            isMulti
-                            options={medRisk2}
-                        />
-                    </FormGroup>
-                </Col>
             </Row>
+            <Button color="primary" size="lg">Save</Button>
         </div>
     );
 };

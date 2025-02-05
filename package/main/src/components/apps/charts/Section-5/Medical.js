@@ -12,13 +12,15 @@ import {
 import {section5List} from "../../../../data/arrayList";
 import MedFaceSheet from "./MedFaceSheet";
 import MedScreening from "./MedScreening";
-import MentalHealthScreen from "./MentalHealthScreen";
-import PhysicalExam from "./PhysicalExam";
-import AssessmentDiagnosis from "./AssessmentDiagnosis";
-import OrderForm from "./OrderForm";
+// import MentalHealthScreen from "./MentalHealthScreen";
+// import PhysicalExam from "./PhysicalExam";
+// import AssessmentDiagnosis from "./AssessmentDiagnosis";
+// import OrderForm from "./OrderForm";
 import NursingAdmission from "./NursingAdmission";
 import ProgressNote from "./ProgressNote";
 import IDTNoteNursing from './IDTNoteNursing';
+
+
 
 const Medical = () => {
     const [activeTab, setActiveTab] = useState('1');
@@ -65,17 +67,7 @@ const Medical = () => {
                                     Nursing Screening
                                 </NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('4');
-                                    }}
-                                >
-                                    Mental Health Screening
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
+                            {/* <NavItem>
                                 <NavLink
                                     className={activeTab === '5' ? 'active bg-transparent' : 'cursor-pointer'}
                                     onClick={() => {
@@ -104,7 +96,7 @@ const Medical = () => {
                                 >
                                     Order Form
                                 </NavLink>
-                            </NavItem>
+                            </NavItem> */}
                             <NavItem>
                                 <NavLink
                                     className={activeTab === '8' ? 'active bg-transparent' : 'cursor-pointer'}
@@ -127,9 +119,9 @@ const Medical = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink
-                                    className={activeTab === '9' ? 'active bg-transparent' : 'cursor-pointer'}
+                                    className={activeTab === '11' ? 'active bg-transparent' : 'cursor-pointer'}
                                     onClick={() => {
-                                        toggle('10');
+                                        toggle('11');
                                     }}
                                 >
                                     Nursing IDT
@@ -184,16 +176,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            <TabPane tabId="4">
-                                <Row>
-                                    <Col sm="12">
-                                        <div className="p-4">
-                                            <MentalHealthScreen/>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                             <TabPane tabId="5">
+                            {/* <TabPane tabId="5">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
@@ -202,7 +185,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            <TabPane tabId="6">
+                             <TabPane tabId="6">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">
@@ -210,7 +193,7 @@ const Medical = () => {
                                         </div>
                                     </Col>
                                 </Row>
-                            </TabPane>
+                            </TabPane> 
                             <TabPane tabId="7">
                                 <Row>
                                     <Col sm="12">
@@ -219,7 +202,7 @@ const Medical = () => {
                                         </div>
                                     </Col>
                                 </Row>
-                            </TabPane>
+                            </TabPane>*/}
                             <TabPane tabId="8">
                                 <Row>
                                     <Col sm="12">
@@ -238,7 +221,7 @@ const Medical = () => {
                                     </Col>
                                 </Row>
                             </TabPane>
-                            <TabPane tabId="10">
+                            <TabPane tabId="11">
                                 <Row>
                                     <Col sm="12">
                                         <div className="p-4">

@@ -1,24 +1,30 @@
-import React, {useState} from "react";
+// import React, {useState} from "react";
+import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, InputGroup, InputGroupText, Table
+    Col, FormGroup, Label, Input, InputGroup, InputGroupText, Table, Button
 } from 'reactstrap';
 import Select from 'react-select';
-import TagsInput from "react-tagsinput";
+// import TagsInput from "react-tagsinput";
 import {
     abdomen,
     ambulation, communication,
     edema, elimMethUsed, enteral, hearingVision,
-    historyOf, initialSkin, mobDevices, nutrHyd, oral,
+    historyOf, mobDevices, nutrHyd, oral,
     painHistory,
     pList,
-    rList, skinRisk,
+    rList,
     tList,
     transfers,
-    weightBearing
+    weightBearing, locList, orientedToList, orientedToRoomList, clientPain,
+    lungSounds, adlLevel,
+    bowelBladder,
+    physicalFuncStat
 } from "../../../../data/arrayList";
 import 'react-tagsinput/react-tagsinput.css';
 import '../../../../views/form-pickers/tagselect.scss';
+import front from'./front.png'
+import rear from'./rear.png'
 
 
 const CustomClearText = () => 'clear all';
@@ -47,1062 +53,739 @@ const ClearIndicatorStyles = (base, state) => ({
 
 
 
-const NursingAdmission = () => {
-    const [regularTags, setRegularTags] = useState([]);
+const NursingAdmission = () => /* const [regularTags, setRegularTags] = useState([]);*/ /* const handleRegularTags = (tags) => {*/ /*     setRegularTags(tags);*/ /* };*/ /* const [foodAllergies, setFoodAllergies] = useState([]);*/ /* const handleFoodAllergies = (foodA) => {*/ /*     setFoodAllergies(foodA);*/ /* };*/ /* const [otherAllergies, setOtherAllergies] = useState([]);*/ /* const handleOtherAllergies = (otherA) => {*/ /*     setOtherAllergies(otherA);*/ /* };*/ (
 
-    const handleRegularTags = (tags) => {
-        setRegularTags(tags);
-    };
-    const [foodAllergies, setFoodAllergies] = useState([]);
+    <div className="form-body">
+        <Row className="text-center">
+            <Label>NURSING ADMISSION INTAKE</Label>
+        </Row>
+        <Row>
+            <Col md="4">
+                <Label for="">LOC</Label>
+                <Select
+                    closeMenuOnSelect={false}
+                    components={{ ClearIndicator }}
+                    styles={{ clearIndicator: ClearIndicatorStyles }}
+                    // defaultValue={{}}
+                    isMulti
+                    options={locList} />
+            </Col>
+            <Col md="4">
+                <Label for="">Oriented to:</Label>
+                <Select
+                    closeMenuOnSelect={false}
+                    components={{ ClearIndicator }}
+                    styles={{ clearIndicator: ClearIndicatorStyles }}
+                    // defaultValue={{}}
+                    isMulti
+                    options={orientedToList} />
+            </Col>
+            <Col md="4">
+                <Label for="">Oriented To Room/Routine:</Label>
+                <Select
+                    closeMenuOnSelect={false}
+                    components={{ ClearIndicator }}
+                    styles={{ clearIndicator: ClearIndicatorStyles }}
+                    // defaultValue={{}}
+                    isMulti
+                    options={orientedToRoomList} />
+            </Col>
+        </Row>
+        <Row>
+            <Col className="text-center">
+                <b><Label>Cardio-Pulmonary</Label></b>
+            </Col>
+        </Row>
+        <Row>
+            {/*Cardio-Pulmonary*/}
+            <Col md="2">
+                <br />
+                <FormGroup>
+                    <InputGroup>
+                        <InputGroupText>T</InputGroupText>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <br />
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={tList} />
+                </FormGroup>
+            </Col>
+            <Col md="2">
+                <br />
+                <FormGroup>
+                    <InputGroup>
+                        <InputGroupText>P =</InputGroupText>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <br />
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={pList} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="2">
+                <FormGroup>
+                    <InputGroup>
+                        <InputGroupText>R =</InputGroupText>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={rList} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <FormGroup>
+                    <InputGroup>
+                        <InputGroupText>Blood Pressure</InputGroupText>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <FormGroup>
+                    <Label for="">History of:</Label>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={historyOf} />
+                </FormGroup>
+            </Col>
+            <Col md="4">
+                Edema
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={edema} />
+                </FormGroup>
+            </Col>
+            <Col md="4">
+                <Label>If Edema Present Specify Location:</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
 
-    const handleFoodAllergies = (foodA) => {
-        setFoodAllergies(foodA);
-    };
-    const [otherAllergies, setOtherAllergies] = useState([]);
+        </Row>
+        <Row>
+            <Col md="3">
+                <FormGroup>
+                    <Label for="">Pain Level:</Label>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={clientPain} />
+                </FormGroup>
+            </Col>
+            <Col md="4">
+                <FormGroup>
+                    <Label for="">Pain History/Frequency:</Label>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={painHistory} />
+                </FormGroup>
+            </Col>
+            <Col md="4">
+                <FormGroup>
+                    <Label for="">Lung Sounds:</Label>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={lungSounds} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <FormGroup>
+                    <Label for="">Bowel & Bladder </Label>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={bowelBladder} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Catheter Present Type</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Catheter Size</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Diagnosis for use:</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input placeholder="" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <Label>Elimination Method(s)</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={elimMethUsed} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Last Bowel Movement</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input type="date" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Last Voiding</Label>
+                <FormGroup>
+                    <InputGroup>
+                        <Input type="date" />
+                    </InputGroup>
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Abdomen</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={abdomen} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <Label>Physical & Functional Status</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={physicalFuncStat} />
+                </FormGroup>
+            </Col>
+            <Col md="3" className="text-center">
+                <FormGroup>
+                    <Label for="clientPhysicalFuncNotes">Addtional Notes</Label>
+                    <Input type="textarea" id="clientPhysicalFuncNotes" name="clientPhysicalFuncNotes" />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Weight-Bearing:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={weightBearing} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Transfers:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={transfers} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <Label>Ambulation:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={ambulation} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Mobility Devices:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={mobDevices} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                <Label>Nutrition/Hydration</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={nutrHyd} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Enteral Nutrition</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={enteral} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Oral:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={oral} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                <Label>Hearing:</Label>
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={hearingVision} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="3">
+                Vision:
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={hearingVision} />
+                </FormGroup>
+            </Col>
+            <Col md="3">
+                Communication:
+                <FormGroup>
+                    <Select
+                        closeMenuOnSelect={false}
+                        components={{ ClearIndicator }}
+                        styles={{ clearIndicator: ClearIndicatorStyles }}
+                        isMulti
+                        options={communication} />
+                </FormGroup>
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+                <Table bordered responsive>
+                    <tbody>
+                        <tr className="text-center">
+                            <td colSpan={2}>ADL Level</td>
 
-    const handleOtherAllergies = (otherA) => {
-        setOtherAllergies(otherA);
-    };
-    return (
-
-        <div className="form-body">
-                    <Row className="text-center">
-                        <Label>NURSING ADMISSION INTAKE</Label>
-                    </Row>
-                    <Row>
-                        <Col md="3" >
-                            <FormGroup>
-                                <Label for="">Admitted From</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-                                <Label for="">Transported By</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-                                <Label for="">Accompanied By</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-                                <Label for="">Gender</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-                            </FormGroup>
-                        </Col>
-                        <Col md="3">
-                            <FormGroup inline>
-                                <Label for="">Tuberculosis</Label><br/>
-                                <div className="form-check form-check-inline">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Denies past exposure</Label>
-                                </div>
-                                <div className="form-check form-check-inline">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Hx. Of Positive ( +) PPD</Label>
-                                </div>
-                                <Label for="">Chest X-ray:</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-
-                                <Label for="">Results</Label>
-                                <Input type="text" id="" name="" placeholder=""/><br/>
-
-                                <div className="form-check form-check-inline">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Status Unknown</Label>
-                                </div>
-                            </FormGroup>
-                        </Col>
-                        <Col md="6">
-                            {/*<ComponentCard title="Allergies">*/}
-                                Medications
-                                <TagsInput
-                                    value={regularTags}
-                                    onChange={(tags) => handleRegularTags(tags)}
-                                    tagProps={{
-                                        className: 'react-tagsinput-tag bg-info text-white rounded',
-                                    }}
-                                />
-
-                                Food
-                                <TagsInput
-                                    value={foodAllergies}
-                                    onChange={(foodA) => handleFoodAllergies(foodA)}
-                                    tagProps={{
-                                        className: 'react-tagsinput-tag bg-info text-white rounded',
-                                    }}
-                                />
-
-                                Other
-                                <TagsInput
-                                    value={otherAllergies}
-                                    onChange={(otherA) => handleOtherAllergies(otherA)}
-                                    tagProps={{
-                                        className: 'react-tagsinput-tag bg-info text-white rounded',
-                                    }}
-                                />
-                            {/*</ComponentCard>*/}
-                        </Col>
-                    </Row>
-                    <Row>
-                        {/*<Col md="">
-                            <Table className="align-middle">
-                                <thead>
-                                <tr align="center">
-                                    <th>LOC/COGNITION</th>
-                                    <th>ORIENTATION TO ROOM/ROUTINE:</th>
-                                    <th>CARDIO-PULMONARY:</th>
-                                    <th>PAIN:</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        LOC:
-                                        <Select
-                                            closeMenuOnSelect={false}
-                                            components={{ ClearIndicator }}
-                                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                                            // defaultValue={{}}
-                                            isMulti
-                                            options={locList}
-                                        />
-                                        Oriented to:
-                                        <Select
-                                            closeMenuOnSelect={false}
-                                            components={{ ClearIndicator }}
-                                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                                            // defaultValue={{}}
-                                            isMulti
-                                            options={locList}
-                                        />
-                                    </td>
-                                    <td>
-                                        Oriented To Room/Routine:
-                                        <Select
-                                            closeMenuOnSelect={false}
-                                            components={{ ClearIndicator }}
-                                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                                            // defaultValue={{}}
-                                            isMulti
-                                            options={orientedToRoomList}
-                                        />
-                                    </td>
-                                    <td>
-                                        Cardio-Pulmonary:
-                                        <Select
-                                            closeMenuOnSelect={false}
-                                            components={{ ClearIndicator }}
-                                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                                            // defaultValue={{}}
-                                            isMulti
-                                            options={orientedToRoomList}
-                                        />
-                                        B/P<Input input type="text" id="" name=""/>mm./hg.
-                                        <Input input type="checkbox" id="" name=""/>
-
-                                    </td>
-                                    <td><Input input type="tel" id="" name="" placeholder="Phone Number"/></td>
-                                </tr>
-                                <tr>
-                                    <td colSpan={1}>
-                                        Cardio-Pulmonary:<br/>
-                                        <Select
-                                            closeMenuOnSelect={false}
-                                            components={{ ClearIndicator }}
-                                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                                            // defaultValue={{}}
-                                            isMulti
-                                            options={orientedToRoomList}
-                                        />
-                                        B/P<Input input type="text" id="" name=""/>mm./hg.
-                                        <Input input type="checkbox" id="" name=""/>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td><Input input type="text" id="" name="" placeholder="PCP/Specialty Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Appointment Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Address"/></td>
-                                    <td><Input input type="tel" id="" name="" placeholder="Phone Number"/></td>
-                                </tr>
-                                <tr>
-                                    <td><Input input type="text" id="" name="" placeholder="PCP/Specialty Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Appointment Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Address"/></td>
-                                    <td><Input input type="tel" id="" name="" placeholder="Phone Number"/></td>
-                                </tr>
-                                <tr>
-                                    <td><Input input type="text" id="" name="" placeholder="PCP/Specialty Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Appointment Type"/></td>
-                                    <td><Input input type="text" id="" name="" placeholder="Address"/></td>
-                                    <td><Input input type="tel" id="" name="" placeholder="Phone Number"/></td>
-                                </tr>
-                                </tbody>
-                            </Table>
-                        </Col>*/}
-                    </Row>
-                    <Row className="text-center">
-                        <Label>Cardio-Pulmonary</Label>
-                    </Row>
-                    <Row>
-                        <Col md="4">
-                            <br/>
-                            <FormGroup>
-                                <InputGroup>
-                                    <InputGroupText>Blood Pressure</InputGroupText>
-                                    <Input placeholder="" />
-                                </InputGroup>
-                            </FormGroup>
-                        </Col>
-                        <Col md="4">
-                            Lung Sounds
-                            <br/>
-                            <div className="form-check form-check-inline">
-                                <Input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    id="inlineCheckbox1"
-                                    value="option1"
-                                />
-                                <Label for="">Clear to auscultation bilateral fields</Label>
-                            </div>
-                            <br/>
-                            <div className="d-flex">
-                                <FormGroup className="me-3">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Other</Label>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Input type="text" id=""/>
-                                </FormGroup>
-                            </div>
-                        </Col>
-                        <Col md="4">
-                            Pain
-                            <br/>
-                            <div className="form-check form-check-inline">
-                                <Input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    id="inlineCheckbox1"
-                                    value="option1"
-                                />
-                                <Label for="">Denies Pain/Without Non-verbal Indicators</Label>
-                            </div>
-                            <br/>
-                            <div className="d-flex">
-                                <FormGroup className="me-3">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Pain Level Out of 10</Label>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Input type="text" id=""/>
-                                </FormGroup>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        {/*Cardio-Pulmonary*/}
-                        <Col md="2">
-                            <br/>
-                            <FormGroup>
-                                <InputGroup>
-                                    <InputGroupText>T =</InputGroupText>
-                                    <Input placeholder="" />
-                                </InputGroup>
-                            </FormGroup>
-                        </Col>
-                        <Col md="2">
-                            <br/>
-                           <FormGroup>
+                        </tr>
+                        <tr>
+                            <td>Bathing</td>
+                            <td>
                                 <Select
                                     closeMenuOnSelect={false}
                                     components={{ ClearIndicator }}
                                     styles={{ clearIndicator: ClearIndicatorStyles }}
                                     isMulti
-                                    options={tList}
-                                />
-                           </FormGroup>
-                        </Col>
-                        <Col md="4">
-                            History of:
-                            <FormGroup>
+                                    options={adlLevel} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Eating</td>
+                            <td>
                                 <Select
                                     closeMenuOnSelect={false}
                                     components={{ ClearIndicator }}
                                     styles={{ clearIndicator: ClearIndicatorStyles }}
                                     isMulti
-                                    options={historyOf}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col md="4">
-                            <div>
-                                 <FormGroup className="me-3">
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value=""
-                                    />Non-verbal Indicators(Specify):
-                                     <Input type="text" id=""/>
-                                </FormGroup>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="2">
-                            <br/>
-                            <FormGroup>
-                                <InputGroup>
-                                    <InputGroupText>P =</InputGroupText>
-                                    <Input placeholder="" />
-                                </InputGroup>
-                            </FormGroup>
-                        </Col>
-                        <Col md="2">
-                            <br/>
-                            <FormGroup>
+                                    options={adlLevel} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Toileting</td>
+                            <td>
                                 <Select
                                     closeMenuOnSelect={false}
                                     components={{ ClearIndicator }}
                                     styles={{ clearIndicator: ClearIndicatorStyles }}
                                     isMulti
-                                    options={pList}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col md="4">
-                            Edema
-                            <FormGroup>
+                                    options={adlLevel} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bed Mobility</td>
+                            <td>
                                 <Select
                                     closeMenuOnSelect={false}
                                     components={{ ClearIndicator }}
                                     styles={{ clearIndicator: ClearIndicatorStyles }}
                                     isMulti
-                                    options={edema}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col md="4">
-                            Pain History / Frequency
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={painHistory}
-                                />
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="2">
-                            <FormGroup>
-                                <InputGroup>
-                                    <InputGroupText>R =</InputGroupText>
-                                    <Input placeholder="" />
-                                </InputGroup>
-                            </FormGroup>
-                        </Col>
-                        <Col md="2">
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={rList}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col md="4">
+                                    options={adlLevel} />
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="12">
+                <Table bordered responsive>
+                    <tbody>
+                        <tr>
+                            <td colSpan={8}></td>
+                            <td>Notes</td>
+                        </tr>
+                        <tr>
+                            <td rowSpan={21} colSpan={8} style={{ textAlign: 'center' }}>
+                                Front Body Inspection <br />
+                                <img src={front} alt="Front" />    
+                            </td>
 
-                        </Col>
-                        <Col md="4">
-                            <div className="form-check form-check-inline">
-                                <FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Denies Pain/Without Non-verbal Indicators</Label></FormGroup>
-                            </div>
-                            <div className="form-check form-check-inline">
-                                <FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Day to day activities limited due to pain</Label>
-                                </FormGroup>
-                            </div>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Face</Label>
+                                <Input id="clientBodyFace" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Chest</Label>
+                                <Input id="clientBodyChest" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Right Upper Quadrant(RUQ)</Label>
+                                <Input id="clientBodyRUQ" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Left Upper Quadrant(LUQ)</Label>
+                                <Input id="clientBodyLUQ" type="textarea" /> 
+                            </td>   
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Right Lower Quadrant(RLQ)</Label>
+                                <Input id="clientBodyRLO" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Left Lower Quadrant(LLQ)</Label>
+                                <Input id="clientBodyLLQ" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Upper Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Lower Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Upper Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Lower Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Thigh</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Thigh</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Knee</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Knee</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Shin</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Shin</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Ankle</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Ankle</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Foot</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Foot</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Col>
+        </Row>
+        <Row>
+            <Col md="12">
+                <Table bordered responsive>
+                    <tbody>
+                        <tr>
+                            <td colSpan={8}></td>
+                            <td>Notes</td>
+                        </tr>
+                        <tr>
+                            <td rowSpan={21} colSpan={8} style={{ textAlign: 'center' }}>
+                                Back Body Inspection
+                                <br />
+                                <img src={rear} alt="Rear" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Face</Label>
+                                <Input id="clientBodyFace" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Chest</Label>
+                                <Input id="clientBodyChest" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Right Upper Quadrant(RUQ)</Label>
+                                <Input id="clientBodyRUQ" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Left Upper Quadrant(LUQ)</Label>
+                                <Input id="clientBodyLUQ" type="textarea" /> 
+                            </td>   
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Right Lower Quadrant(RLQ)</Label>
+                                <Input id="clientBodyRLO" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Abdomen - Left Lower Quadrant(LLQ)</Label>
+                                <Input id="clientBodyLLQ" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Upper Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Lower Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Upper Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Lower Arm</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Thigh</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Thigh</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Knee</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Knee</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Shin</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Shin</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Ankle</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Ankle</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Left Foot</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Label>Right Foot</Label>
+                                <Input id="" type="textarea" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Col>
+        </Row>
+        <Button color="primary" size="lg">Save</Button>
+    </div>
 
-                            <Label for=""><b><i>* Proceed with Pain Assessment/Management Care Plan</i></b></Label>
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="4">
-                            Bowel & Bladder
-                            <div className="form-check form-check-inline">
-                                <FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Continent of both Bowel & Bladder</Label>
-                                    <br/>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">History of Incontinence; Any Degree</Label>
-                                    <br/>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Unable to Determine Status from Admission Sources</Label>
-                                    <br/>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value=""
-                                    />Catheter Present Type:
-                                    <Input type="text" id=""/>
-                                    <br/>
-                                    Size = Fr.
-                                    <FormGroup>
-                                        <Row>
-                                            <Col md="4">
-                                                <Input/>
-                                            </Col>
-                                            <Col md="4">
-                                                <Input />
-                                            </Col>cc balloon
-                                        </Row>
-                                    </FormGroup>
-                                    Diagnosis for use:<Input />(Proceed with catheter orders and care plan development)
-                                </FormGroup>
-                            </div>
-                        </Col>
-                        <Col md="3">
-                            Physical & Functional Status:
-                            <div className="form-check form-check-inline">
-                                <FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Full / Functional ROM</Label>
-                                    <FormGroup>
-                                        <Input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            id="inlineCheckbox1"
-                                            value=""
-                                        />Paralysis - Site(s):
-                                        <Row>
-                                            <Col md="8">
-                                                <Input/>
-                                            </Col>
-                                        </Row>
-                                        <Input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            id="inlineCheckbox1"
-                                            value=""
-                                        />Amputee - Type/Limb(s):
-                                        <Row>
-                                            <Col md="8">
-                                                <Input/>
-                                            </Col>
-                                        </Row>
-                                        <Input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            id="inlineCheckbox1"
-                                            value=""
-                                        />Contractures Site(s):
-                                        <Row>
-                                            <Col md="8">
-                                                <Input/>
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label>Hip Precautions</Label>
-                                    <br/>
-                                    Nutrition/Hydration
-                                    <Select
-                                        closeMenuOnSelect={false}
-                                        components={{ ClearIndicator }}
-                                        styles={{ clearIndicator: ClearIndicatorStyles }}
-                                        isMulti
-                                        options={nutrHyd}
-                                    />
-                                    Enteral Nutrition
-                                    <Select
-                                        closeMenuOnSelect={false}
-                                        components={{ ClearIndicator }}
-                                        styles={{ clearIndicator: ClearIndicatorStyles }}
-                                        isMulti
-                                        options={enteral}
-                                    />
-                                    Tube type/ size:
-                                    <FormGroup>
-                                        <Row>
-                                            <Col md="8">
-                                                <Input/>
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                </FormGroup>
-                            </div>
-                        </Col>
-                        <Col md="2">
-                            <br/>
-                            Weight-Bearing:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={weightBearing}
-                                />
-                            </FormGroup>
-                            Ambulation:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={ambulation}
-                                />
-                            </FormGroup>
-                            Oral:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={oral}
-                                />
-                            </FormGroup>
-                            Hearing:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={hearingVision}
-                                />
-                            </FormGroup>
-                            Vision:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={hearingVision}
-                                />
-                            </FormGroup>
-                        </Col>
-                        <Col md="2">
-                            <br/>
-                            Transfers:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={transfers}
-                                />
-                            </FormGroup>
-                            Mobility Devices:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={mobDevices}
-                                />
-                            </FormGroup>
-                            Communication:
-                            <FormGroup>
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    components={{ ClearIndicator }}
-                                    styles={{ clearIndicator: ClearIndicatorStyles }}
-                                    isMulti
-                                    options={communication}
-                                />
-                            </FormGroup>
-                            Language
-                            <FormGroup>
-                                <Row>
-                                    <Col md="8">
-                                        <Input/>
-                                    </Col>
-                                </Row>
-                            </FormGroup>
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="4">
-                            Elimination Method(s) Used / Preferred:
-                            <div className="form-check form-check-inline">
-                                <FormGroup>
-                                    <Select
-                                        closeMenuOnSelect={false}
-                                        components={{ ClearIndicator }}
-                                        styles={{ clearIndicator: ClearIndicatorStyles }}
-                                        isMulti
-                                        options={elimMethUsed}
-                                    />
-                                    <FormGroup>
-                                        <Row>
-                                            <Col md="4">
-                                                Last BM:<Input/>
-                                            </Col>
-                                            <Col md="4">
-                                                Last Voiding:<Input />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">Bowel Sounds present x 4</Label>
-                                    <br/>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value="option1"
-                                    />
-                                    <Label for="">History of Constipation</Label>
-                                    <br/>
-                                    <Input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id="inlineCheckbox1"
-                                        value=""
-                                    />Bowel Sounds absent (Specify)
-                                    <Input type="text" id=""/>
-                                    Abdomen
-                                    <Select
-                                        closeMenuOnSelect={false}
-                                        components={{ ClearIndicator }}
-                                        styles={{ clearIndicator: ClearIndicatorStyles }}
-                                        isMulti
-                                        options={abdomen}
-                                    />
-                                </FormGroup>
-                            </div>
-                        </Col>
-                        <Col>
-                            <Table bordered responsive>
-                                <tbody>
-                                    <tr>
-                                        <td>ADL Level</td>
-                                        <td>Independent</td>
-                                        <td>Some Assist</td>
-                                        <td>Dependent</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bathing</td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Eating</td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Toileting</td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bed Mobility</td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                        <td><Input/></td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Col>
-                    </Row>
-            <Row>
-                <Col md="12">
-                    <Table bordered responsive>
-                        <tbody>
-                            <tr>
-                                <td colSpan={8}>Number Each Location To Correspond With Condition</td>
-                                <td>#</td>
-                                <td>Non-Pressure</td>
-                            </tr>
-                            <tr>
-                                <td rowSpan={13} colSpan={1} style={{ textAlign: 'center' }}>Full Body Inspection</td>
-                                <td rowSpan={13} colSpan={7} style={{ textAlign: 'center' }}>Full Body Inspection</td>
-
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td colSpan={2} > Access Lines/ Other Devices</td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="12">
-                    <Table bordered responsive>
-                        <tbody>
-                            <tr>
-                                <td colSpan={2}>Inspect Bony Prominences</td>
-                                <td>Clear</td>
-                                <td>#</td>
-                                <td>Scar</td>
-                                <td>Cast/DRSG.</td>
-                                <td>Stage I</td>
-                                <td>Stage II</td>
-                                <td>Stage III</td>
-                                <td>Stage IV</td>
-                                <td>Stage DTI</td>
-                                <td>Stage UTD</td>
-                            </tr>
-                            <tr>
-                                <td rowSpan={6} style={{ textAlign: 'center' }}>Right</td>
-                                <td>Elbow</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Trochanter</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Heel</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Scapula</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Ischium</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Buttock</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            {/*MID*/}
-                            <tr>
-                                <td rowSpan={3} style={{ textAlign: 'center' }}>Mid</td>
-                                <td>Spine</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Coccyx</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Sacrum</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-
-                            {/*Left*/}
-                            <tr>
-                                <td rowSpan={6} style={{ textAlign: 'center' }}>Left</td>
-                                <td>Elbow</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Trochanter</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Heel</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Scapula</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Ischium</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                            <tr>
-                                <td>Buttock</td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                                <td><Input/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={5}>
-                    Skin Risk Screen:
-                    <FormGroup>
-                        <Select
-                            closeMenuOnSelect={false}
-                            components={{ ClearIndicator }}
-                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                            isMulti
-                            options={skinRisk}
-                        />
-                    </FormGroup>
-                </Col>
-                <Col md={5}>
-                    Initial Skin Interventions:
-                    <FormGroup>
-                        <Select
-                            closeMenuOnSelect={false}
-                            components={{ ClearIndicator }}
-                            styles={{ clearIndicator: ClearIndicatorStyles }}
-                            isMulti
-                            options={initialSkin}
-                        />
-                    </FormGroup>
-                </Col>
-            </Row>
-        </div>
-
-    );
-};
+);
 
 export default NursingAdmission;

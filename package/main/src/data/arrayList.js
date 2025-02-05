@@ -5,19 +5,20 @@ export const clientGenders = [
     "Trans Female (MTF or Male to Female)",
     "Trans Male (FTM or Female to Male)",
     "Gender Non-Conforming (i.e. not exclusively male or female)",
-    "Client doesn’t know, Client refused",
+    "Client doesn’t know", 
+    "Client refused",
     "Data not collected"
 ];
 
 export const clientPronouns = [
     "",
-    "Female",
-    "Male",
-    "Trans Female (MTF or Male to Female)",
-    "Trans Male (FTM or Female to Male)",
-    "Gender Non-Conforming (i.e. not exclusively male or female)",
-    "Client doesn’t know, Client refused",
-    "Data not collected"
+    "She/her/hers",
+    "He/him/his",
+    "They/them/theirs",
+    "Ze/zir/zirs",
+    "Ey/em/eirs",
+    "Client doesn’t know",
+    "Client refused",
 ];
 
 export const clientEthnicityList = [
@@ -26,7 +27,21 @@ export const clientEthnicityList = [
     "Non-Hispanic/Non-Latino",
     "Client doesn’t know",
     "Client refused",
-    "Data not collected"
+];
+
+export const clientVeteranStatus = [
+    "",
+    "Protected Veteran",
+    "I am a veteran, but I am not a protected veteran",
+    "I am not a veteran",
+    "Client doesn’t know",
+];
+
+export const clientCitizenStatus = [
+    "",
+    "US Citizen",
+    "Legal Resident",
+    "None of the above"
 ];
 export const clientSleepPlace = [
     "",
@@ -268,8 +283,10 @@ export const locList = [
 ];
 
 export const orientedToList = [
-    { value: '', label: '' },
-    { value: '', label: '' },
+    { value: 'Person', label: 'Person' },
+    { value: 'Place', label: 'Place' },
+    { value: 'Time', label: 'Time' },
+    { value: 'Situation', label: 'Situation' },
 ];
 
 export const tList = [
@@ -1026,10 +1043,23 @@ export const assessmentTypeList = [
 export const assessmentLocationList = [
     {id: "Crisis needs assessment", value: "Crisis needs assessment"},{id: "Housing needs assessment", value: "Housing needs assessment"}
 ];
-export const traumaList = [ "","Denies history of abuse", "History of physical/sexual/emotional abuse","History of sexual assault/rape","Exploitation/Sex Trafficking","Unwilling to provide information","History of intimate partner violence (victim/perpetrator)","History of trauma"];
+export const traumaList = [ 
+    {value: "Denies history of abuse", label: "Denies history of abuse"},
+    {value: "History of physical/sexual/emotional abuse", label: "History of physical/sexual/emotional abuse"},
+    {value: "History of sexual assault/rape", label: "History of sexual assault/rape"},
+    {value: "Exploitation/Sex Trafficking", label: "Exploitation/Sex Trafficking"},
+    {value: "Unwilling to provide information", label: "Unwilling to provide information"},
+    {value: "History of intimate partner violence (victim/perpetrator)", label: "History of intimate partner violence (victim/perpetrator)"},
+    {value: "History of trauma", label: "History of trauma"}
+];
 
 export const statusList = ["Active","Case Closed","Unknown"];
-export const riskList = ["Thoughts of harming him or herself","Thoughts of harming others","Denies thoughts"];
+export const riskList = [
+    {value: "Thoughts of harming him or herself", label: "Thoughts of harming him or herself"},
+    {value: "Thoughts of harming others", label: "Thoughts of harming others"},
+    {value: "Denies thoughts", label: "Denies thoughts"},
+
+];
 export const substanceList = ["Alcohol","Cocaine/Crack","Marijuana","Heroin","Methadone or Suboxone","Methamphetamine","Speed","LSD","Tobacco","Other"];
 export const treatList = ["","Detox","Outpatient","Residential Treatment"];
 export const legalList = [ 
@@ -1224,13 +1254,31 @@ export const medRisk2 = [
     { value: "I use condoms 100% of the time", label: "I use condoms 100% of the time"},
     { value: "I am monogamous – sex with 1 person", label: "I am monogamous – sex with 1 person"}
 ];
-export const clientLang = [ "English","Spanish","French","Italian","German","Greek","Polish","Portugese","Russian","Swedish",
-    "American Sign Language","Other(specify:)","Client Doesn’t Know","Client Rsefiused"];
+export const clientLang = [ "","English","Spanish","French","Italian","German","Greek","Polish","Portugese","Russian","Swedish",
+    "American Sign Language","Chinese", "Korean","Client Doesn’t Know","Client Rsefiused"];
 
-export const lungSounds = [ "Clear to Auscultation Bilateral Fields","Other"];
+    export const clientLang2 = [ 
+        {value: "English", label: "English"},
+        {value: "Spanish", label: "Spanish"},
+        {value: "French", label: "French"},
+        {value: "Italian", label: "Italian"},
+        {value: "German", label: "German"},
+        {value: "Greek", label: "Greek"},
+        {value: "Polish", label: "Polish"},
+        {value: "Portugese", label: "Portugese"},
+        {value: "Russian", label: "Russian"},
+        {value: "Swedish", label: "Swedish"},
+        {value: "American Sign Language", label: "American Sign Language"},
+        {value: "Chinese", label: "Chinese"},
+        {value: "Korean", label: "Korean"}
+    ];
+
+export const lungSounds = [ 
+    {value: "Clear to Auscultation Bilateral Fields", label: "Clear to Auscultation Bilateral Fields"},
+    {value: "Other", label: "Other"}
+];
 export const edema = [
     {value: "None", label: "None"},
-    {value: "Edema Present", label: "Edema Present"},
     {value: "1", label: "1"},
     {value: "2", label: "2"},
     {value: "3", label: "3"},
@@ -1246,6 +1294,20 @@ export const historyOf = [
     {value: "AICD", label: "AICD"}
 ];
 
+export const clientPain = [
+    {value: "Denies Pain/Without Non-verbal Indicators", label: "Denies Pain/Without Non-verbal Indicators"},
+    {value: "1", label: "1"},
+    {value: "2", label: "2"},
+    {value: "3", label: "3"},
+    {value: "4", label: "4"},
+    {value: "5", label: "5"},
+    {value: "6", label: "6"},
+    {value: "7", label: "7"},
+    {value: "8", label: "8"},
+    {value: "9", label: "9"},
+    {value: "10", label: "10"},
+];
+
 export const painHistory = [
     {value: "Frequent*", label: "Frequent*"},
     {value: "Almost Constant*", label: "Almost Constant*"},
@@ -1258,6 +1320,18 @@ export const weightBearing = [
     {value: "Partial weight", label: "Partial weight"},
     {value: "Non-weight", label: "Non-weight"},
     {value: "Bed rest", label: "Bed rest"},
+];
+
+export const bowelBladder = [
+    {value: "Continent of both Bowel & Bladder", label: "Continent of both Bowel & Bladder"},
+    {value: "History of Incontinence", label: "History of Incontinence"},
+    {value: "Unable to Determine Status", label: "Unable to Determine Status"},
+    // {value: "", label: ""},
+    // {value: "", label: ""},
+    // {value: "", label: ""},
+    // {value: "", label: ""},
+    // {value: "", label: ""},
+    // {value: "", label: ""},
 ];
 
 export const transfers = [
@@ -1298,6 +1372,21 @@ export const abdomen = [
     {value: "Distended", label: "Distended"},
     {value: "Tender", label: "Tender"}
 ];
+
+export const physicalFuncStat = [
+    {value: "Full/Functional ROM", label: "Full/Functional ROM"},
+    {value: "Paralysis", label: "Paralysis"},
+    {value: "Amputee", label: "Amputee"},
+    {value: "Contractures", label: "Contractures"},
+    {value: "Hip Precautions", label: "Hip Precautions"}
+];
+
+export const adlLevel = [
+    {value: "Independent", label: "Independent"},
+    {value: "Some Assist", label: "Some Assist"},
+    {value: "Dependent", label: "Dependent"}
+];
+
 export const nutrHyd = [
     {value: "No recent history of nutrition, hydration, or weight issue", label: "No recent history of nutrition, hydration, or weight issue"},
     {value: "Recent history of weight gain", label: "Recent history of weight gain"},
@@ -1352,9 +1441,7 @@ export const initialSkin = [
     {value: "Specialty Mattress-LAL,etc", label: "Specialty Mattress-LAL,etc"},
     {value: "Foot Cradle", label: "Foot Cradle"}
 ];
-/*export const elimMethUsed = [
-    {value: "", label: ""},
-];*/
+/**/
 
 export const falls = [ "History of Falls(Last 30 Days)","History of Falls(Last 2-6 Months)","Fall Resulting in Fracture: Last 6 Months"];
 export const sideRails = [ "Is the bed equipped with any type of rails","Is safety maintained if rails are used","Do rails assist with bed mobility or transfers","Do rails allow freedom of movement"];
@@ -1362,8 +1449,29 @@ export const elopement = [ "Self-mobile by ambulation or wheelchair","History of
 export const fallsClinical = [ "Evaluated room for immediate safety issues","Oriented to room, facility routine and use of call light","Placement of tab alarm or sensor"];
 export const sideClinical = [ "If the first question is Yes and any of the other questions are No, side rails are not recommended without further assessment of need; Alternative devices and interventions should also be considered.","If Yes to all questions, side rails may be considered."];
 export const elopeClinical = [ "Yes to self-mobile with No on additional risk factors, residents is not generally considered at risk for elopement","Yes to self-mobile and yes on 1 or more risk factors; Resident is considered to be at risk for elopement, implement an elopement risk prevention care plan"];
+export const functionalCommunication = [ 
+    { value: '', label: '' },
+    {value: "Verbally", label: "Verbally"},
+    {value: "Facial expressions or gestures", label: "Facial expressions or gestures"},
+    {value: "Sounds or movements", label: "Sounds or movements"},
+    {value: "Talking device", label: "Talking device"}
+];
 
+export const ambulatoryStatus = [
+    {value: "", label: ""},
+    {value: "Self", label: "Self"},
+    {value: "Partial Assistance", label: "Partial Assistance"},
+    {value: "Complete Assistance", label: "Complete Assistance"},
+    {value: "Limb Braces", label: "Limb Braces"},
+    {value: "Cane", label: "Cane"},
+    {value: "Walker", label: "Walker"},
+    {value: "Wheel Chair", label: "Wheel Chair"},
+    {value: "Needs assistance in transferring in & out of bed", label: "Needs assistance in transferring in & out of bed"},
+];
 
+export const medicationData = [ 
+    ['Tylenol', '1x/day', 'None', 'Yes'],
+]; // eslint-disable-line
 
 //
 // export const medCond = [ "","","","","","","","","",""];
@@ -1374,6 +1482,6 @@ export const elopeClinical = [ "Yes to self-mobile with No on additional risk fa
 
 
 export default {
-    clientGenders, mfList, substanceAbuseOften, substanceAbuseUse, substanceList, clientEthnicityList,ynd, PatientProfileList, ppcList, acpList, finList, famList,section4List,encTypeList,hhhSiteList,behContractList, gadQuestList, gadDifList, crList, section5List, section6List,
-    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema, clientPronouns
+    medicationData, clientGenders, mfList, substanceAbuseOften, substanceAbuseUse, substanceList, clientEthnicityList,ynd, PatientProfileList, ppcList, acpList, finList, famList,section4List,encTypeList,hhhSiteList,behContractList, gadQuestList, gadDifList, crList, section5List, section6List,
+    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema, clientPronouns, clientLang, clientVeteranStatus, clientCitizenStatus
 }

@@ -1,25 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Input, FormGroup, Button, Label } from 'reactstrap';
+import { Input, FormGroup, Button, Label, Col, Row } from 'reactstrap';
 import { UpdateNote, addNote } from '../../../../../store/apps/notes/NursingSlice';
-
-const colorsBg = [
-  {
-    bg: 'primary',
-  },
-  {
-    bg: 'success',
-  },
-  {
-    bg: 'danger',
-  },
-  {
-    bg: 'info',
-  },
-  {
-    bg: 'warning',
-  },
-];
 
 const NoteDetail = () => {
   const noteDetails = useSelector(
@@ -31,7 +13,7 @@ const NoteDetail = () => {
 
   const handleNote = (e) => {
     e.preventDefault();
-    dispatch(addNote(id, 'dummy Title', 'primary'));
+    dispatch(addNote(id, 'Enter Nursing Note Here', 'primary'));
   };
 
   return (
@@ -45,7 +27,7 @@ const NoteDetail = () => {
         <div className="p-4">
           <FormGroup>
             <Label for="title1" tag="h5">
-              Edit Note
+              Nursing Note
             </Label>
             <Input
               id="title1"
@@ -56,24 +38,14 @@ const NoteDetail = () => {
               onChange={(e) => dispatch(UpdateNote(noteDetails.id, 'title', e.target.value))}
             />
           </FormGroup>
-          <br />
-          <h5>Change Note color</h5>
-          <div className="button-group">
-            {colorsBg.map((colorbg) => (
-              <Button
-                color={colorbg.bg}
-                key={colorbg.bg}
-                size="sm"
-                onClick={() => dispatch(UpdateNote(noteDetails.id, 'color', `${colorbg.bg}`))}
-              >
-                {noteDetails.color === colorbg.bg ? (
-                  <i className="bi bi-check" />
-                ) : (
-                  <i className="bi bi-circle" />
-                )}
-              </Button>
-            ))}
-          </div>
+          <Row>
+          <Col md="2">
+            <Button>Save Draft</Button>
+          </Col>
+          <Col md="3"> 
+            <Button type="button" class="btn btn-danger">Submit Note</Button>
+          </Col>
+          </Row>  
         </div>
       ) : (
         <div className="d-flex mt-3 p-4 flex-column align-items-center justify-content-center">

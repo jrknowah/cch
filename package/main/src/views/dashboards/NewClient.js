@@ -7,7 +7,7 @@ import {
 import {
     clientEthnicityList,
     clientGenders, clientPronouns, clientRace, highestEdu,
-    maritalStatusList, religiousPrefList
+    maritalStatusList, religiousPrefList, clientLang, clientVeteranStatus, clientCitizenStatus
 } from "../../data/arrayList";
 
 
@@ -69,7 +69,7 @@ const NewClient = () => {
                                 <FormGroup>
                                     <Label for="clientCitizenship">Citizenship Status</Label>
                                     <Input type="select" name="clientCitizenship" id="clientCitizenship" >
-                                        {clientEthnicityList.map((ethnicity) => (
+                                        {clientCitizenStatus.map((ethnicity) => (
                                             <option value={ethnicity}>{ethnicity}</option>
                                         ))}
                                     </Input>
@@ -78,7 +78,11 @@ const NewClient = () => {
                             <Col md="4" sm="12">
                                 <FormGroup>
                                     <Label for="clientVetStatus">Veteran Status</Label>
-                                    <Input type="text" name="clientVetStatus" id="clientVetStatus" />
+                                    <Input type="select" name="clientVetStatus" id="clientVetStatus" >
+                                        {clientVeteranStatus.map((vet) => (
+                                            <option value={vet}>{vet}</option>
+                                        ))}
+                                    </Input>
                                 </FormGroup>
                             </Col>
                         </Row>
@@ -102,7 +106,7 @@ const NewClient = () => {
                             <Col md="4" sm="12">
                                 <FormGroup>
                                     <Label for="clientPronouns">Pronouns</Label>
-                                    <Input type="select" name="clientPronouns" id="clientPronouns" >
+                                    <Input type="select" name="clientPronouns" id="clientPronouns" value="">
                                         {clientPronouns.map((proN) => (
                                             <option value={proN}>{proN}</option>
                                         ))}
@@ -134,7 +138,11 @@ const NewClient = () => {
                             <Col md="4" sm="12">
                                 <FormGroup>
                                     <Label for="clientLang">Primary Language</Label>
-                                    <Input type="text" id="clientLang" name="clientLang" />
+                                    <Input type="select" id="clientLang" name="clientLang">
+                                        {clientLang.map((lang) => (
+                                            <option value={lang}>{lang}</option>
+                                        ))}
+                                    </Input>
                                 </FormGroup>
                             </Col>
                         </Row>

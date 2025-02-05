@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, Table
+    Col, FormGroup, Label, Input, Table, Button
 } from 'reactstrap';
 import Select from 'react-select';
 import {
@@ -139,6 +139,7 @@ const ClientFace = () => {
                     </Table>
                 </Col>
             </Row>
+            <Button color="primary" size="lg">Save</Button>
         </div>
     );
 };

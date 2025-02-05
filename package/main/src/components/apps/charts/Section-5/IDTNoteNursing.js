@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input
+    Col, FormGroup, Label, Input, Button
 } from 'reactstrap';
 
 const IDTNoteNursing = () => {
@@ -57,6 +57,7 @@ const IDTNoteNursing = () => {
                 </Col>
 
             </Row>
+            <Button color="primary" size="lg">Save</Button>
         </div>
     );
 };

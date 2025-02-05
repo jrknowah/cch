@@ -6,7 +6,7 @@ import {
     Nav,
     NavItem,
     NavLink,
-    TabContent, TabPane, Form, FormGroup, Input 
+    TabContent, TabPane, Form, FormGroup, Input, Button
 } from 'reactstrap';
 //import ComponentCard from '../../../../components/ComponentCard';
 import ComponentCard from '../../../ComponentCard'
@@ -72,7 +72,9 @@ const Indentification = () => {
                             <TabPane tabId="1">
                                 <Row>
                                     <Col sm="12">
-                                        <ClientFace/>
+                                        <div className="p-4">
+                                            <ClientFace/>
+                                        </div>
                                     </Col>
                                 </Row>
                             </TabPane>
@@ -85,6 +87,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -94,6 +97,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -103,6 +107,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                 </Row>
@@ -114,6 +119,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -123,6 +129,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                 </Row>
@@ -136,6 +143,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -145,6 +153,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -154,6 +163,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                 </Row>
@@ -165,6 +175,7 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
+                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>                                
                                 </Row>
@@ -180,13 +191,15 @@ const Indentification = () => {
                                                         <Input type="file" name="file" id="exampleFile" />
                                                     </FormGroup>
                                                     </Form>
+                                                    <Button color="primary" size="sm">Upload</Button>
                                                 </ComponentCard>
                                             </Col>
                                         </div>
                                     </Col>
                                 </Row>
+                                
                             </TabPane>
-                        </TabContent>
+                            </TabContent>
                     </Card>
                 </Col>
             </Row>

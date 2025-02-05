@@ -4,7 +4,7 @@ const SidebarData = [
   { caption: 'Home' },
   {
     title: 'Dashboard',
-    href: '/dashboards',
+    href: '/main',
     id: 1,
     icon: <MaterialIcon icon="speed" />,
   },

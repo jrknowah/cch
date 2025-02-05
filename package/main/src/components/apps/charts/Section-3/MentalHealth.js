@@ -1,19 +1,20 @@
 import React from "react";
 import {
     Row,
-    Col, FormGroup, Label, Input, 
+    Col, FormGroup, Label, Input, Button,
     // InputGroup, InputGroupText, Form, 
     Table
 } from 'reactstrap';
 import Select from 'react-select';
 import {
-    clientGenders, cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,cmObNone,legalList,
+    cmOb1, cmOb2, cmOb3, cmOb4, cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11,cmObNone,legalList,
     energyLevelList,
     gadList,
-    gfp, famList, ynd,
-    mhList, relList, resultInList,
-    sleepPatternList, substanceAbuseOften, substanceAbuseUse, substanceList, traumaList, treatList,needsCol1
+    mhList,
+    sleepPatternList, substanceAbuseOften, substanceAbuseUse, substanceList, traumaList,needsCol1, medicationData,
+    riskList
 } from "../../../../data/arrayList";
+import ComponentCard from "../../../ComponentCard";
 
 
 const MentalHealth = () => {
@@ -21,635 +22,13 @@ const MentalHealth = () => {
     return (
 
         <div className="form-body">
-            <Row className="text-center">
-                <Label>Strengths and Challenges</Label>
-            </Row>
-            <Row className="text-center">
-                <Col md="12">
-                <FormGroup>
-                    <FormGroup>
-                        <center><Label check>Areas of Strengths</Label></center>
-                        <Input type="textarea" name="clientAreaOfStrengths" id="clientAreaOfStrengths"/>
-                    </FormGroup>
-                </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <center><Label>Family Origin</Label></center>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <Label>Who primarily raised you?</Label>
-                    <FormGroup>
-                        <Input type="select" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
-                            {famList.map((fam) => (
-                                <option value={fam}>{fam}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <Label>Did your parents separate/divorce?</Label>
-                    <FormGroup>
-                        <Input type="select" className="custom-select" id="clientFamDiv" name="clientFamDiv" >
-                            {ynd.map((y) => (
-                                <option value={y}>{y}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <Label check>If yes, what age did this occur?</Label>
-                    <FormGroup>
-                    <Input type="select" className="custom-select" id="clientFamDivAge" name="clientFamDivAge" >
-                        {ynd.map((y) => (
-                            <option value={y}>{y}</option>
-                        ))}
-                    </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>                
-                <Col md="4">
-                    <Label>How many siblings do you have?</Label>
-                    <FormGroup>
-                        <Input type="text" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <Label>Childhood family’s economic status?</Label>
-                    <FormGroup>
-                    <Input type="select" id="clientPayee" name="clientPayee" >
-                            <option> </option>
-                            <option>Poverty level (on welfare)</option>
-                            <option>Middle Class</option>
-                            <option>Upper Middle Class</option>
-                            <option>Wealthy</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <Label>How many siblings do you have?</Label>
-                    <FormGroup>
-                        <Input type="text" className="custom-select" id="clientFamRaised" name="clientFamRaised" >
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-
-            <Row>
-                <Col md="4">
-                    <FormGroup >
-                        <Label></Label>
-                        <Input type="select" id="clientPayee" name="clientPayee" >
-                            <option> </option>
-                            <option>Poverty level (on welfare)</option>
-                            <option>Middle Class</option>
-                            <option>Upper Middle Class</option>
-                            <option>Wealthy</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup >
-                        <Label>Overall, my childhood was:</Label>
-                        <Input type="select" id="clientPayee" name="clientPayee" >
-                            <option> </option>
-                            <option>Good</option>
-                            <option>Fair</option>
-                            <option>Poor</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientPayee">As a child, my relationship with my mother was:</Label>
-                        <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                            {relList.map((rel) => (
-                                <option value={rel}>{rel}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientPayee">As a child, my relationship with my father was:</Label>
-                        <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                            {relList.map((rel) => (
-                                <option value={rel}>{rel}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientPayee">As a child, my relationship with my siblings was:</Label>
-                        <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                            {relList.map((rel) => (
-                                <option value={rel}>{rel}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="clientPayee">As a child, my relationship with my friends was:</Label>
-                        <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                            {relList.map((rel) => (
-                                <option value={rel}>{rel}</option>
-                            ))}
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup >
-                        <Label>Currently married or in relationship?</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Good</option>
-                            <option>Fair</option>
-                            <option>Poor</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup>
-                        <Label for="">If Yes, this relationship is:</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Good</option>
-                            <option>Fair</option>
-                            <option>Poor</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Col md="12">
-                    <FormGroup>
-                        <Label for="">List any other sources of emotional support</Label>
-                        <Input type="textarea" id="" name="" />
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label for="clientContactInfo">Family Dynamic</Label>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <FormGroup >
-                        <Label>Do you have any children (If Yes, specify below)</Label>
-                    </FormGroup>
-                </Col>
-                <Col md={{ size: 1, offset: 0}}>
-                    <FormGroup>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Gender</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                                    {clientGenders.map((gen) => (
-                                        <option value={gen}>{gen}</option>
-                                    ))}
-                                </Input>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                                    {clientGenders.map((gen) => (
-                                        <option value={gen}>{gen}</option>
-                                    ))}
-                                </Input>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                                    {clientGenders.map((gen) => (
-                                        <option value={gen}>{gen}</option>
-                                    ))}
-                                </Input>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                                    {clientGenders.map((gen) => (
-                                        <option value={gen}>{gen}</option>
-                                    ))}
-                                </Input>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td><Input input type="text" id="clientPayee" name="clientPayee"/></td>
-                            <td>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                                    {clientGenders.map((gen) => (
-                                        <option value={gen}>{gen}</option>
-                                    ))}
-                                </Input>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">Do you have legal custody of your children?</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">Do you owe child support?</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">Have you ever been involved with DCFS?</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                
-            </Row>
-            <Row>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">Do you currently have an open DCFS case?</Label>
-                        <Input type="select" id="" name="" >
-                            <option> </option>
-                            <option>Yes</option>
-                            <option>No</option>
-                        </Input>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">DCFS Workers Name</Label>
-                        <Input type="text" id="" name=""/>
-                    </FormGroup>
-                </Col>
-                <Col md="4">
-                    <FormGroup inline>
-                        <Label for="">Phone Number</Label>
-                        <Input type="text" id="" name=""/>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label for="clientContactInfo">Supportive Services</Label>
-            </Row>
-            <Row>
-
-            </Row>
-            <Row>
-
-            </Row>
-            <Row>
-
-            </Row>
-            <Row>
-
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="clientContactInfo">Have you ever applied for government-sponsoring housing? (If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Section 8</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Shelter Plus Care</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>SRO</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="clientContactInfo">Have you lived in government sponsored housing? (If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Section 8</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Shelter Plus Care</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>SRO</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="2" >
-                    <Label for="clientEmployed">Have you ever rented before?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="3" >
-                    <Label for="clientEmployed">Have you ever been served a late notice before?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="2" >
-                    <Label for="clientEmployed">Have you ever been evicted?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="3" >
-                    <Label for="clientEmployed">Have you had problems with previous landlords?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="2" >
-                    <Label for="clientEmployed">Do you have any outstanding utility bills?</Label>
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <Label for="clientEmployed">How would you rate your credit?</Label>
-                    <Input type="select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
-                        {gfp.map((g) => (
-                            <option value={g}>{g}</option>
-                        ))}
-                    </Input>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <Label for="clientEmployed">Total Number in Household</Label>
-                </Col>
-                <Col md="4" >
-                    <Label for="clientEmployed"># of adults to be housed in addition to applicant?</Label>
-                </Col>
-                <Col md="4" >
-                    <Label for="clientEmployed"># of children to be housed?</Label>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={{ size: 2, offset: 3}} >
-                    <FormGroup>
-                        <FormGroup>
-                            <Input type="text" id="clientEmployed" name="clientEmployed" />
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-                <Col md={{ size: 2, offset: 2}} >
-                    <FormGroup>
-                        <FormGroup>
-                            <Input type="text" id="clientEmployed" name="clientEmployed" />
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label for="clientContactInfo">Medical</Label>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="clientContactInfo">Does individual have health Insurance?(If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-                <Col md="4" >
-                    <FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Medi-Cal</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Medicare</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>HMO</Label>
-                        </FormGroup>
-                        <FormGroup check inline>
-                            <Input type="checkbox" name="customcheck1" />
-                            <Label check>Private</Label>
-                        </FormGroup>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <FormGroup>
-                        <Label for="clientContactInfo">Health Insurance Provider (e.g. HealthNet/LA Care):</Label>
-                    </FormGroup>
-                </Col>
-                <Col md="4" >
-                    <Input type="text" name="customcheck1" />
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Label for="clientContactInfo">Medical Provider Information</Label>
-            </Row>
-            <Row>
-                <Col md="6" >
-                    <Label for="clientContactInfo">Do you have a primary care physician?(If Yes, specify)
-                        <FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>Yes</Label>
-                            </FormGroup>
-                            <FormGroup check inline>
-                                <Input type="radio" name="customcheck1" />
-                                <Label check>No</Label>
-                            </FormGroup>
-                        </FormGroup></Label>
-                </Col>
-            </Row>
-            <Row>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Physician</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Facility</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="2">
-                    <Label for="clientContactInfo">Address</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="1">
-                    <Label for="clientContactInfo">State</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="1">
-                    <Label for="clientContactInfo">Zip Code</Label>
-                    <Input type="text" name="customcheck1" />
-                </Col>
-                <Col  md="1">
-                    <Label for="clientContactInfo">Phone </Label>
-                    <Input type="tel" name="customcheck1" />
-                </Col>
-            </Row>
-            <Row>
-                <Col  md="3">
-                    <Label for="clientContactInfo">LAST APPOINTMENT</Label>
-                    <Input type="datetime-local" name="customcheck1" />
-                </Col>
-                <Col  md="3">
-                    <Label for="clientContactInfo">NEXT APPOINTMENT</Label>
-                    <Input type="datetime-local" name="customcheck1" />
-                </Col>
-
-            </Row>
-            <Row>
-                <Col>
-                    *If client agrees, sign release of information to coordinate treatment*
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4">
-                    <Label for="clientContactInfo">Do you have a primary care physician?(If Yes, specify)</Label>
-                </Col>
-                <Col md="1">
-                    <Input type="select" id="clientEmployed" name="clientEmployed" >
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Program/Date Received Services (if known)</th>
-                            <th>Name of Case Manager / Contact Person</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
             <Row>
                 <Col className="text-center">
                     <b><Label>Mental Health History</Label></b>
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="5" >
                     <Label for="">Ever been diagnosis with a mental illness?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -657,7 +36,7 @@ const MentalHealth = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3" >
+                <Col md="7" >
                     <Label for="">If YES, select one:</Label>
                     <Input type="select" className="custom-select" id="" name="" >
                         {mhList.map((mh) => (
@@ -672,7 +51,7 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="5" >
                     <Label for="">Ever utilized mental health services?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -680,7 +59,7 @@ const MentalHealth = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="2" >
+                <Col md="7" >
                     <Label for="clientEmployed">Currently utilizing mental health services?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -689,169 +68,105 @@ const MentalHealth = () => {
                     </Input>
                 </Col>
             </Row>
-            <Row>
-                <Col className="text-center">
-                    <b><Label>List most current Mental Health Provider:</Label></b>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="2" >
-                    <Label for="">Agency Name:</Label>
-                    <Input type="text" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">MH Worker:</Label>
-                    <Input type="text" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">Phone Number:</Label>
-                    <Input type="tel" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">LAST APPOINTMENT:</Label>
-                    <Input type="datetime-local" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">NEXT APPOINTMENT:</Label>
-                    <Input type="datetime-local" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="5" >
-                    <Label>Have you ever been hospitalized for mental health reason(s)?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="2" >
-                    <Label>Total # hospitalizations:</Label>
-                    <Input type="text" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Date Hospitalized</th>
-                            <th>Location of Hospitalization (Hospital)</th>
-                            <th>Reason for Hospitalization</th>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Most current Mental Health Provider Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="Current Mental Health Provider"
+                subtitle={
+                    <Button color="primary" size="sm">Add Provider</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Agency</th>
+                        <th>MH Worker</th>
+                        <th>Phone</th>
+                        <th>Date of Last Appointment</th>
+                        <th>Date of Next Appointment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                            <tr>
-                                <td><Input input type="date" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                                <td><Input input type="text" id="" name=""/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Col>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
             </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="">Have you ever seen a psychiatrist?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="4" >
-                    <Label for="">Are you current seeing a psychiatrist?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="2" >
-                    <Label for="">Psychiatrist:</Label>
-                    <Input type="text" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">Facility:</Label>
-                    <Input type="text" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">Phone Number:</Label>
-                    <Input type="tel" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">LAST APPOINTMENT:</Label>
-                    <Input type="datetime-local" id="" name=""/>
-                </Col>
-                <Col md="2" >
-                    <Label for="">NEXT APPOINTMENT:</Label>
-                    <Input type="datetime-local" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-center">
-                    <b><Label>Psychiatric Medications</Label></b>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="4" >
-                    <Label for="">Have you ever taken medications for mental health?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="4" >
-                    <Label for="">Are you currently taking medications for mental health issues?</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Name of Medication</th>
-                            <th>Dose / Frequency</th>
-                            <th>Effectiveness/Side Effects</th>
+            
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Most current Mental Health Provider Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="List Mental Mental Health Hospitalizations"
+                subtitle={
+                    <Button color="primary" size="sm">Add Hospitalization</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Date Hospitalized</th>
+                        <th>Location of Hospitalization</th>
+                        <th>Reasons for Hospitalization</th>
+                        <th>Date Hospitalized</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
+            </Row>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Psychiatric Medication Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="List Psychiatric Medications"
+                subtitle={
+                    <Button color="primary" size="sm">Add Medication</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dose / Frequency</th>
+                        <th>Effectiveness/Side Effects</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        <tr>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                            <td><Input input type="text" id="" name=""/></td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </Col>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
             </Row>
             <Row>
                 <Col className="text-center">
@@ -859,7 +174,7 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">How often do you feel sad?</Label>
                     <Input type="select" id="" name="" >
                         {gadList.map((g) => (
@@ -867,7 +182,7 @@ const MentalHealth = () => {
                         ))}
                     </Input>
                 </Col>
-                <Col md="2" >
+                <Col md="3" >
                     <Label for="">How often do you feel anxious?</Label>
                     <Input type="select" id="" name="" >
                         {gadList.map((g) => (
@@ -876,7 +191,7 @@ const MentalHealth = () => {
                     </Input>
                 </Col>
                 <Col md="3" >
-                    <Label for="">How would you describe your sleep pattern?</Label>
+                    <Label for="">Describe your sleep pattern:</Label>
                     <Input type="select" id="" name="" >
                         {sleepPatternList.map((g) => (
                             <option value={g}>{g}</option>
@@ -884,7 +199,7 @@ const MentalHealth = () => {
                     </Input>
                 </Col>
                 <Col md="3" >
-                    <Label for="">How would you describe your energy level?</Label>
+                    <Label for="">Describe your energy level:</Label>
                     <Input type="select" id="" name="" >
                         {energyLevelList.map((g) => (
                             <option value={g}>{g}</option>
@@ -893,7 +208,7 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="2" >
+                <Col md="6" >
                     <Label for="">Do you find it difficult to concentrate?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -901,7 +216,7 @@ const MentalHealth = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3" >
+                <Col md="6" >
                     <Label for="">Are there ever thoughts / voices that you cannot get out of your head?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -909,17 +224,17 @@ const MentalHealth = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3" >
-                    <Label for="">Have you ever felt like someone was reading your mind or making you think things?</Label>
+            </Row>
+            <Row>
+                <Col md="6" >
+                    <Label for="">Ever felt like someone was reading your mind or making you think things?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
-            </Row>
-            <Row>
-                <Col md="2" >
+                <Col md="6" >
                     <Label for="">Do you hear voices?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
@@ -927,7 +242,9 @@ const MentalHealth = () => {
                         <option>No</option>
                     </Input>
                 </Col>
-                <Col md="3" >
+            </Row>
+            <Row>
+                <Col md="6" >
                     <Label for="">If you hear voices, specify (what do voices say, length of hearing voices, effect voices have on individual):</Label>
                 </Col>
                 <Col>
@@ -935,14 +252,19 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="3" >
+                <Col md="6" >
                     <Label for="">Do you ever feel like someone is following you or out to get you?</Label>
+                    
+                </Col>
+                <Col md="6" >
                     <Input type="select" id="" name="" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
                 </Col>
+            </Row>
+            <Row>
                 <Col md="3" >
                     <Label for="">If you feel like someone is out to get you, specify (who was out to get you and reason):</Label>
                 </Col>
@@ -951,19 +273,19 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="12" >
-                    <Label for="">Explore any yes items here:</Label>
-                    <Input type="textarea" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
+                <Col md="6" >
                     <Label for="">Do you have a family history of mental health illness?</Label>
                     <Input type="select" id="" name="" >
                         <option> </option>
                         <option>Yes</option>
                         <option>No</option>
                     </Input>
+                </Col>
+            </Row>
+            <Row className="text-center">
+                <Col md="12" >
+                    <Label for="">Mental Health Screening Summary Notes</Label>
+                    <Input type="textarea" id="" name=""/>
                 </Col>
             </Row>
             <Row>
@@ -977,45 +299,67 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md="5" >
-                    <Label for="">Does patient report any history of abuse (Select all that apply)</Label>
-                </Col>
-                <Col md="3">
-                    <Input type="select" multiple id="" name="" >
-                        {traumaList.map((g) => (
-                            <option value={g}>{g}</option>
-                        ))}
-                    </Input>
+                <Col md="8" >
+                    <Label for="">Does patient report any history of abuse (Select all that apply)
+                        <FormGroup>
+                            <Select
+                                closeMenuOnSelect={false}
+                                isMulti
+                                options={traumaList}
+                            />
+                        </FormGroup>
+                    </Label>
                 </Col>
             </Row>
-            <Row>
-                <Col md="3" >
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Incident reported</Label>
-                </Col>
-                <Col md="2" >
-                    <Input type="checkbox" id="" name=""/>
-                    <Label for="">Date reported:</Label>
-                    <Input type="date" id="" name="" />
-                </Col>
-                <Col md="2" >
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Report filed by:</Label>
-                    <Input type="text" id="" name="" />
-                </Col>
-                <Col md="2" >
-                    <Label for="">Status:</Label>
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Active</option>
-                        <option>Case closed</option>
-                        <option>Unknown</option>
-                    </Input>
-                </Col>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Abuse History Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="List Reported Incidents"
+                subtitle={
+                    <Button color="primary" size="sm">Add Incident</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Type of Incident</th>
+                        <th>Date Reported</th>
+                        <th>Filed By</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
             </Row>
             <Row>
                 <Col className="text-center">
-                    <b><Label>Safety Risk Assessment (Current)</Label></b>
+                    <b><Label>Safety Risk Assessment</Label></b>
+                </Col>
+            </Row>
+            <Row>
+                <Col md="8" >
+                    <Label for="">Does client currently report any “DANGER TO SELF” and/or “DANGER TO OTHERS” (check all that apply):
+                        <FormGroup>
+                            <Select
+                                closeMenuOnSelect={false}
+                                isMulti
+                                options={riskList}
+                            />
+                        </FormGroup>
+                    </Label>
                 </Col>
             </Row>
             <Row>
@@ -1023,48 +367,7 @@ const MentalHealth = () => {
                     <Label>Does client currently report any “DANGER TO SELF” and/or “DANGER TO OTHERS” (check all that apply):</Label>
                 </Col>
             </Row>
-            <Row>
-                <Col md="3" >
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Thoughts of harming him or herself</Label>
-                </Col>
-                <Col md="3" >
-                    <Input type="checkbox" id="" name=""/>
-                    <Label for="">Thoughts of harming others</Label>
-                </Col>
-                <Col md="3" >
-                    <Input type="checkbox" id="" name="" />
-                    <Label for="">Denies thoughts</Label>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="3" >
-                    <Label>Does the client have a plan to harm him or herself or someone else?</Label>
-                </Col>
-                <Col md="1" >
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-                <Col md="2" >
-                    <Label>If individual has a plan please describe:</Label>
-                </Col>
-                <Col md="2" >
-                    <Input type="textarea" id="" name="" />
-                </Col>
-                <Col md="2" >
-                    <Label>If yes to plan, does the client have access to the means of planned harm?</Label>
-                </Col>
-                <Col md="1" >
-                    <Input type="select" id="" name="" >
-                        <option> </option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </Input>
-                </Col>
-            </Row>
+
             <Row>
                 <div>
                     Special Instructions regarding “SUICIDE ASSESSMENT”:<br/>
@@ -1088,7 +391,7 @@ const MentalHealth = () => {
             </Row>
             <Row>
                 <Col className="text-center">
-                    <b><Label>Safety Risk Assessment (History))</Label></b>
+                    <b><Label>Safety Risk Assessment</Label></b>
                 </Col>
             </Row>
             <Row>
@@ -1121,6 +424,12 @@ const MentalHealth = () => {
                 <Col md="4" >
                     <Label for="">Describe:</Label>
                     <Input type="textarea" id="" name="" />
+                </Col>
+            </Row>
+            <Row className="text-center">
+                <Col md="12" >
+                    <Label for="">Risk Screening Summary Notes</Label>
+                    <Input type="textarea" id="" name=""/>
                 </Col>
             </Row>
             <Row>
@@ -1178,50 +487,44 @@ const MentalHealth = () => {
                     </Input>
                 </Col>
             </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Program/Date Received Services (if known)</th>
-                            <th>Type of Treatment</th>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Treatment History Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="Program/Treatment History"
+                subtitle={
+                    <Button color="primary" size="sm">Add Program</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Date Received</th>
+                        <th>Type of Treatment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {treatList.map((t) => (
-                                            <option value={t}>{t}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {treatList.map((t) => (
-                                            <option value={t}>{t}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {treatList.map((t) => (
-                                            <option value={t}>{t}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
+            </Row>
+            <Row className="text-center">
+                <Col md="12" >
+                    <Label for="">Substance Abuse Summary Notes</Label>
+                    <Input type="textarea" id="" name=""/>
                 </Col>
             </Row>
+
 
             <hr/>
             <Row>
@@ -1337,83 +640,47 @@ const MentalHealth = () => {
                     </Input>
                 </Col>
             </Row>
-            <Row>
-                <Col className="text-center">
-                    <b><Label>Arrest History</Label></b>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="">
-                    <Table className="align-middle">
-                        <thead>
-                        <tr>
-                            <th>Date/Year</th>
-                            <th>Criminal Charge</th>
-                            <th>Misdemeanor (M)or Felony(F):</th>
-                            <th>Where did offense take place (city/state)</th>
-                            <th>Time Served</th>
-                            <th>Resulted In?</th>
+            <Row> 
+                {/*--------------------------------------------------------------------------------*/}
+                {/*  Arrest History Table                                                  */}
+                {/*--------------------------------------------------------------------------------*/}
+        
+                <ComponentCard
+                title="Arrest History"
+                subtitle={
+                    <Button color="primary" size="sm">Add Arrest</Button>
+                }
+                >
+                <Table responsive>
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Charge</th>
+                        <th>Misdemeanor(M) or Felony(F)</th>
+                        <th>Where did offense take place (city/state)</th>
+                        <th>Time Served</th>
+                        <th>Resulted In?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {medicationData.map((item) => (
+                        <tr key={item.id}>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {resultInList.map((r) => (
-                                            <option value={r}>{r}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {resultInList.map((r) => (
-                                            <option value={r}>{r}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {resultInList.map((r) => (
-                                            <option value={r}>{r}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td><Input type="text" id="" name=""/></td>
-                                <td>
-                                    <Input type="select"id="" name="" >
-                                        {resultInList.map((r) => (
-                                            <option value={r}>{r}</option>
-                                        ))}
-                                    </Input>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                        ))}          
+                    </tbody>
+                </Table>
+                </ComponentCard>  
+            </Row>
+            <Row className="text-center">
+                <Col md="12" >
+                    <Label for="">Legal Summary Notes</Label>
+                    <Input type="textarea" id="" name=""/>
                 </Col>
             </Row>
 
@@ -1431,7 +698,7 @@ const MentalHealth = () => {
             <Row>
                 <Col md="" className="text-center">
                     <FormGroup>
-                        <Label for="">Patient/Family Needs: Review Section One: Bio-Social Assessment to complete.</Label>
+                        <Label for="">Patient/Family Needs:</Label>
                         <Select id="clientPatFamNeeds" name="clientPatFamNeeds"
                             closeMenuOnSelect={false}
                             isMulti
@@ -1441,8 +708,9 @@ const MentalHealth = () => {
                 </Col>
             </Row>
             <Row className="text-center">
-                <Col md="" className="text-center">
-                    *For each checked needs assessment; there needs to be an objective and plan to complete objective*
+                <Col md="12" >
+                    <Label for="">Needs Assessment Summary</Label>
+                    <Input type="textarea" id="" name=""/>
                 </Col>
             </Row>
 
@@ -1576,20 +844,14 @@ const MentalHealth = () => {
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
+            <Row className="text-center">
                 <Col>
-                    <br/><Label>Diagnostic Summary: (Be sure to include assessment for risk of suicidal/homicidal behaviors, significant strengths/weaknesses, observations/descriptions, symptoms/impairments in life functioning, i.e., Work, School, Home, Community, Living Arrangements, etc.)</Label>
+                    <br/><Label>Summary and Any Other Observations</Label>
                 </Col>
             </Row>
             <Row>
                 <Col md="12">
                     <Input input type="textarea" id="" name=""/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="12">
-                    Mental Health Assessment Completed By:<br/>
-                    <Input input type="text" id="" name=""/>
                 </Col>
             </Row>
         </div>

@@ -31,6 +31,7 @@ export function makeData(len = 5553) {
 /*  
 // This is for the action table
 */
+// const dataTable = [];
 const dataTable = [
   ['James Smith', 'Photographer', 'Alexandria', '30'],
   ['Michael Smith', 'Hacker', 'Aurora', '36'],

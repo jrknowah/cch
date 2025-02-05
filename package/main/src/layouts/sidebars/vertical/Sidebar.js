@@ -26,6 +26,7 @@ const Sidebar = () => {
     <div className={`sidebarBox shadow bg-${activeBg} ${isFixed ? 'fixedSidebar' : ''}`}>
       <SimpleBar style={{ height: '100%' }}>
         <div className="profilebg" style={{ background: `url(${probg}) no-repeat` }}>
+          
           <div className="p-3 d-flex">
             <img src={user1} alt="user" width="50" className="rounded-circle" />
           </div>

@@ -26,7 +26,7 @@ const EncounterNoteDetail = () => {
         <div>
             <div className="border-bottom p-3 text-end">
                 <Button className="btn btn-success ms-auto" size="sm" onClick={handleNote}>
-                    Start New Note
+                    New Note
                 </Button>
             </div>
             {noteDetails && noteDetails.deleted === false ? (
@@ -113,41 +113,7 @@ const EncounterNoteDetail = () => {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row>
-                            <Col md="6">
-                                <FormGroup>
-                                    <Label for="clientWholePersonRepSign">Case Manager Name</Label>
-                                    <Input type="text" id="clientWholePersonRepSign" name="clientWholePersonRepSign">
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                            <Col md="6">
-                                <FormGroup>
-                                    <Label for="clientWholePersonSign">Case Manager Signature</Label>
-                                    <Input type="text" id="clientWholePersonSign" name="clientWholePersonSign">
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        <Row>
-
-                        </Row>
-                        <Row>
-                            <Col md="6">
-                                <FormGroup>
-                                    <Label for="clientWholePersonRepName">Clinician Name</Label>
-                                    <Input type="text" id="clientWholePersonRepName" name="clientWholePersonRepName">
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                            <Col md="6">
-                                <FormGroup>
-                                    <Label for="clientWholePersonRepSign">Clinician Signature</Label>
-                                    <Input type="text" id="clientWholePersonRepSign" name="clientWholePersonRepSign">
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                        </Row>
+                        
                         <Row>
                             <Col md="12">
                                 <p>
