@@ -15,6 +15,11 @@ import ComponentCard from "../../../ComponentCard";
 
 
 const MedScreening = () => {
+    // const [clientMeds, setClientMeds] = useState(false);
+        
+    // const toggleMeds = () => {
+    //     setClientMeds(!clientMeds);
+    // };
 
     return (
 
@@ -282,13 +287,59 @@ const MedScreening = () => {
                 {/* Prescription Medication Table                                                  */}
                 {/*--------------------------------------------------------------------------------*/}
         
-                <ComponentCard
-                subtitle={
-                    <p>
-                    <Button color="primary" size="sm">Add Medication</Button>
-                    </p>
-                }
-                >
+                <ComponentCard>
+                    {/*<Button color="primary" size="sm" onClick={toggleMeds}>Add Medication</Button>
+                     <Modal isOpen={medAppt} toggle={toggleMeds.bind(null)}>
+                        <ModalHeader toggle={toggleMeds.bind(null)}>Add Appointmet</ModalHeader>
+                        <ModalBody>
+                            <Form>
+                                <Row>
+                                <Col md="6">
+                                    <FormGroup>
+                                    <Label>Date</Label>
+                                    <Input type="date" id="medApptDate" value={medApptDate} onChange={(e) => setMedApptDate(e.target.value)}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col md="6">
+                                    <FormGroup>
+                                    <Label>Location</Label>
+                                    <Input type="text" id="medApptLoc" value={medApptLoc} onChange={(e) => setMedApptLoc(e.target.value)} />
+                                    </FormGroup>
+                                </Col>
+                                <Col md="6">
+                                    <FormGroup>
+                                    <Label>Type</Label>
+                                    <Input type="text" id="medApptType" value={medApptType} onChange={(e) => setMedApptType(e.target.value)}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col md="6">
+                                    <FormGroup>
+                                    <Label>Provider</Label>
+                                    <Input type="text" id="medApptProv" value={medApptProv} onChange={(e) => setMedApptProv(e.target.value)}/>   
+                                    </FormGroup>
+                                </Col>
+                                </Row>
+                                <Row>
+                                <Col md="6">
+                                    <FormGroup>
+                                        <Label>Transportation</Label>
+                                        <Input type="select" id="medApptTranport" value={medApptTranport} onChange={(e) => setMedApptTranport(e.target.value)}>
+                                            <option value=""></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+                                </Row>
+
+                            </Form>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="primary" onClick={handleSaveAppointment}>
+                            Save 
+                            </Button>
+                        </ModalFooter>
+                    </Modal> */}
                 <Table responsive>
                     <thead>
                     <tr>

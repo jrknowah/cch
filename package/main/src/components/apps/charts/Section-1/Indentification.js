@@ -47,26 +47,6 @@ const Indentification = () => {
                                     Identification
                                 </NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '3' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('3');
-                                    }}
-                                >
-                                    Medical Identification
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === '4' ? 'active bg-transparent' : 'cursor-pointer'}
-                                    onClick={() => {
-                                        toggle('4');
-                                    }}
-                                >
-                                    Income Verification
-                                </NavLink>
-                            </NavItem>
                         </Nav>
                         <TabContent activeTab={activeTab}>
                             <TabPane tabId="1">
@@ -87,7 +67,6 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -97,7 +76,6 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -107,7 +85,6 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                 </Row>
@@ -119,7 +96,6 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -129,13 +105,8 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
-                                </Row>
-                            </TabPane>
-                            <TabPane tabId="3">
-                                <Row>
                                     <Col md="4">
                                         <ComponentCard title="Medi-Cal Benefits"  >
                                             <Form>
@@ -143,9 +114,10 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
+                                </Row>
+                                <Row>
                                     <Col md="4">
                                         <ComponentCard title="Medicare"  >
                                             <Form>
@@ -153,7 +125,6 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
                                     <Col md="4">
@@ -163,11 +134,8 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
                                     </Col>
-                                </Row>
-                                <Row>
                                     <Col md="4">
                                         <ComponentCard title="TB Clearance"  >
                                             <Form>
@@ -175,26 +143,30 @@ const Indentification = () => {
                                                 <Input type="file" name="file" id="exampleFile" />
                                             </FormGroup>
                                             </Form>
-                                            <Button color="primary" size="sm">Upload</Button>
                                         </ComponentCard>
-                                    </Col>                                
+                                    </Col>   
                                 </Row>
-                            </TabPane>
-                            <TabPane tabId="4">
+                                <Row>
+                                    <Col md="4">
+                                        <ComponentCard title="Income" >
+                                            <Form>
+                                            <FormGroup>
+                                                <Input type="file" name="file" id="exampleFile" />
+                                            </FormGroup>
+                                            </Form>
+                                        </ComponentCard>
+                                    </Col>
+                                </Row>
                                 <Row>
                                 <Col sm="12">
                                         <div className="p-4">
-                                            <Col sm="12" md="6">
-                                                <ComponentCard title="Select File to Upload" >
-                                                    <Form>
-                                                    <FormGroup>
-                                                        <Input type="file" name="file" id="exampleFile" />
-                                                    </FormGroup>
-                                                    </Form>
-                                                    <Button color="primary" size="sm">Upload</Button>
-                                                </ComponentCard>
+                                            <Col md="4">
+                                                <Button color="primary" size="sm">Upload Documents</Button>
                                             </Col>
                                         </div>
+                                    </Col>
+                                    <Col md="4">
+                                        
                                     </Col>
                                 </Row>
                                 

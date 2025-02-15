@@ -1,31 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Row,
     Col, FormGroup, Label, Input, InputGroup, InputGroupText, Form
 } from 'reactstrap';
 import Select from 'react-select';
 import {assistList, finList, gfp, ynd, housingList, functionalCommunication,ambulatoryStatus} from "../../../../data/arrayList";
-import Profile from "../../../widgets/Profile";
 
 
 const BioSocial = () => {
-
+    const [selectedPayeeOptions, setSelectedPayeeOptions] = useState([]);
     return (
 
         <div className="form-body">
             <Row className="text-center">
                 <Label>Bio-Social Assessment</Label>
-            </Row>
-            <Row>
-                <Col md="4">
-                
-                </Col>
-                <Col md="4">
-                    <Profile/>
-                </Col>
-                <Col md="4">
-                
-                </Col>
             </Row>
             <Row className="text-center">
                 <Label>FINANCIAL SCREENING</Label>
@@ -49,7 +37,7 @@ const BioSocial = () => {
                 <Col md="4">
                     <FormGroup>
                         <Label for=" ">Do you have a payee?</Label>
-                        <Input type="select" id="payeeChoice" name="payeeChoice" >
+                        <Input type="select" id="payeeChoice" name="payeeChoice" value={selectedPayeeOptions} onChange={(selected) => setSelectedPayeeOptions(selected)}>
                             {ynd.map((list) => {
                                 return (
                                    <option>{list}</option>
@@ -290,7 +278,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Eating</InputGroupText>
-                                <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                                <Input type="select" className="custom-select" id="clientEating" name="clientEating" >
                                     {assistList.map((a) => (
                                         <option value={a}>{a}</option>
                                     ))}
@@ -302,7 +290,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Bathing / Showering</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientBathing" name="clientBathing" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -314,7 +302,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Brushing Teeth</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientBrushing" name="clientBrushing" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -326,7 +314,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Toileting</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientToileting" name="clientToileting" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -340,7 +328,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Cooking</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientCooking" name="clientCooking" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -352,7 +340,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Cleaning</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientCleaning" name="clientCleaning" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -364,7 +352,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Laundry</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientLaundry" name="clientLaundry" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -376,7 +364,7 @@ const BioSocial = () => {
                     <Form>
                         <InputGroup>
                             <InputGroupText>Taking Medication</InputGroupText>
-                            <Input type="select" className="custom-select" id="clientCurrEnrolled" name="clientCurrEnrolled" >
+                            <Input type="select" className="custom-select" id="clientTakingMeds" name="clientTakingMeds" >
                                 {assistList.map((a) => (
                                     <option value={a}>{a}</option>
                                 ))}
@@ -408,7 +396,7 @@ const BioSocial = () => {
             </Row>
             <Row >
                 <Col md="4" >
-                    <Label for="clientGovHousingApp">How does patient communicate / express themselves?
+                    <Label for="">How does patient communicate / express themselves?
                     </Label>
                 </Col>
                 <Col md="6" >
@@ -417,6 +405,7 @@ const BioSocial = () => {
                             closeMenuOnSelect={false}
                             isMulti
                             options={functionalCommunication}
+                            id="clientCommunication" name="clientCommunication"
                         />
                     </FormGroup>
                 </Col>
@@ -426,7 +415,7 @@ const BioSocial = () => {
                     <FormGroup>
                         <FormGroup>
                             <Label check>Bio-Social Summary Notes</Label>
-                            <Input type="textarea" name="customcheck1" />
+                            <Input type="textarea" name="clientBioSocialNotes" id="clientBioSocialNotes"  />
                         </FormGroup>
                     </FormGroup>
                 </Col>

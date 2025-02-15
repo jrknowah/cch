@@ -4,13 +4,13 @@ export const clientGenders = [
     "Male",
     "Trans Female (MTF or Male to Female)",
     "Trans Male (FTM or Female to Male)",
-    "Gender Non-Conforming (i.e. not exclusively male or female)",
+    "Gender Non-Conforming",
     "Client doesn’t know", 
     "Client refused",
     "Data not collected"
 ];
 
-export const clientPronouns = [
+export const clientPronounsList = [
     "",
     "She/her/hers",
     "He/him/his",
@@ -265,15 +265,21 @@ export const hhhSiteList = ["","41st","97th","104th","238th","Downey","Heritage 
 
 export const srcSiteList = ["", "Arlington-LA","Arroyo","East LA","Lakeview Terrace","Long Beach 4th", "Motel 6","Percy","Torrance-Cabrillo"];
 
+// export const allergyList = [ 
+//     { value: 'No Allergies', label: 'No Allergies' },
+//     { value: 'Drug Allergy', label: 'Drug Allergy' },
+//     { value: 'Food Allergy', label: 'Food Allergy' },
+//     { value: 'Insect Allergy', label: 'Insect Allergy' },
+//     { value: 'Latex Allergy', label: 'Latex Allergy' },
+//     { value: 'Mold Allergy', label: 'Mold Allergy' },
+//     { value: 'Pet Allergy', label: 'Pet Allergy' },
+//     { value: 'Pollen Allergy', label: 'Pollen Allergy' }
+// ];
+
 export const allergyList = [ 
-    { value: 'No Allergies', label: 'No Allergies' },
-    { value: 'Drug Allergy', label: 'Drug Allergy' },
-    { value: 'Food Allergy', label: 'Food Allergy' },
-    { value: 'Insect Allergy', label: 'Insect Allergy' },
-    { value: 'Latex Allergy', label: 'Latex Allergy' },
-    { value: 'Mold Allergy', label: 'Mold Allergy' },
-    { value: 'Pet Allergy', label: 'Pet Allergy' },
-    { value: 'Pollen Allergy', label: 'Pollen Allergy' }
+    ["No Allergies"],["Drug Allergy"],["Food Allergy"],
+    ["Insect Allergy"],["Latex Allergy"],["Mold Allergy"],
+    ["Pet Allergy"],["Pollen Allergy"]
 ];
 
 export const locList = [
@@ -440,9 +446,17 @@ export const famList = ["","Mother", "Father", "Other"];
 export const famEconList = ["","Poverty level (on welfare)","Middle Class","Upper Middle Class","Wealthy"]
 export const gfpList = ["","Good","Fair","Poor"];
 export const relList = ["","Healthy/Typical","Strained","Unhealthy/Poor"];
-export const mhList = ["","Anxiety","Depression","Bipolar","Schizophrenia","Personality Disorder","Other:"];
+export const mhList = [
+    { value: '', label: '' },
+    { value: 'Anxiety', label: 'Anxiety' },
+    { value: 'Depression', label: 'Depression' },
+    { value: 'Bipolar', label: 'Bipolar' },
+    { value: 'Schizophrenia', label: 'Schizophrenia' },
+    { value: 'Personality Disorder', label: 'Personality Disorder' },
+    { value: 'Other:', label: 'Other:' }
+];
 
-export const clientRace = [
+export const clientRaceList = [
     "",
     "White",
     "Black or African-American",
@@ -1254,7 +1268,7 @@ export const medRisk2 = [
     { value: "I use condoms 100% of the time", label: "I use condoms 100% of the time"},
     { value: "I am monogamous – sex with 1 person", label: "I am monogamous – sex with 1 person"}
 ];
-export const clientLang = [ "","English","Spanish","French","Italian","German","Greek","Polish","Portugese","Russian","Swedish",
+export const clientLangList = [ "","English","Spanish","French","Italian","German","Greek","Polish","Portugese","Russian","Swedish",
     "American Sign Language","Chinese", "Korean","Client Doesn’t Know","Client Rsefiused"];
 
     export const clientLang2 = [ 
@@ -1483,5 +1497,5 @@ export const medicationData = [
 
 export default {
     medicationData, clientGenders, mfList, substanceAbuseOften, substanceAbuseUse, substanceList, clientEthnicityList,ynd, PatientProfileList, ppcList, acpList, finList, famList,section4List,encTypeList,hhhSiteList,behContractList, gadQuestList, gadDifList, crList, section5List, section6List,
-    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema, clientPronouns, clientLang, clientVeteranStatus, clientCitizenStatus
+    cmOb1,cmOb2,cmOb3,cmOb4,cmOb5,cmOb6,cmOb7,cmOb8,cmOb9,cmOb10,cmOb11, allergyList, edema, clientPronounsList, clientVeteranStatus, clientCitizenStatus
 }

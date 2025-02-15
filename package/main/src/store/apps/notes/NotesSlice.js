@@ -48,7 +48,7 @@ export const NotesSlice = createSlice({
         state.notes.push(action.payload);
       },
       prepare: (id, title, color) => {
-        return { payload: { id, title, color, datef: new Date().toDateString(), deleted: false } };
+        return { payload: { id,clientID, title, color, datef: new Date().now().toDateString(), noteType, noteSite, noteDate, deleted: false } };
       },
     },
   },

@@ -8,6 +8,10 @@ const NotesData = [
       ' Client is able to ambulate and wounds are beginning to heal.',
     dateCreated: '2024-01-02T23:28:56.782Z',
     dateLastModified: '2024-11-19T23:28:56.782Z',
+    noteDate: '2024-11-19T23:28:56.782Z',
+    noteType: 'Summary',
+    noteSite: '41st',
+    clientID: '123456',
     deleted: false,
   },
   // {
